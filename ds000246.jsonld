@@ -27,18 +27,14 @@
     },
     "Diagnosis": "nb:Diagnosis",
     "Image": "nb:Image",
-    "Session": "nb:Session",
+    "ImagingSession": "nb:ImagingSession",
     "hasFilePath": {
       "@id": "nb:hasFilePath"
     },
     "hasAcquisition": {
       "@id": "nb:hasAcquisition"
     },
-    "Sex": "nb:Sex",
-    "Subject": "nb:Subject",
-    "hasSession": {
-      "@id": "nb:hasSession"
-    },
+    "PhenotypicSession": "nb:PhenotypicSession",
     "hasAge": {
       "@id": "nb:hasAge"
     },
@@ -54,29 +50,51 @@
     "hasAssessment": {
       "@id": "nb:hasAssessment"
     },
+    "Session": "nb:Session",
+    "Sex": "nb:Sex",
+    "Subject": "nb:Subject",
+    "hasSession": {
+      "@id": "nb:hasSession"
+    },
     "SubjectGroup": "nb:SubjectGroup"
   },
-  "identifier": "nb:45fe3d56-d64e-495c-b7ba-9f352d9472bc",
+  "identifier": "nb:7c8c760f-ca25-458f-af2f-13951c5842f5",
   "hasLabel": "MEG-BIDS Brainstorm data sample",
   "hasPortalURI": "https://github.com/OpenNeuroDatasets-JSONLD/ds000246.git",
   "hasSamples": [
     {
-      "identifier": "nb:ec53b74e-f4f3-4c53-bf82-2f41775ce502",
+      "identifier": "nb:4f4e35e8-bc5a-4389-99c9-177a840777d5",
       "hasLabel": "sub-emptyroom",
-      "hasSession": [],
+      "hasSession": [
+        {
+          "identifier": "nb:a03f718d-f5bb-4b53-904c-23084ac8ce29",
+          "hasLabel": "ses-nb01",
+          "schemaKey": "PhenotypicSession"
+        }
+      ],
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:cf6df992-c05d-48c0-8e17-6b0851d983ee",
+      "identifier": "nb:196e17ff-b786-4793-a571-28763050a43e",
       "hasLabel": "sub-0001",
       "hasSession": [
         {
-          "identifier": "nb:8e8627ff-aed1-46cd-bcaa-333abd3d082d",
+          "identifier": "nb:8809e2d1-8a8a-4c90-b5c1-c25a454a833c",
+          "hasLabel": "ses-nb01",
+          "hasAge": 25.0,
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:a23d5e40-0ffa-4b7f-990e-7abf5cacf359",
           "hasLabel": "ses-nb01",
           "hasFilePath": "/ds000246/sub-0001",
           "hasAcquisition": [
             {
-              "identifier": "nb:a3420cc0-918b-4e98-aad2-00b8ed673c8f",
+              "identifier": "nb:02edd4ab-9145-4c50-aaef-953688a80a4a",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -84,14 +102,9 @@
               "schemaKey": "Acquisition"
             }
           ],
-          "schemaKey": "Session"
+          "schemaKey": "ImagingSession"
         }
       ],
-      "hasAge": 25.0,
-      "hasSex": {
-        "identifier": "snomed:248153007",
-        "schemaKey": "Sex"
-      },
       "schemaKey": "Subject"
     }
   ],
