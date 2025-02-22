@@ -1,0 +1,31 @@
+name: Push dictionaries
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  push_dict_to_repos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.NB_BOT_ID }}
+          private-key: ${{ secrets.NB_BOT_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Handle dictionaries
+        run: |
+          for dict in $(ls *.json); do
+            echo "Processing $dict"
+          done
