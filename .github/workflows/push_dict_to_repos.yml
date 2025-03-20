@@ -18,14 +18,13 @@ jobs:
       - name: Find and submit data dictionaries
         id: get_datasets
         run: |
-          dataset_names='['
           for dict in $(ls *.json); do
-            dataset_name=$(basename "$dict" .json)  
+            dataset_name=$(basename "$dict" .json)
 
             echo "Beginning upload for ${dataset_name}"
             
             # Attempt to upload the data dictionary with boilerplate information
-            response=$(curl --write-out "%{http_code}" --silent --output /dev/null --retry 3 --retry-delay 30 \
+            response=$(curl --silent --show-error --retry 3 --retry-delay 30 \
               -X 'PUT' \
               "https://upload.neurobagel.org/openneuro/upload?dataset_id=${dataset_name}" \
               -H 'accept: application/json' \
@@ -37,8 +36,10 @@ jobs:
               -F 'affiliation=neurobagel' \
               -F 'gh_username=neurobagel-bot')
 
+            http_status=$(echo "$response" | grep -o '"status":[0-9]*' | grep -o '[0-9]*')
+
             # Check if the response code indicates success
-            if [ "$response" -ne 200 ]; then
+            if [ "$http_status" -ne 200 ]; then
               echo "Upload failed for ${dataset_name} with response code $response"
               exit 1
             fi
