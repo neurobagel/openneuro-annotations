@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - add_automation
   workflow_dispatch:
 
 jobs:
@@ -16,10 +15,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Find and submit data dictionaries
-        id: get_datasets
+        id: get_dictionaries
         run: |
 
-          # Get the list of datasets
+          # Get the list of dictionaries
           data_dictionaries=$(ls *.json)
           n_dictionaries=$(echo "$data_dictionaries" | wc -l)
 
@@ -42,10 +41,10 @@ jobs:
               -H 'Content-Type: multipart/form-data' \
               -F "data_dictionary=@${dict};type=application/json" \
               -F 'changes_summary=Automatic upload from https://github.com/neurobagel/openneuro-annotations' \
-              -F 'name=Bot' \
-              -F 'email=bot@neurobagel.org' \
+              -F 'name=Neurobagel Bot' \
+              -F 'email=neurobagel-bot[bot]@users.noreply.github.com' \
               -F 'affiliation=neurobagel' \
-              -F 'gh_username=neurobagel-bot')
+              -F 'gh_username=neurobagel-bot[bot]')
 
             # Check the status of the response
             if echo $response | jq -e 'has("error")' > /dev/null; then
@@ -54,6 +53,10 @@ jobs:
               if [[ "$error_message" =~ "same as in the target file." ]]; then
                 # Nothing to do
                 success_count=$((success_count + 1))
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
+                continue
+              elif [[ "$error_message" =~ "not a valid JSON file" ]]; then
+                fail_count=$((fail_count + 1))
                 echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
                 continue
               elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
