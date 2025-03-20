@@ -8,8 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  push_dict_to_repos:
+  detect-datasets:
     runs-on: ubuntu-latest
+    outputs:
+      datasets: ${{ steps.get_datasets.outputs.datasets }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,11 +28,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Find dataset names
+        id: get_datasets
         run: |
           dataset_names='['
           for dict in $(ls *.json); do
             dataset_name=$(basename "$dict" .json)  
-            dataset_names="${dataset_names}, \"${dataset_name}\""
+            dataset_names="${dataset_names}\"${dataset_name}\","
           done
           dataset_names="${dataset_names}]"
-          echo ${dataset_names}
+          # Store the dataset names in an output variable
+          echo "datasets=${dataset_names}" >> $GITHUB_OUTPUT
