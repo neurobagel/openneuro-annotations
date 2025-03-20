@@ -46,7 +46,7 @@ jobs:
 
               if [[ "$error_message" =~ "same as in the target file." ]]; then
                 # Nothing to do
-                echo "No changes to upload for ${dataset_name}"
+                continue
               elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
                 # Repo moved
                 missing_repos="${missing_repos}${dataset_name}\n"
