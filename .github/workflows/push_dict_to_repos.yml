@@ -8,33 +8,41 @@ on:
   workflow_dispatch:
 
 jobs:
-  detect-datasets:
+  update-datasets:
     runs-on: ubuntu-latest
-    outputs:
-      datasets: ${{ steps.get_datasets.outputs.datasets }}
+    timeout-minutes: 720
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # - name: Generate a token
-      #   id: generate-token
-      #   uses: actions/create-github-app-token@v1
-      #   with:
-      #     app-id: ${{ vars.NB_BOT_ID }}
-      #     private-key: ${{ secrets.NB_BOT_KEY }}
-      #     owner: ${{ github.repository_owner }}
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Find dataset names
+      - name: Find and submit data dictionaries
         id: get_datasets
         run: |
           dataset_names='['
           for dict in $(ls *.json); do
             dataset_name=$(basename "$dict" .json)  
-            dataset_names="${dataset_names}\"${dataset_name}\","
+
+            echo "Beginning upload for ${dataset_name}"
+            
+            # Attempt to upload the data dictionary with boilerplate information
+            response=$(curl --write-out "%{http_code}" --silent --output /dev/null --retry 3 --retry-delay 30 \
+              -X 'PUT' \
+              "https://upload.neurobagel.org/openneuro/upload?dataset_id=${dataset_name}" \
+              -H 'accept: application/json' \
+              -H 'Content-Type: multipart/form-data' \
+              -F "data_dictionary=@${dict};type=application/json" \
+              -F 'changes_summary=Automatic upload from https://github.com/neurobagel/openneuro-annotations' \
+              -F 'name=Bot' \
+              -F 'email=bot@neurobagel.org' \
+              -F 'affiliation=neurobagel' \
+              -F 'gh_username=neurobagel-bot')
+
+            # Check if the response code indicates success
+            if [ "$response" -ne 200 ]; then
+              echo "Upload failed for ${dataset_name} with response code $response"
+              exit 1
+            fi
+
+            echo "Upload completed for ${dataset_name}"
+
           done
-          dataset_names="${dataset_names}]"
-          # Store the dataset names in an output variable
-          echo "datasets=${dataset_names}" >> $GITHUB_OUTPUT
