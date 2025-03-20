@@ -18,12 +18,20 @@ jobs:
       - name: Find and submit data dictionaries
         id: get_datasets
         run: |
+
+          # Get the list of datasets
+          data_dictionaries=$(ls *.json)
+          n_dictionaries=$(echo "$data_dictionaries" | wc -l)
+
+          # Storage vars
           success_count=0
           fail_count=0
           missing_repos=""
           opened_prs=""
 
-          for dict in *.json; do
+          index=0
+          for dict in ${data_dictionaries}; do
+            index=$((index + 1))
             dataset_name=$(basename $dict .json)
             
             # Attempt to upload the data dictionary with boilerplate information
@@ -46,23 +54,23 @@ jobs:
               if [[ "$error_message" =~ "same as in the target file." ]]; then
                 # Nothing to do
                 success_count=$((success_count + 1))
-                echo "${dataset_name}: ${error_message}"
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
                 continue
               elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
                 # Repo moved
                 fail_count=$((fail_count + 1))
                 missing_repos="${missing_repos}${dataset_name}\n"
-                echo "${dataset_name}: ${error_message}"
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
                 continue
               elif [[ "$error_message" == "Something went wrong" ]]; then
                 # Other error
                 fail_count=$((fail_count + 1))
-                echo "${dataset_name}: ${error_message}"
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
                 continue
               else
                 # Unknown error
                 fail_count=$((fail_count + 1))
-                echo "${dataset_name}: ${error_message}"
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
                 continue
               fi
             elif echo $response | jq -e 'has("pull_request_url")' > /dev/null; then
@@ -70,11 +78,11 @@ jobs:
               pr_url=$(echo "$response" | jq -r '.pull_request_url')
               success_count=$((success_count + 1))
               opened_prs="${opened_prs}${dataset_name}: ${pr_url}\n"
-              echo "${dataset_name}: upload successful - ${pr_url}"
+              echo "(${index}/${n_dictionaries}) ${dataset_name}: upload successful - ${pr_url}"
             else
               # Bad stuff happened and we don't know why
               fail_count=$((fail_count + 1))
-              echo "Unknown response: $response"
+              echo "(${index}/${n_dictionaries}) ${dataset_name}: Unknown response: $response"
               continue
             fi
 
