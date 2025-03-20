@@ -46,15 +46,20 @@ jobs:
 
               if [[ "$error_message" =~ "same as in the target file." ]]; then
                 # Nothing to do
+                echo "${dataset_name}: ${error_message}"
                 continue
               elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
                 # Repo moved
                 missing_repos="${missing_repos}${dataset_name}\n"
+                echo "${dataset_name}: ${error_message}"
+                continue
               elif [[ "$error_message" == "Something went wrong" ]]; then
                 # Other error
+                echo "${dataset_name}: ${error_message}"
                 continue
               else
                 # Unknown error
+                echo "${dataset_name}: ${error_message}"
                 continue
               fi
             elif echo $response | jq -e 'has("pull_request_url")' > /dev/null; then
@@ -62,6 +67,7 @@ jobs:
               pr_url=$(echo "$response" | jq -r '.pull_request_url')
               success_count=$((success_count + 1))
               opened_prs="${opened_prs}${dataset_name}: ${pr_url}\n"
+              echo "${dataset_name}: ${response}"
             else
               # Bad stuff
               echo "Unknown response: $response"
