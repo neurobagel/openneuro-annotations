@@ -18,8 +18,8 @@ jobs:
       - name: Find and submit data dictionaries
         id: get_datasets
         run: |
-          for dict in $(ls *.json); do
-            dataset_name=$(basename "$dict" .json)
+          for dict in *.json; do
+            dataset_name=$(basename $dict .json)
 
             echo "Beginning upload for ${dataset_name}"
             
@@ -41,7 +41,6 @@ jobs:
             # Check if the response code indicates success
             if [ "$http_status" -ne 200 ]; then
               echo "Upload failed for ${dataset_name} with response code $response"
-              # exit 1
             fi
 
             echo "Upload completed for ${dataset_name}"
