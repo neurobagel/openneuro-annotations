@@ -1,4 +1,4 @@
-name: Push dictionaries
+name: Push dictionaries to OpenNeuro-JSONLD
 
 on:
   push:
@@ -25,8 +25,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Handle dictionaries
+      - name: Find dataset names
         run: |
           for dict in $(ls *.json); do
-            echo "Processing $dict"
+            dataset_name=$(basename "$dict" .json)  
+            echo "Processing $dataset_name"
           done
