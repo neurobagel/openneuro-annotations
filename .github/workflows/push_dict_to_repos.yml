@@ -27,7 +27,10 @@ jobs:
 
       - name: Find dataset names
         run: |
+          dataset_names='['
           for dict in $(ls *.json); do
             dataset_name=$(basename "$dict" .json)  
-            echo "Processing $dataset_name"
+            dataset_names="${dataset_names}, \"${dataset_name}\""
           done
+          dataset_names="${dataset_names}]"
+          echo ${dataset_names}
