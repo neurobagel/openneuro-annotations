@@ -24,7 +24,7 @@ jobs:
             echo "Beginning upload for ${dataset_name}"
             
             # Attempt to upload the data dictionary with boilerplate information
-            curl --silent --retry 3 --retry-delay 30 \
+            response=$(curl --silent --retry 3 --retry-delay 30 \
               -X 'PUT' \
               "https://upload.neurobagel.org/openneuro/upload?dataset_id=${dataset_name}" \
               -H 'accept: application/json' \
@@ -34,8 +34,38 @@ jobs:
               -F 'name=Bot' \
               -F 'email=bot@neurobagel.org' \
               -F 'affiliation=neurobagel' \
-              -F 'gh_username=neurobagel-bot'
+              -F 'gh_username=neurobagel-bot')
+
+            # Check the status of the response
+            if echo $response | jq -e 'has("error")' > /dev/null; then
+              error_message=$(echo "$response" | jq -r '.error')
+
+              if [[ "$error_message" =~ "same as in the target file." ]]; then
+                # Nothing to do
+              elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
+                # Repo moved
+              elif [[ "$error_message" == "Something went wrong" ]]; then
+                # Other error
+              else
+                # Unknown error
+                echo "Unknown error: $error_message"
+              fi
+            elif echo $response | jq -e 'has("pull_request_url")' > /dev/null; then
+              # PR opened
+              pr_url=$(echo "$response" | jq -r '.pull_request_url')
+            else
+              # Bad stuff
+            fi
 
             echo "Upload completed for ${dataset_name}"
 
           done
+
+          # We want:
+          # - a counter for each outcome level (success, nothing to do, repo gone, new data dictionary)
+          # - a list of PRs that were opened
+          # - a list of repos that no longer exist
+
+          # {"error":"The content selected for upload is the same as in the target file.","message":"Failed to upload the file to OpenNeuroDatasets-JSONLD."}
+          # {"error":"404: Not Found. Please ensure you have provided a correct existing dataset ID.","message":"Failed to upload the file to OpenNeuroDatasets-JSONLD."}
+          # {"pull_request_url":"https://github.com/OpenNeuroDatasets-JSONLD/ds003340/pull/1","message":"Successfully uploaded file to OpenNeuroDatasets-JSONLD.","warnings":["The uploaded data dictionary may contain changes that are not related to Neurobagel annotations."]}
