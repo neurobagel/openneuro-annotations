@@ -67,7 +67,7 @@ jobs:
               pr_url=$(echo "$response" | jq -r '.pull_request_url')
               success_count=$((success_count + 1))
               opened_prs="${opened_prs}${dataset_name}: ${pr_url}\n"
-              echo "${dataset_name}: ${response}"
+              echo "${dataset_name}: upload successful - ${pr_url}"
             else
               # Bad stuff
               echo "Unknown response: $response"
