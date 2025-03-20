@@ -24,7 +24,7 @@ jobs:
             echo "Beginning upload for ${dataset_name}"
             
             # Attempt to upload the data dictionary with boilerplate information
-            response=$(curl --silent --show-error --retry 3 --retry-delay 30 \
+            response=$(curl --retry 3 --retry-delay 30 \
               -X 'PUT' \
               "https://upload.neurobagel.org/openneuro/upload?dataset_id=${dataset_name}" \
               -H 'accept: application/json' \
