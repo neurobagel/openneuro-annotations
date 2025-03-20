@@ -1,0 +1,98 @@
+name: Push dictionaries to OpenNeuro-JSONLD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update-datasets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 720
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Find and submit data dictionaries
+        id: get_dictionaries
+        run: |
+
+          # Get the list of dictionaries
+          data_dictionaries=$(ls *.json)
+          n_dictionaries=$(echo "$data_dictionaries" | wc -l)
+
+          # Storage vars
+          success_count=0
+          fail_count=0
+          missing_repos=""
+          opened_prs=""
+
+          index=0
+          for dict in ${data_dictionaries}; do
+            index=$((index + 1))
+            dataset_name=$(basename $dict .json)
+            
+            # Attempt to upload the data dictionary with boilerplate information
+            response=$(curl --silent --retry 3 --retry-delay 30 \
+              -X 'PUT' \
+              "https://upload.neurobagel.org/openneuro/upload?dataset_id=${dataset_name}" \
+              -H 'accept: application/json' \
+              -H 'Content-Type: multipart/form-data' \
+              -F "data_dictionary=@${dict};type=application/json" \
+              -F 'changes_summary=Automatic upload from https://github.com/neurobagel/openneuro-annotations' \
+              -F 'name=Neurobagel Bot' \
+              -F 'email=neurobagel-bot[bot]@users.noreply.github.com' \
+              -F 'affiliation=neurobagel' \
+              -F 'gh_username=neurobagel-bot[bot]')
+
+            # Check the status of the response
+            if echo $response | jq -e 'has("error")' > /dev/null; then
+              error_message=$(echo "$response" | jq -r '.error')
+
+              if [[ "$error_message" =~ "same as in the target file." ]]; then
+                # Nothing to do
+                success_count=$((success_count + 1))
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
+                continue
+              elif [[ "$error_message" =~ "not a valid JSON file" ]]; then
+                fail_count=$((fail_count + 1))
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
+                continue
+              elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
+                # Repo moved
+                fail_count=$((fail_count + 1))
+                missing_repos="${missing_repos}${dataset_name}\n"
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
+                continue
+              elif [[ "$error_message" == "Something went wrong" ]]; then
+                # Other error
+                fail_count=$((fail_count + 1))
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
+                continue
+              else
+                # Unknown error
+                fail_count=$((fail_count + 1))
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
+                continue
+              fi
+            elif echo $response | jq -e 'has("pull_request_url")' > /dev/null; then
+              # PR opened  
+              pr_url=$(echo "$response" | jq -r '.pull_request_url')
+              success_count=$((success_count + 1))
+              opened_prs="${opened_prs}${dataset_name}: ${pr_url}\n"
+              echo "(${index}/${n_dictionaries}) ${dataset_name}: upload successful - ${pr_url}"
+            else
+              # Bad stuff happened and we don't know why
+              fail_count=$((fail_count + 1))
+              echo "(${index}/${n_dictionaries}) ${dataset_name}: Unknown response: $response"
+              continue
+            fi
+
+          done
+
+          echo -e "Missing repositories:\n${missing_repos}"
+          echo -e "Opened PRs:\n${opened_prs}"
+          echo -e "Success count: ${success_count}"
+          echo -e "Fail count: ${fail_count}"
+
