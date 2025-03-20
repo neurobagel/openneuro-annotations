@@ -18,10 +18,13 @@ jobs:
       - name: Find and submit data dictionaries
         id: get_datasets
         run: |
+          success_count=0
+          fail_count=0
+          missing_repos=""
+          opened_prs=""
+
           for dict in *.json; do
             dataset_name=$(basename $dict .json)
-
-            echo "Beginning upload for ${dataset_name}"
             
             # Attempt to upload the data dictionary with boilerplate information
             response=$(curl --silent --retry 3 --retry-delay 30 \
@@ -38,6 +41,7 @@ jobs:
 
             # Check the status of the response
             if echo $response | jq -e 'has("error")' > /dev/null; then
+              fail_count=$((fail_count + 1))
               error_message=$(echo "$response" | jq -r '.error')
 
               if [[ "$error_message" =~ "same as in the target file." ]]; then
@@ -45,32 +49,29 @@ jobs:
                 echo "No changes to upload for ${dataset_name}"
               elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
                 # Repo moved
-                echo "Repo ${dataset_name} no longer exists"
+                missing_repos="${missing_repos}${dataset_name}\n"
               elif [[ "$error_message" == "Something went wrong" ]]; then
                 # Other error
-                echo "Error uploading ${dataset_name}"
+                continue
               else
                 # Unknown error
-                echo "Unknown error: $error_message"
+                continue
               fi
             elif echo $response | jq -e 'has("pull_request_url")' > /dev/null; then
-              # PR opened
+              # PR opened  
               pr_url=$(echo "$response" | jq -r '.pull_request_url')
-              echo "PR opened for ${dataset_name}: ${pr_url}"
+              success_count=$((success_count + 1))
+              opened_prs="${opened_prs}${dataset_name}: ${pr_url}\n"
             else
               # Bad stuff
               echo "Unknown response: $response"
+              continue
             fi
-
-            echo "Upload completed for ${dataset_name}"
 
           done
 
-          # We want:
-          # - a counter for each outcome level (success, nothing to do, repo gone, new data dictionary)
-          # - a list of PRs that were opened
-          # - a list of repos that no longer exist
+          echo "Missing repositories:\n${missing_repos}"
+          echo "Opened PRs:\n${opened_prs}"
+          echo "Success count: ${success_count}"
+          echo "Fail count: ${fail_count}"
 
-          # {"error":"The content selected for upload is the same as in the target file.","message":"Failed to upload the file to OpenNeuroDatasets-JSONLD."}
-          # {"error":"404: Not Found. Please ensure you have provided a correct existing dataset ID.","message":"Failed to upload the file to OpenNeuroDatasets-JSONLD."}
-          # {"pull_request_url":"https://github.com/OpenNeuroDatasets-JSONLD/ds003340/pull/1","message":"Successfully uploaded file to OpenNeuroDatasets-JSONLD.","warnings":["The uploaded data dictionary may contain changes that are not related to Neurobagel annotations."]}
