@@ -1,5 +1,5 @@
-Repo info: ds004663,"0e849848476070e0971e7a85bab77e097259877d"
-ds004663: Running the CLI
+Repo info: ds005875,"96276e6130b1234904d246fc7003d8e27a6d7c3a"
+ds005875: Running the CLI
 latest: Pulling from neurobagel/bagelcli
 8b91b88d5577: Pulling fs layer
 824416e23423: Pulling fs layer
@@ -20,13 +20,13 @@ fa9b8272de45: Waiting
 824416e23423: Download complete
 6903bcecb972: Verifying Checksum
 6903bcecb972: Download complete
+8b91b88d5577: Download complete
 b2697057e25f: Verifying Checksum
 b2697057e25f: Download complete
 6e7d39ff1535: Verifying Checksum
 6e7d39ff1535: Download complete
 783ecd6218fb: Verifying Checksum
 783ecd6218fb: Download complete
-8b91b88d5577: Download complete
 b235388ea61d: Verifying Checksum
 b235388ea61d: Download complete
 fa9b8272de45: Verifying Checksum
@@ -44,6 +44,420 @@ b235388ea61d: Pull complete
 fa9b8272de45: Pull complete
 Digest: sha256:b32f73cdc950c53d59443c9927a6c3671a7ba1c651e05d67f54f3a938c76748e
 Status: Downloaded newer image for neurobagel/bagelcli:latest
+docker.io/neurobagel/bagelcli:latest
+[INFO] Attempting a clone into /home/runner/work/.github/.github/code/data/ds005875 
+[INFO] Attempting to clone from https://github.com/OpenNeuroDatasets-JSONLD/ds005875.git to /home/runner/work/.github/.github/code/data/ds005875 
+[INFO] Start enumerating objects 
+[INFO] Start counting objects 
+[INFO] Start compressing objects 
+[INFO] Start receiving objects 
+[INFO] Start resolving deltas 
+[INFO] Completed clone attempts for Dataset(/home/runner/work/.github/.github/code/data/ds005875) 
+[INFO] Remote origin not usable by git-annex; setting annex-ignore 
+[INFO] https://github.com/OpenNeuroDatasets-JSONLD/ds005875.git/config download failed: Not Found 
+install(ok): /home/runner/work/.github/.github/code/data/ds005875 (dataset)
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /usr/local/lib/python3.10/site-packages/bagel/cli.py:99 in pheno             │
+│                                                                              │
+│    96 │                                                                      │
+│    97 │   data_dictionary = file_utils.load_json(dictionary)                 │
+│    98 │   pheno_df = file_utils.load_tabular(pheno)                          │
+│ ❱  99 │   pheno_utils.validate_inputs(data_dictionary, pheno_df)             │
+│   100 │                                                                      │
+│   101 │   # NOTE: `space` determines the amount of padding (in num. characte │
+│   102 │   # It is currently calculated as = (length of the longer string, in │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ data_dictionary = {                                                      │ │
+│ │                   │   'age': {                                           │ │
+│ │                   │   │   'Description': 'age of the participant',       │ │
+│ │                   │   │   'Units': 'years'                               │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'sex': {                                           │ │
+│ │                   │   │   'Description': 'sex of the participant as      │ │
+│ │                   reported by the participant',                          │ │
+│ │                   │   │   'Levels': {'M': 'male', 'F': 'female'}         │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'fMRImotion(max)-run1': {                          │ │
+│ │                   │   │   'Description': 'the maximum head movement data │ │
+│ │                   (° OR mm) in run1'                                     │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'exclusion-run1': {                                │ │
+│ │                   │   │   'Description': 'The exclusion is recommended   │ │
+│ │                   due to head motion exceeding the size of 1 voxel       │ │
+│ │                   in'+6,                                                 │ │
+│ │                   │   │   'Levels': {                                    │ │
+│ │                   │   │   │   '0': 'exclusion is not recommended',       │ │
+│ │                   │   │   │   '1': 'exclusion is recommended'            │ │
+│ │                   │   │   }                                              │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'fMRImotion(max)-run2': {                          │ │
+│ │                   │   │   'Description': 'the maximum head movement data │ │
+│ │                   (° OR mm) in run2'                                     │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'exclusion-run2': {                                │ │
+│ │                   │   │   'Description': 'The exclusion is recommended   │ │
+│ │                   due to head motion exceeding the size of 1 voxel       │ │
+│ │                   in'+6,                                                 │ │
+│ │                   │   │   'Levels': {                                    │ │
+│ │                   │   │   │   '0': 'exclusion is not recommended',       │ │
+│ │                   │   │   │   '1': 'exclusion is recommended'            │ │
+│ │                   │   │   }                                              │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'NFC': {                                           │ │
+│ │                   │   │   'Description': 'the score of the Need for      │ │
+│ │                   Cognition questionnaire'                               │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'CRT': {                                           │ │
+│ │                   │   │   'Description': 'the score of the Cognitive     │ │
+│ │                   Reflection Test'                                       │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'traitFOM': {                                      │ │
+│ │                   │   │   'Description': 'the score of the Fear of       │ │
+│ │                   Missing out subscale, which primarily describes an     │ │
+│ │                   ind'+75                                                │ │
+│ │                   │   },                                                 │ │
+│ │                   │   'stateFOM': {                                      │ │
+│ │                   │   │   'Description': 'the score of the Fear of       │ │
+│ │                   Missing out subscale, which primarily describes an     │ │
+│ │                   ind'+75                                                │ │
+│ │                   │   }                                                  │ │
+│ │                   }                                                      │ │
+│ │      dictionary = PosixPath('/home/runner/work/.github/.github/code/dat… │ │
+│ │            name = 'China’s Social Fake News database release with brain  │ │
+│ │                   structural, functional, and'+21                        │ │
+│ │          output = PosixPath('/home/runner/work/.github/.github/code/dat… │ │
+│ │       overwrite = False                                                  │ │
+│ │           pheno = PosixPath('/home/runner/work/.github/.github/code/dat… │ │
+│ │        pheno_df =    participant_id age sex fMRImotion(max)-run1  ...    │ │
+│ │                   NFC CRT traitFOM stateFOM                              │ │
+│ │                   0          sub-01  22   M                 2.12  ...    │ │
+│ │                   93   2        9       16                               │ │
+│ │                   1          sub-02  23   F                 2.41  ...    │ │
+│ │                   71   1        9       11                               │ │
+│ │                   2          sub-03  22   F                  1.1  ...    │ │
+│ │                   63   0       16       21                               │ │
+│ │                   3          sub-04  21   F                 6.25  ...    │ │
+│ │                   72   0        9       17                               │ │
+│ │                   4          sub-05  19   M                 0.73  ...    │ │
+│ │                   101   2       15       21                              │ │
+│ │                   5          sub-06  20   F                  1.5  ...    │ │
+│ │                   80   2       12       27                               │ │
+│ │                   6          sub-07  19   M                 1.86  ...    │ │
+│ │                   68   3       10       15                               │ │
+│ │                   7          sub-08  19   M                 1.19  ...    │ │
+│ │                   77   3       16       14                               │ │
+│ │                   8          sub-09  20   F                  0.7  ...    │ │
+│ │                   76   1        9       16                               │ │
+│ │                   9          sub-10  19   F                 5.49  ...    │ │
+│ │                   66   3       15       23                               │ │
+│ │                   10         sub-11  19   F                 1.62  ...    │ │
+│ │                   82   3       14       11                               │ │
+│ │                   11         sub-12  21   F                 1.47  ...    │ │
+│ │                   81   2        8       14                               │ │
+│ │                   12         sub-13  22   M                 1.39  ...    │ │
+│ │                   87   0       11       26                               │ │
+│ │                   13         sub-14  21   F                  1.6  ...    │ │
+│ │                   72   0       14       13                               │ │
+│ │                   14         sub-15  18   F                 1.03  ...    │ │
+│ │                   83   3       13       21                               │ │
+│ │                   15         sub-16  19   F                 1.29  ...    │ │
+│ │                   70   2       12       15                               │ │
+│ │                   16         sub-17  22   F                 2.41  ...    │ │
+│ │                   77   2       10       26                               │ │
+│ │                   17         sub-18  21   F                 2.25  ...    │ │
+│ │                   64   2        9       30                               │ │
+│ │                   18         sub-19  23   M                 0.65  ...    │ │
+│ │                   87   2        9       26                               │ │
+│ │                   19         sub-20  21   F                 1.06  ...    │ │
+│ │                   62   1       15       20                               │ │
+│ │                   20         sub-21  23   F                 1.89  ...    │ │
+│ │                   57   2        9       16                               │ │
+│ │                   21         sub-22  22   F                 7.86  ...    │ │
+│ │                   43   3       11       33                               │ │
+│ │                   22         sub-23  22   F                 1.34  ...    │ │
+│ │                   69   1       10       17                               │ │
+│ │                   23         sub-24  22   F                 1.59  ...    │ │
+│ │                   70   1       10       22                               │ │
+│ │                   24         sub-25  21   F                 6.86  ...    │ │
+│ │                   74   1       16       26                               │ │
+│ │                   25         sub-26  21   F                 1.12  ...    │ │
+│ │                   78   3        6       32                               │ │
+│ │                   26         sub-27  21   F                 1.21  ...    │ │
+│ │                   67   1       12       14                               │ │
+│ │                   27         sub-28  22   F                 1.46  ...    │ │
+│ │                   62   2        8       20                               │ │
+│ │                   28         sub-29  22   M                 1.74  ...    │ │
+│ │                   78   3       16       26                               │ │
+│ │                   29         sub-30  22   M                 1.21  ...    │ │
+│ │                   58   2       10       31                               │ │
+│ │                   30         sub-31  21   F                 1.78  ...    │ │
+│ │                   75   2       12       24                               │ │
+│ │                   31         sub-32  22   M                 0.78  ...    │ │
+│ │                   82   2        9        9                               │ │
+│ │                   32         sub-33  22   F                  0.5  ...    │ │
+│ │                   89   0       14       20                               │ │
+│ │                   33         sub-34  23   F                 0.62  ...    │ │
+│ │                   61   3        6       13                               │ │
+│ │                   34         sub-35  22   F                 1.33  ...    │ │
+│ │                   78   0        9       15                               │ │
+│ │                   35         sub-36  21   F                 1.91  ...    │ │
+│ │                   39   3       17       29                               │ │
+│ │                   36         sub-37  19   M                 2.27  ...    │ │
+│ │                   85   3        4       13                               │ │
+│ │                   37         sub-38  18   M                 1.17  ...    │ │
+│ │                   58   2        8       26                               │ │
+│ │                   38         sub-39  19   M                  1.1  ...    │ │
+│ │                   85   3       10       22                               │ │
+│ │                   39         sub-40  20   M                 0.86  ...    │ │
+│ │                   50   3       14       33                               │ │
+│ │                   40         sub-41  21   F                 0.85  ...    │ │
+│ │                   80   3       10       22                               │ │
+│ │                   41         sub-42  19   M                 1.16  ...    │ │
+│ │                   67   3       14       19                               │ │
+│ │                   42         sub-43  18   F                 0.64  ...    │ │
+│ │                   90   2       10       17                               │ │
+│ │                                                                          │ │
+│ │                   [43 rows x 11 columns]                                 │ │
+│ │          portal = 'https://github.com/OpenNeuroDatasets-JSONLD/ds005875… │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /usr/local/lib/python3.10/site-packages/bagel/utilities/pheno_utils.py:475   │
+│ in validate_inputs                                                           │
+│                                                                              │
+│   472                                                                        │
+│   473 def validate_inputs(data_dict: dict, pheno_df: pd.DataFrame) -> None:  │
+│   474 │   """Determines whether input data are valid"""                      │
+│ ❱ 475 │   validate_data_dict(data_dict)                                      │
+│   476 │                                                                      │
+│   477 │   if not are_inputs_compatible(data_dict, pheno_df):                 │
+│   478 │   │   raise LookupError(                                             │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ data_dict = {                                                            │ │
+│ │             │   'age': {                                                 │ │
+│ │             │   │   'Description': 'age of the participant',             │ │
+│ │             │   │   'Units': 'years'                                     │ │
+│ │             │   },                                                       │ │
+│ │             │   'sex': {                                                 │ │
+│ │             │   │   'Description': 'sex of the participant as reported   │ │
+│ │             by the participant',                                         │ │
+│ │             │   │   'Levels': {'M': 'male', 'F': 'female'}               │ │
+│ │             │   },                                                       │ │
+│ │             │   'fMRImotion(max)-run1': {                                │ │
+│ │             │   │   'Description': 'the maximum head movement data (° OR │ │
+│ │             mm) in run1'                                                 │ │
+│ │             │   },                                                       │ │
+│ │             │   'exclusion-run1': {                                      │ │
+│ │             │   │   'Description': 'The exclusion is recommended due to  │ │
+│ │             head motion exceeding the size of 1 voxel in'+6,             │ │
+│ │             │   │   'Levels': {                                          │ │
+│ │             │   │   │   '0': 'exclusion is not recommended',             │ │
+│ │             │   │   │   '1': 'exclusion is recommended'                  │ │
+│ │             │   │   }                                                    │ │
+│ │             │   },                                                       │ │
+│ │             │   'fMRImotion(max)-run2': {                                │ │
+│ │             │   │   'Description': 'the maximum head movement data (° OR │ │
+│ │             mm) in run2'                                                 │ │
+│ │             │   },                                                       │ │
+│ │             │   'exclusion-run2': {                                      │ │
+│ │             │   │   'Description': 'The exclusion is recommended due to  │ │
+│ │             head motion exceeding the size of 1 voxel in'+6,             │ │
+│ │             │   │   'Levels': {                                          │ │
+│ │             │   │   │   '0': 'exclusion is not recommended',             │ │
+│ │             │   │   │   '1': 'exclusion is recommended'                  │ │
+│ │             │   │   }                                                    │ │
+│ │             │   },                                                       │ │
+│ │             │   'NFC': {                                                 │ │
+│ │             │   │   'Description': 'the score of the Need for Cognition  │ │
+│ │             questionnaire'                                               │ │
+│ │             │   },                                                       │ │
+│ │             │   'CRT': {                                                 │ │
+│ │             │   │   'Description': 'the score of the Cognitive           │ │
+│ │             Reflection Test'                                             │ │
+│ │             │   },                                                       │ │
+│ │             │   'traitFOM': {                                            │ │
+│ │             │   │   'Description': 'the score of the Fear of Missing out │ │
+│ │             subscale, which primarily describes an  ind'+75              │ │
+│ │             │   },                                                       │ │
+│ │             │   'stateFOM': {                                            │ │
+│ │             │   │   'Description': 'the score of the Fear of Missing out │ │
+│ │             subscale, which primarily describes an  ind'+75              │ │
+│ │             │   }                                                        │ │
+│ │             }                                                            │ │
+│ │  pheno_df =    participant_id age sex fMRImotion(max)-run1  ...  NFC CRT │ │
+│ │             traitFOM stateFOM                                            │ │
+│ │             0          sub-01  22   M                 2.12  ...   93   2 │ │
+│ │             9       16                                                   │ │
+│ │             1          sub-02  23   F                 2.41  ...   71   1 │ │
+│ │             9       11                                                   │ │
+│ │             2          sub-03  22   F                  1.1  ...   63   0 │ │
+│ │             16       21                                                  │ │
+│ │             3          sub-04  21   F                 6.25  ...   72   0 │ │
+│ │             9       17                                                   │ │
+│ │             4          sub-05  19   M                 0.73  ...  101   2 │ │
+│ │             15       21                                                  │ │
+│ │             5          sub-06  20   F                  1.5  ...   80   2 │ │
+│ │             12       27                                                  │ │
+│ │             6          sub-07  19   M                 1.86  ...   68   3 │ │
+│ │             10       15                                                  │ │
+│ │             7          sub-08  19   M                 1.19  ...   77   3 │ │
+│ │             16       14                                                  │ │
+│ │             8          sub-09  20   F                  0.7  ...   76   1 │ │
+│ │             9       16                                                   │ │
+│ │             9          sub-10  19   F                 5.49  ...   66   3 │ │
+│ │             15       23                                                  │ │
+│ │             10         sub-11  19   F                 1.62  ...   82   3 │ │
+│ │             14       11                                                  │ │
+│ │             11         sub-12  21   F                 1.47  ...   81   2 │ │
+│ │             8       14                                                   │ │
+│ │             12         sub-13  22   M                 1.39  ...   87   0 │ │
+│ │             11       26                                                  │ │
+│ │             13         sub-14  21   F                  1.6  ...   72   0 │ │
+│ │             14       13                                                  │ │
+│ │             14         sub-15  18   F                 1.03  ...   83   3 │ │
+│ │             13       21                                                  │ │
+│ │             15         sub-16  19   F                 1.29  ...   70   2 │ │
+│ │             12       15                                                  │ │
+│ │             16         sub-17  22   F                 2.41  ...   77   2 │ │
+│ │             10       26                                                  │ │
+│ │             17         sub-18  21   F                 2.25  ...   64   2 │ │
+│ │             9       30                                                   │ │
+│ │             18         sub-19  23   M                 0.65  ...   87   2 │ │
+│ │             9       26                                                   │ │
+│ │             19         sub-20  21   F                 1.06  ...   62   1 │ │
+│ │             15       20                                                  │ │
+│ │             20         sub-21  23   F                 1.89  ...   57   2 │ │
+│ │             9       16                                                   │ │
+│ │             21         sub-22  22   F                 7.86  ...   43   3 │ │
+│ │             11       33                                                  │ │
+│ │             22         sub-23  22   F                 1.34  ...   69   1 │ │
+│ │             10       17                                                  │ │
+│ │             23         sub-24  22   F                 1.59  ...   70   1 │ │
+│ │             10       22                                                  │ │
+│ │             24         sub-25  21   F                 6.86  ...   74   1 │ │
+│ │             16       26                                                  │ │
+│ │             25         sub-26  21   F                 1.12  ...   78   3 │ │
+│ │             6       32                                                   │ │
+│ │             26         sub-27  21   F                 1.21  ...   67   1 │ │
+│ │             12       14                                                  │ │
+│ │             27         sub-28  22   F                 1.46  ...   62   2 │ │
+│ │             8       20                                                   │ │
+│ │             28         sub-29  22   M                 1.74  ...   78   3 │ │
+│ │             16       26                                                  │ │
+│ │             29         sub-30  22   M                 1.21  ...   58   2 │ │
+│ │             10       31                                                  │ │
+│ │             30         sub-31  21   F                 1.78  ...   75   2 │ │
+│ │             12       24                                                  │ │
+│ │             31         sub-32  22   M                 0.78  ...   82   2 │ │
+│ │             9        9                                                   │ │
+│ │             32         sub-33  22   F                  0.5  ...   89   0 │ │
+│ │             14       20                                                  │ │
+│ │             33         sub-34  23   F                 0.62  ...   61   3 │ │
+│ │             6       13                                                   │ │
+│ │             34         sub-35  22   F                 1.33  ...   78   0 │ │
+│ │             9       15                                                   │ │
+│ │             35         sub-36  21   F                 1.91  ...   39   3 │ │
+│ │             17       29                                                  │ │
+│ │             36         sub-37  19   M                 2.27  ...   85   3 │ │
+│ │             4       13                                                   │ │
+│ │             37         sub-38  18   M                 1.17  ...   58   2 │ │
+│ │             8       26                                                   │ │
+│ │             38         sub-39  19   M                  1.1  ...   85   3 │ │
+│ │             10       22                                                  │ │
+│ │             39         sub-40  20   M                 0.86  ...   50   3 │ │
+│ │             14       33                                                  │ │
+│ │             40         sub-41  21   F                 0.85  ...   80   3 │ │
+│ │             10       22                                                  │ │
+│ │             41         sub-42  19   M                 1.16  ...   67   3 │ │
+│ │             14       19                                                  │ │
+│ │             42         sub-43  18   F                 0.64  ...   90   2 │ │
+│ │             10       17                                                  │ │
+│ │                                                                          │ │
+│ │             [43 rows x 11 columns]                                       │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+│                                                                              │
+│ /usr/local/lib/python3.10/site-packages/bagel/utilities/pheno_utils.py:375   │
+│ in validate_data_dict                                                        │
+│                                                                              │
+│   372 │   │   ) from e                                                       │
+│   373 │                                                                      │
+│   374 │   if get_annotated_columns(data_dict) == []:                         │
+│ ❱ 375 │   │   raise LookupError(                                             │
+│   376 │   │   │   "The provided data dictionary must contain at least one co │
+│   377 │   │   )                                                              │
+│   378                                                                        │
+│                                                                              │
+│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+│ │ data_dict = {                                                            │ │
+│ │             │   'age': {                                                 │ │
+│ │             │   │   'Description': 'age of the participant',             │ │
+│ │             │   │   'Units': 'years'                                     │ │
+│ │             │   },                                                       │ │
+│ │             │   'sex': {                                                 │ │
+│ │             │   │   'Description': 'sex of the participant as reported   │ │
+│ │             by the participant',                                         │ │
+│ │             │   │   'Levels': {'M': 'male', 'F': 'female'}               │ │
+│ │             │   },                                                       │ │
+│ │             │   'fMRImotion(max)-run1': {                                │ │
+│ │             │   │   'Description': 'the maximum head movement data (° OR │ │
+│ │             mm) in run1'                                                 │ │
+│ │             │   },                                                       │ │
+│ │             │   'exclusion-run1': {                                      │ │
+│ │             │   │   'Description': 'The exclusion is recommended due to  │ │
+│ │             head motion exceeding the size of 1 voxel in'+6,             │ │
+│ │             │   │   'Levels': {                                          │ │
+│ │             │   │   │   '0': 'exclusion is not recommended',             │ │
+│ │             │   │   │   '1': 'exclusion is recommended'                  │ │
+│ │             │   │   }                                                    │ │
+│ │             │   },                                                       │ │
+│ │             │   'fMRImotion(max)-run2': {                                │ │
+│ │             │   │   'Description': 'the maximum head movement data (° OR │ │
+│ │             mm) in run2'                                                 │ │
+│ │             │   },                                                       │ │
+│ │             │   'exclusion-run2': {                                      │ │
+│ │             │   │   'Description': 'The exclusion is recommended due to  │ │
+│ │             head motion exceeding the size of 1 voxel in'+6,             │ │
+│ │             │   │   'Levels': {                                          │ │
+│ │             │   │   │   '0': 'exclusion is not recommended',             │ │
+│ │             │   │   │   '1': 'exclusion is recommended'                  │ │
+│ │             │   │   }                                                    │ │
+│ │             │   },                                                       │ │
+│ │             │   'NFC': {                                                 │ │
+│ │             │   │   'Description': 'the score of the Need for Cognition  │ │
+│ │             questionnaire'                                               │ │
+│ │             │   },                                                       │ │
+│ │             │   'CRT': {                                                 │ │
+│ │             │   │   'Description': 'the score of the Cognitive           │ │
+│ │             Reflection Test'                                             │ │
+│ │             │   },                                                       │ │
+│ │             │   'traitFOM': {                                            │ │
+│ │             │   │   'Description': 'the score of the Fear of Missing out │ │
+│ │             subscale, which primarily describes an  ind'+75              │ │
+│ │             │   },                                                       │ │
+│ │             │   'stateFOM': {                                            │ │
+│ │             │   │   'Description': 'the score of the Fear of Missing out │ │
+│ │             subscale, which primarily describes an  ind'+75              │ │
+│ │             │   }                                                        │ │
+│ │             }                                                            │ │
+│ ╰──────────────────────────────────────────────────────────────────────────╯ │
+╰──────────────────────────────────────────────────────────────────────────────╯
+LookupError: The provided data dictionary must contain at least one column with 
+Neurobagel annotations.
+Usage: bagel bids [OPTIONS]
+Try 'bagel bids --help' for help.
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Invalid value for '--jsonld-path' / '-p': File                               │
+│ '/home/runner/work/.github/.github/code/data/ds005875/pheno.jsonld' does not │
+│ exist.                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+cp: cannot stat '/home/runner/work/.github/.github/code/data/ds005875/pheno_bids.jsonld': No such file or directory
+ds005875: CLI failed
+Repo info: ds004663,"0e849848476070e0971e7a85bab77e097259877d"
+ds004663: Running the CLI
+latest: Pulling from neurobagel/bagelcli
+Digest: sha256:b32f73cdc950c53d59443c9927a6c3671a7ba1c651e05d67f54f3a938c76748e
+Status: Image is up to date for neurobagel/bagelcli:latest
 docker.io/neurobagel/bagelcli:latest
 [INFO] Attempting a clone into /home/runner/work/.github/.github/code/data/ds004663 
 [INFO] Attempting to clone from https://github.com/OpenNeuroDatasets-JSONLD/ds004663.git to /home/runner/work/.github/.github/code/data/ds004663 
@@ -74,47 +488,6 @@ Try 'bagel bids --help' for help.
 ╰──────────────────────────────────────────────────────────────────────────────╯
 cp: cannot stat '/home/runner/work/.github/.github/code/data/ds004663/pheno_bids.jsonld': No such file or directory
 ds004663: CLI failed
-Repo info: ds000222,"32e5c28001eed4559aa801e4f0751296e2d25b9a"
-ds000222: Running the CLI
-latest: Pulling from neurobagel/bagelcli
-Digest: sha256:b32f73cdc950c53d59443c9927a6c3671a7ba1c651e05d67f54f3a938c76748e
-Status: Image is up to date for neurobagel/bagelcli:latest
-docker.io/neurobagel/bagelcli:latest
-[INFO] Attempting a clone into /home/runner/work/.github/.github/code/data/ds000222 
-[INFO] Attempting to clone from https://github.com/OpenNeuroDatasets-JSONLD/ds000222.git to /home/runner/work/.github/.github/code/data/ds000222 
-[INFO] Start enumerating objects 
-[INFO] Start counting objects 
-[INFO] Start compressing objects 
-[INFO] Start receiving objects 
-[INFO] Start resolving deltas 
-[INFO] Completed clone attempts for Dataset(/home/runner/work/.github/.github/code/data/ds000222) 
-[INFO] Remote origin not usable by git-annex; setting annex-ignore 
-[INFO] https://github.com/OpenNeuroDatasets-JSONLD/ds000222.git/config download failed: Not Found 
-[INFO] access to 1 dataset sibling s3-PRIVATE not auto-enabled, enable with:
-| 		datalad siblings -d "/home/runner/work/.github/.github/code/data/ds000222" enable -s s3-PRIVATE 
-install(ok): /home/runner/work/.github/.github/code/data/ds000222 (dataset)
-/usr/local/lib/python3.10/site-packages/bagel/utilities/pheno_utils.py:451: UserWarning: The data dictionary contains at least one column that looks categorical but lacks a BIDS 'Levels' attribute.
-  warnings.warn(
-/usr/local/lib/python3.10/site-packages/bagel/utilities/pheno_utils.py:500: UserWarning: The following values annotated as missing values in the data dictionary were not found in the corresponding phenotypic file column(s) (<column_name>: [<unused missing values>]): {'age': ['', 'n/a', ' ']}. If this is not intentional, please check your data dictionary and phenotypic file.
-  warnings.warn(
-Processing phenotypic annotations:
-   Tabular file (.tsv):      /home/runner/work/.github/.github/code/data/ds000222/participants.tsv
-   Data dictionary (.json):  /home/runner/work/.github/.github/code/data/ds000222/participants.json
-
-Saved output to:  /home/runner/work/.github/.github/code/data/ds000222/pheno.jsonld
-Running initial checks of inputs...
-   Existing subject graph data to augment (.jsonld):   /home/runner/work/.github/.github/code/data/ds000222/pheno.jsonld
-   BIDS dataset directory:                             /home/runner/work/.github/.github/code/data/ds000222
-Initial checks of inputs passed.
-
-Parsing and validating BIDS dataset. This may take a while...
-BIDS parsing completed.
-
-Merging BIDS metadata with existing subject annotations...
-
-Saved output to:  /home/runner/work/.github/.github/code/data/ds000222/pheno_bids.jsonld
-ds000222: CLI ran successfully!
-ds000222: Updating SHA in file
 Repo info: ds003548,"aa881cd1ea58eca9dec0ac877e69afc26f0eeccc"
 ds003548: Running the CLI
 latest: Pulling from neurobagel/bagelcli
@@ -158,12 +531,12 @@ Running initial checks of inputs...
 │ │ existing_subs_dict = {                                                   │ │
 │ │                      │   'sub-01': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:d07be74a-219d-41b9-9c66-3cb787281e9… │ │
+│ │                      identifier='nb:f792848b-eae3-4e7b-acf7-c80ac62542c… │ │
 │ │                      │   │   hasLabel='sub-01',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:b816d677-fc46-42ce-8f37-2fde805f3ba… │ │
+│ │                      identifier='nb:5a73492a-add5-4080-92cf-b8f8b888553… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -178,7 +551,7 @@ Running initial checks of inputs...
 │ │                      }                                                   │ │
 │ │     jsonld_dataset = Dataset(                                            │ │
 │ │                      │                                                   │ │
-│ │                      identifier='nb:8e09d674-f46a-4fa6-828e-d528d082dcb… │ │
+│ │                      identifier='nb:7fc347d0-8351-43dc-af0c-1067343fdec… │ │
 │ │                      │   hasLabel='Emotion Category and Face Perception  │ │
 │ │                      Task Optimized for Multivariate Pattern Ana'+5,     │ │
 │ │                      │                                                   │ │
@@ -186,12 +559,12 @@ Running initial checks of inputs...
 │ │                      │   hasSamples=[                                    │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:d07be74a-219d-41b9-9c66-3cb787281e9… │ │
+│ │                      identifier='nb:f792848b-eae3-4e7b-acf7-c80ac62542c… │ │
 │ │                      │   │   │   hasLabel='sub-01',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:b816d677-fc46-42ce-8f37-2fde805f3ba… │ │
+│ │                      identifier='nb:5a73492a-add5-4080-92cf-b8f8b888553… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -225,15 +598,15 @@ Running initial checks of inputs...
 │                                                                              │
 │ ╭──────────────────── locals ────────────────────╮                           │
 │ │           missing_subs = [                     │                           │
-│ │                          │   'sub-15',         │                           │
-│ │                          │   'sub-09',         │                           │
-│ │                          │   'sub-06',         │                           │
-│ │                          │   'sub-05',         │                           │
-│ │                          │   'sub-11',         │                           │
-│ │                          │   'sub-03',         │                           │
-│ │                          │   'sub-04',         │                           │
-│ │                          │   'sub-16',         │                           │
 │ │                          │   'sub-13',         │                           │
+│ │                          │   'sub-03',         │                           │
+│ │                          │   'sub-10',         │                           │
+│ │                          │   'sub-07',         │                           │
+│ │                          │   'sub-05',         │                           │
+│ │                          │   'sub-08',         │                           │
+│ │                          │   'sub-15',         │                           │
+│ │                          │   'sub-16',         │                           │
+│ │                          │   'sub-11',         │                           │
 │ │                          │   'sub-12',         │                           │
 │ │                          │   ... +5            │                           │
 │ │                          ]                     │                           │
@@ -256,8 +629,8 @@ Running initial checks of inputs...
 ╰──────────────────────────────────────────────────────────────────────────────╯
 LookupError: The specified BIDS directory contains subject IDs not found in the 
 provided json-ld file:
-['sub-15', 'sub-09', 'sub-06', 'sub-05', 'sub-11', 'sub-03', 'sub-04', 'sub-16',
-'sub-13', 'sub-12', 'sub-10', 'sub-08', 'sub-14', 'sub-02', 'sub-07']
+['sub-13', 'sub-03', 'sub-10', 'sub-07', 'sub-05', 'sub-08', 'sub-15', 'sub-16',
+'sub-11', 'sub-12', 'sub-04', 'sub-09', 'sub-02', 'sub-06', 'sub-14']
 Subject IDs are case sensitive. Please check that the BIDS directory corresponds
 to the dataset in the provided .jsonld.
 cp: cannot stat '/home/runner/work/.github/.github/code/data/ds003548/pheno_bids.jsonld': No such file or directory
@@ -666,12 +1039,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │ existing_subs_dict = {                                                   │ │
 │ │                      │   'sub-008': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:25d5b1ce-c329-4bbc-aa29-3497682aefb… │ │
+│ │                      identifier='nb:9e1ab13d-896a-4ca5-a745-bb2a9517fea… │ │
 │ │                      │   │   hasLabel='sub-008',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:d266f330-f410-47ae-ba32-c26af59f1c4… │ │
+│ │                      identifier='nb:7d004ac1-fcc9-433e-b977-3d1fb3cbd75… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=23.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -688,12 +1061,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-022': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:b73144fa-93b0-4003-b73b-0b8a0d82062… │ │
+│ │                      identifier='nb:647fec89-1d58-4dc4-aba3-9c7cb42e3f4… │ │
 │ │                      │   │   hasLabel='sub-022',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:7754e289-24df-4065-8356-bbdf05ed30c… │ │
+│ │                      identifier='nb:05fbcb25-14b8-49c8-b01a-abadac5e50d… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=24.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -710,12 +1083,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-031': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:6bca6415-3b5c-4b7a-8778-0bb3615eb0b… │ │
+│ │                      identifier='nb:735634a1-caa3-4500-a355-74cfbac6b0a… │ │
 │ │                      │   │   hasLabel='sub-031',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:2b13b7ad-6702-4208-87b8-a88c7a7d49e… │ │
+│ │                      identifier='nb:fdc83363-6cc8-4718-b820-7f5489bb36b… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=22.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -732,12 +1105,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-032': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:ed6590dc-823e-474e-a0ea-95e51fe0420… │ │
+│ │                      identifier='nb:124077aa-029a-4470-bd76-3922b9e9b40… │ │
 │ │                      │   │   hasLabel='sub-032',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:1d7bb4f2-7d90-4dd3-bcdf-c72dd5dfe2e… │ │
+│ │                      identifier='nb:f80d24ef-8b03-4e25-9cc8-0afc43aa145… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=41.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -754,12 +1127,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-033': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:32ae3edb-6860-4e11-81f9-b14c310f828… │ │
+│ │                      identifier='nb:f5254035-6cef-48c7-ad0c-37ce33f53a3… │ │
 │ │                      │   │   hasLabel='sub-033',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:aa0ae56c-5f50-439a-9ad6-805c2084a0d… │ │
+│ │                      identifier='nb:54b27ff2-fbf2-461a-8830-6a193daee22… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=25.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -776,12 +1149,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-037': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:b4dcda22-442f-46fc-a5b5-fd0f2fa7d29… │ │
+│ │                      identifier='nb:b23e4fc9-0bbf-4a66-a0cd-cacae5b6d14… │ │
 │ │                      │   │   hasLabel='sub-037',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:a2a4ae56-11f3-43bb-a486-9f2fc611209… │ │
+│ │                      identifier='nb:7e75a12d-9d1e-44cf-a638-2a5914e635e… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=22.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -798,12 +1171,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-038': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:aaa2e09e-6532-4e5c-bdc0-22a8a4435e9… │ │
+│ │                      identifier='nb:1aee6847-f2c2-4482-8694-9e082c8c876… │ │
 │ │                      │   │   hasLabel='sub-038',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:61d6db06-1870-4875-bea5-1ad8a0d8b1c… │ │
+│ │                      identifier='nb:850745fa-8d5b-47bd-bb2c-72c59929f01… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=24.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -820,12 +1193,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-039': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:c290efc4-8109-4dd5-b0d5-302c094c6be… │ │
+│ │                      identifier='nb:9f95b52d-9e19-4dea-b29b-6c40b3a8196… │ │
 │ │                      │   │   hasLabel='sub-039',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:6cff59d2-faac-4e27-93d7-1c879825b5e… │ │
+│ │                      identifier='nb:d0e814e6-d9ee-45b8-a760-7e199323636… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=21.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -842,12 +1215,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-041': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:9c7ee08a-4402-499b-b79c-02faba24691… │ │
+│ │                      identifier='nb:9c04b84d-c6db-44aa-8a83-6a9d1dedbbe… │ │
 │ │                      │   │   hasLabel='sub-041',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:8e15149f-fd87-4ee5-8ceb-b1b671cfdcd… │ │
+│ │                      identifier='nb:79ff9db0-9b79-4363-a846-777ed08be5f… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=24.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -864,12 +1237,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-043': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:6b9162d8-9a8d-4bde-8521-dfbc3c37c44… │ │
+│ │                      identifier='nb:b0cb7c31-5824-431f-9167-dd317226f92… │ │
 │ │                      │   │   hasLabel='sub-043',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:dbdf9c69-9124-4b57-820c-1d4fe76f044… │ │
+│ │                      identifier='nb:74277e59-d833-4a83-b81e-00426380f53… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=37.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -888,7 +1261,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      }                                                   │ │
 │ │     jsonld_dataset = Dataset(                                            │ │
 │ │                      │                                                   │ │
-│ │                      identifier='nb:77771dda-48ee-4b93-9231-a7fe32aa9df… │ │
+│ │                      identifier='nb:d1fccbb2-94d1-4a34-9bb3-f6bec14633e… │ │
 │ │                      │   hasLabel='Tasting Pictures: Viewing Images of   │ │
 │ │                      Foods Evokes Taste-Quality-Specific Activity'+28,   │ │
 │ │                      │                                                   │ │
@@ -896,12 +1269,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   hasSamples=[                                    │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:25d5b1ce-c329-4bbc-aa29-3497682aefb… │ │
+│ │                      identifier='nb:9e1ab13d-896a-4ca5-a745-bb2a9517fea… │ │
 │ │                      │   │   │   hasLabel='sub-008',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:d266f330-f410-47ae-ba32-c26af59f1c4… │ │
+│ │                      identifier='nb:7d004ac1-fcc9-433e-b977-3d1fb3cbd75… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=23.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -919,12 +1292,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:b73144fa-93b0-4003-b73b-0b8a0d82062… │ │
+│ │                      identifier='nb:647fec89-1d58-4dc4-aba3-9c7cb42e3f4… │ │
 │ │                      │   │   │   hasLabel='sub-022',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:7754e289-24df-4065-8356-bbdf05ed30c… │ │
+│ │                      identifier='nb:05fbcb25-14b8-49c8-b01a-abadac5e50d… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=24.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -942,12 +1315,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:6bca6415-3b5c-4b7a-8778-0bb3615eb0b… │ │
+│ │                      identifier='nb:735634a1-caa3-4500-a355-74cfbac6b0a… │ │
 │ │                      │   │   │   hasLabel='sub-031',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:2b13b7ad-6702-4208-87b8-a88c7a7d49e… │ │
+│ │                      identifier='nb:fdc83363-6cc8-4718-b820-7f5489bb36b… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=22.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -965,12 +1338,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:ed6590dc-823e-474e-a0ea-95e51fe0420… │ │
+│ │                      identifier='nb:124077aa-029a-4470-bd76-3922b9e9b40… │ │
 │ │                      │   │   │   hasLabel='sub-032',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:1d7bb4f2-7d90-4dd3-bcdf-c72dd5dfe2e… │ │
+│ │                      identifier='nb:f80d24ef-8b03-4e25-9cc8-0afc43aa145… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=41.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -988,12 +1361,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:32ae3edb-6860-4e11-81f9-b14c310f828… │ │
+│ │                      identifier='nb:f5254035-6cef-48c7-ad0c-37ce33f53a3… │ │
 │ │                      │   │   │   hasLabel='sub-033',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:aa0ae56c-5f50-439a-9ad6-805c2084a0d… │ │
+│ │                      identifier='nb:54b27ff2-fbf2-461a-8830-6a193daee22… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=25.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -1011,12 +1384,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:b4dcda22-442f-46fc-a5b5-fd0f2fa7d29… │ │
+│ │                      identifier='nb:b23e4fc9-0bbf-4a66-a0cd-cacae5b6d14… │ │
 │ │                      │   │   │   hasLabel='sub-037',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:a2a4ae56-11f3-43bb-a486-9f2fc611209… │ │
+│ │                      identifier='nb:7e75a12d-9d1e-44cf-a638-2a5914e635e… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=22.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -1034,12 +1407,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:aaa2e09e-6532-4e5c-bdc0-22a8a4435e9… │ │
+│ │                      identifier='nb:1aee6847-f2c2-4482-8694-9e082c8c876… │ │
 │ │                      │   │   │   hasLabel='sub-038',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:61d6db06-1870-4875-bea5-1ad8a0d8b1c… │ │
+│ │                      identifier='nb:850745fa-8d5b-47bd-bb2c-72c59929f01… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=24.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -1057,12 +1430,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:c290efc4-8109-4dd5-b0d5-302c094c6be… │ │
+│ │                      identifier='nb:9f95b52d-9e19-4dea-b29b-6c40b3a8196… │ │
 │ │                      │   │   │   hasLabel='sub-039',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:6cff59d2-faac-4e27-93d7-1c879825b5e… │ │
+│ │                      identifier='nb:d0e814e6-d9ee-45b8-a760-7e199323636… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=21.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -1080,12 +1453,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:9c7ee08a-4402-499b-b79c-02faba24691… │ │
+│ │                      identifier='nb:9c04b84d-c6db-44aa-8a83-6a9d1dedbbe… │ │
 │ │                      │   │   │   hasLabel='sub-041',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:8e15149f-fd87-4ee5-8ceb-b1b671cfdcd… │ │
+│ │                      identifier='nb:79ff9db0-9b79-4363-a846-777ed08be5f… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=24.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -1103,12 +1476,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:6b9162d8-9a8d-4bde-8521-dfbc3c37c44… │ │
+│ │                      identifier='nb:b0cb7c31-5824-431f-9167-dd317226f92… │ │
 │ │                      │   │   │   hasLabel='sub-043',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:dbdf9c69-9124-4b57-820c-1d4fe76f044… │ │
+│ │                      identifier='nb:74277e59-d833-4a83-b81e-00426380f53… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=37.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -1147,7 +1520,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │                                                                              │
 │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
 │ │       _indexer = <bids.layout.index.BIDSLayoutIndexer object at          │ │
-│ │                  0x7f1b8d90af20>                                         │ │
+│ │                  0x7f473395ef20>                                         │ │
 │ │ absolute_paths = True                                                    │ │
 │ │         config = ['bids']                                                │ │
 │ │  database_path = None                                                    │ │
@@ -1169,10 +1542,10 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                  'doi:10.18112/openneuro.ds003340.v1.0.4'                │ │
 │ │                  }                                                       │ │
 │ │       ind_args = {                                                       │ │
-│ │                  │   'index_metadata',                                   │ │
-│ │                  │   'config_filename',                                  │ │
 │ │                  │   'force_index',                                      │ │
-│ │                  │   'ignore'                                            │ │
+│ │                  │   'ignore',                                           │ │
+│ │                  │   'index_metadata',                                   │ │
+│ │                  │   'config_filename'                                   │ │
 │ │                  }                                                       │ │
 │ │        indexer = None                                                    │ │
 │ │ indexer_kwargs = {}                                                      │ │
@@ -1319,7 +1692,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │        layout = BIDS Layout: ...hub/.github/code/data/ds003340 |         │ │
 │ │                 Subjects: 20 | Sessions: 20 | Runs: 79                   │ │
 │ │          self = <bids.layout.index.BIDSLayoutIndexer object at           │ │
-│ │                 0x7f1b8d90af20>                                          │ │
+│ │                 0x7f473395ef20>                                          │ │
 │ ╰──────────────────────────────────────────────────────────────────────────╯ │
 │                                                                              │
 │ /usr/local/lib/python3.10/site-packages/bids/layout/index.py:504 in          │
@@ -1393,25 +1766,25 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    ]                                                     │ │
 │ │         all_objs = [                                                     │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbee1d0>,                                      │ │
+│ │                    0x7f4732bfdc90>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbedc90>,                                      │ │
+│ │                    0x7f4732bfe890>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbee500>,                                      │ │
+│ │                    0x7f4732bfe1a0>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbedf00>,                                      │ │
+│ │                    0x7f4732bfe080>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbeeb30>,                                      │ │
+│ │                    0x7f4732bfeb00>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbee3e0>,                                      │ │
+│ │                    0x7f4732bfe320>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbee890>,                                      │ │
+│ │                    0x7f4732bfec50>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbeec50>,                                      │ │
+│ │                    0x7f4732bfebc0>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbeef20>,                                      │ │
+│ │                    0x7f4732bfeef0>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f1b8cbeed10>,                                      │ │
+│ │                    0x7f4732bfed40>,                                      │ │
 │ │                    │   ... +2                                            │ │
 │ │                    ]                                                     │ │
 │ │    all_tag_dicts = [                                                     │ │
@@ -1567,7 +1940,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {},                                   │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
@@ -1582,7 +1955,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {'direction': 'PA'},                  │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
@@ -1598,7 +1971,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {},                                   │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
@@ -3734,7 +4107,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {},                                   │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
@@ -3749,7 +4122,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {'task': 'foodpicture'},              │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
@@ -3758,7 +4131,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {'task': 'tastemap'},                 │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
@@ -3767,7 +4140,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   }),                                               │ │
 │ │                    │   ... +1                                            │ │
 │ │                    }                                                     │ │
-│ │    file_ent_keys = {'run', 'task', 'session', 'subject', 'datatype'}     │ │
+│ │    file_ent_keys = {'task', 'datatype', 'subject', 'session', 'run'}     │ │
 │ │        file_ents = {                                                     │ │
 │ │                    │   'datatype': 'func',                               │ │
 │ │                    │   'run': 01,                                        │ │
@@ -3836,15 +4209,15 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │          js_file = '/home/runner/work/.github/.github/code/data/ds00334… │ │
 │ │          js_keys = {'task'}                                              │ │
 │ │            js_md = functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │          js_path = '/home/runner/work/.github/.github/code/data/ds00334… │ │
 │ │        json_data = []                                                    │ │
 │ │         json_key = '.json/events'                                        │ │
 │ │              key = '.json/events'                                        │ │
-│ │             keys = {'run', 'task', 'session', 'subject', 'datatype'}     │ │
+│ │             keys = {'task', 'datatype', 'subject', 'session', 'run'}     │ │
 │ │        load_json = <functools._lru_cache_wrapper object at               │ │
-│ │                    0x7f1b8d144510>                                       │ │
+│ │                    0x7f4733168510>                                       │ │
 │ │          matches = [False]                                               │ │
 │ │           md_key = 'run'                                                 │ │
 │ │           md_val = {                                                     │ │
@@ -3858,20 +4231,20 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │           parent = PosixUPath('/')                                       │ │
 │ │             path = '/home/runner/work/.github/.github/code/data/ds00334… │ │
 │ │          payload = functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │         payloads = [                                                     │ │
 │ │                    │   (                                                 │ │
 │ │                    │   │                                                 │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │                                                 │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
 │ │                    │   )                                                 │ │
 │ │                    ]                                                     │ │
 │ │               pl = functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │      seen_assocs = {                                                     │ │
 │ │                    │                                                     │ │
@@ -3897,7 +4270,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   ... +2                                            │ │
 │ │                    }                                                     │ │
 │ │             self = <bids.layout.index.BIDSLayoutIndexer object at        │ │
-│ │                    0x7f1b8d90af20>                                       │ │
+│ │                    0x7f473395ef20>                                       │ │
 │ │              src = '/home/runner/work/.github/.github/code/data/ds00334… │ │
 │ │           suffix = 'events'                                              │ │
 │ │                t = <Tag                                                  │ │
@@ -3915,7 +4288,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │         to_store = (                                                     │ │
 │ │                    │   {'task': 'tastemap'},                             │ │
 │ │                    │   functools.partial(<functools._lru_cache_wrapper   │ │
-│ │                    object at 0x7f1b8d144510>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4733168510>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │                                                     │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00334… │ │
@@ -4420,12 +4793,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │ existing_subs_dict = {                                                   │ │
 │ │                      │   'sub-007': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:a3536bc3-6c3a-4545-8b36-cbf29f39c18… │ │
+│ │                      identifier='nb:38b968cc-85a3-44db-8c1d-e80c5e93d48… │ │
 │ │                      │   │   hasLabel='sub-007',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:bdeea394-90b3-450a-abbd-76b7a93b9dd… │ │
+│ │                      identifier='nb:cc7ffd5d-f70c-443f-bb5e-ea3454742af… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=24.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4442,12 +4815,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-008': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:c9f4187c-7642-4477-a630-b35c891a647… │ │
+│ │                      identifier='nb:76dab568-8a2b-420e-8019-81c1a77c8ea… │ │
 │ │                      │   │   hasLabel='sub-008',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:5f7dfd5a-12d3-480c-9c8a-1b2d62e8d62… │ │
+│ │                      identifier='nb:bd0ec8bb-3915-4ec4-b7d2-9468b495ff3… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=22.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4464,12 +4837,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-009': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:8f3b4917-1770-4f67-bbc2-4cc40d2cc52… │ │
+│ │                      identifier='nb:7e992bd6-2b02-4092-a495-92af7a6827c… │ │
 │ │                      │   │   hasLabel='sub-009',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:a63671bd-faf5-4beb-a14b-9b41503d12b… │ │
+│ │                      identifier='nb:8d1d0a08-f383-4897-99e6-8f8ef74fe28… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=27.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4486,12 +4859,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-010': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:beee6763-c241-4013-b6df-bb1d34fb54b… │ │
+│ │                      identifier='nb:e44b63fb-aaf7-4acc-b40f-ac36475918e… │ │
 │ │                      │   │   hasLabel='sub-010',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:a2687f16-222b-4a08-aaa0-d917cc0b343… │ │
+│ │                      identifier='nb:1fd46ef2-cd43-43aa-82d1-0233f12580e… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=29.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4508,12 +4881,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-011': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:6154635a-8360-4c74-bb9b-3a74d9af6a0… │ │
+│ │                      identifier='nb:71da88e3-b61e-4422-b180-a391cbf1d3b… │ │
 │ │                      │   │   hasLabel='sub-011',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:c989a527-459e-4e78-8214-a4b08974c7e… │ │
+│ │                      identifier='nb:00f31ac4-1044-41ad-9a13-ad728da2420… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=22.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4530,12 +4903,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-012': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:f624a786-c2f8-42f7-a759-f0e668cdd70… │ │
+│ │                      identifier='nb:c840266a-95db-4a93-b81f-42990b010da… │ │
 │ │                      │   │   hasLabel='sub-012',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:038b89e7-1533-4f8f-a34c-83728d65e37… │ │
+│ │                      identifier='nb:2d905799-8397-4d81-99ae-ea4c8ad5805… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=24.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4552,12 +4925,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-013': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:a6ec6d2f-6580-4371-ab8c-4d2327a11f1… │ │
+│ │                      identifier='nb:f9921575-a509-484a-9b09-51c4ae696d8… │ │
 │ │                      │   │   hasLabel='sub-013',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:e9eb7587-7b4f-429a-896b-0fa6f38d041… │ │
+│ │                      identifier='nb:611eba89-6f7f-4a35-90bc-7c3751209db… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=23.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4574,12 +4947,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-014': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:9943ade8-d7b5-49b0-b24f-60b39a28aa8… │ │
+│ │                      identifier='nb:03f47835-f42c-4d11-89ea-98296199de7… │ │
 │ │                      │   │   hasLabel='sub-014',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:aaa00d61-5f79-4f09-9de4-b6389ac28ba… │ │
+│ │                      identifier='nb:ac59a956-7910-4d39-a94a-5c2cec8839e… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=22.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4596,12 +4969,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-015': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:3c5fa840-8c43-4d46-b2d1-1fb587164bf… │ │
+│ │                      identifier='nb:4d811b11-2dc9-4c99-a684-e368458ea2c… │ │
 │ │                      │   │   hasLabel='sub-015',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:d929b624-5288-486d-a7ef-75bb4b5b9de… │ │
+│ │                      identifier='nb:f7099c72-e751-41b3-b70c-4146072faa4… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=23.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4618,12 +4991,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-016': Subject(                             │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:39aa0e80-1340-4c29-b57d-6e784179a21… │ │
+│ │                      identifier='nb:45b4ac53-77bc-42c6-a525-9e5d25a8680… │ │
 │ │                      │   │   hasLabel='sub-016',                         │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:1f5179ba-7f5a-485d-81a7-47356e8c87a… │ │
+│ │                      identifier='nb:77bcc1d7-a808-46ba-ab95-b1af2fbb893… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=48.0,                        │ │
 │ │                      │   │   │   │   hasSex=Sex(                         │ │
@@ -4642,7 +5015,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      }                                                   │ │
 │ │     jsonld_dataset = Dataset(                                            │ │
 │ │                      │                                                   │ │
-│ │                      identifier='nb:47292262-2e30-4476-9a75-a1b089a9291… │ │
+│ │                      identifier='nb:c73d4db3-9d32-4d1d-b85c-d58655be7f7… │ │
 │ │                      │   hasLabel='Taste Quality Representation in the   │ │
 │ │                      Human Brain',                                       │ │
 │ │                      │                                                   │ │
@@ -4650,12 +5023,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   hasSamples=[                                    │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:a3536bc3-6c3a-4545-8b36-cbf29f39c18… │ │
+│ │                      identifier='nb:38b968cc-85a3-44db-8c1d-e80c5e93d48… │ │
 │ │                      │   │   │   hasLabel='sub-007',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:bdeea394-90b3-450a-abbd-76b7a93b9dd… │ │
+│ │                      identifier='nb:cc7ffd5d-f70c-443f-bb5e-ea3454742af… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=24.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4673,12 +5046,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:c9f4187c-7642-4477-a630-b35c891a647… │ │
+│ │                      identifier='nb:76dab568-8a2b-420e-8019-81c1a77c8ea… │ │
 │ │                      │   │   │   hasLabel='sub-008',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:5f7dfd5a-12d3-480c-9c8a-1b2d62e8d62… │ │
+│ │                      identifier='nb:bd0ec8bb-3915-4ec4-b7d2-9468b495ff3… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=22.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4696,12 +5069,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:8f3b4917-1770-4f67-bbc2-4cc40d2cc52… │ │
+│ │                      identifier='nb:7e992bd6-2b02-4092-a495-92af7a6827c… │ │
 │ │                      │   │   │   hasLabel='sub-009',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:a63671bd-faf5-4beb-a14b-9b41503d12b… │ │
+│ │                      identifier='nb:8d1d0a08-f383-4897-99e6-8f8ef74fe28… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=27.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4719,12 +5092,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:beee6763-c241-4013-b6df-bb1d34fb54b… │ │
+│ │                      identifier='nb:e44b63fb-aaf7-4acc-b40f-ac36475918e… │ │
 │ │                      │   │   │   hasLabel='sub-010',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:a2687f16-222b-4a08-aaa0-d917cc0b343… │ │
+│ │                      identifier='nb:1fd46ef2-cd43-43aa-82d1-0233f12580e… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=29.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4742,12 +5115,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:6154635a-8360-4c74-bb9b-3a74d9af6a0… │ │
+│ │                      identifier='nb:71da88e3-b61e-4422-b180-a391cbf1d3b… │ │
 │ │                      │   │   │   hasLabel='sub-011',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:c989a527-459e-4e78-8214-a4b08974c7e… │ │
+│ │                      identifier='nb:00f31ac4-1044-41ad-9a13-ad728da2420… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=22.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4765,12 +5138,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:f624a786-c2f8-42f7-a759-f0e668cdd70… │ │
+│ │                      identifier='nb:c840266a-95db-4a93-b81f-42990b010da… │ │
 │ │                      │   │   │   hasLabel='sub-012',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:038b89e7-1533-4f8f-a34c-83728d65e37… │ │
+│ │                      identifier='nb:2d905799-8397-4d81-99ae-ea4c8ad5805… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=24.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4788,12 +5161,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:a6ec6d2f-6580-4371-ab8c-4d2327a11f1… │ │
+│ │                      identifier='nb:f9921575-a509-484a-9b09-51c4ae696d8… │ │
 │ │                      │   │   │   hasLabel='sub-013',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:e9eb7587-7b4f-429a-896b-0fa6f38d041… │ │
+│ │                      identifier='nb:611eba89-6f7f-4a35-90bc-7c3751209db… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=23.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4811,12 +5184,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:9943ade8-d7b5-49b0-b24f-60b39a28aa8… │ │
+│ │                      identifier='nb:03f47835-f42c-4d11-89ea-98296199de7… │ │
 │ │                      │   │   │   hasLabel='sub-014',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:aaa00d61-5f79-4f09-9de4-b6389ac28ba… │ │
+│ │                      identifier='nb:ac59a956-7910-4d39-a94a-5c2cec8839e… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=22.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4834,12 +5207,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:3c5fa840-8c43-4d46-b2d1-1fb587164bf… │ │
+│ │                      identifier='nb:4d811b11-2dc9-4c99-a684-e368458ea2c… │ │
 │ │                      │   │   │   hasLabel='sub-015',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:d929b624-5288-486d-a7ef-75bb4b5b9de… │ │
+│ │                      identifier='nb:f7099c72-e751-41b3-b70c-4146072faa4… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=23.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4857,12 +5230,12 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:39aa0e80-1340-4c29-b57d-6e784179a21… │ │
+│ │                      identifier='nb:45b4ac53-77bc-42c6-a525-9e5d25a8680… │ │
 │ │                      │   │   │   hasLabel='sub-016',                     │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:1f5179ba-7f5a-485d-81a7-47356e8c87a… │ │
+│ │                      identifier='nb:77bcc1d7-a808-46ba-ab95-b1af2fbb893… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=48.0,                    │ │
 │ │                      │   │   │   │   │   hasSex=Sex(                     │ │
@@ -4901,7 +5274,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │                                                                              │
 │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
 │ │       _indexer = <bids.layout.index.BIDSLayoutIndexer object at          │ │
-│ │                  0x7f11f8e91780>                                         │ │
+│ │                  0x7f4f1fdb6830>                                         │ │
 │ │ absolute_paths = True                                                    │ │
 │ │         config = ['bids']                                                │ │
 │ │  database_path = None                                                    │ │
@@ -4925,10 +5298,10 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                  │   'DatasetDOI': '10.18112/openneuro.ds002995.v1.0.1'  │ │
 │ │                  }                                                       │ │
 │ │       ind_args = {                                                       │ │
-│ │                  │   'config_filename',                                  │ │
-│ │                  │   'force_index',                                      │ │
 │ │                  │   'index_metadata',                                   │ │
-│ │                  │   'ignore'                                            │ │
+│ │                  │   'config_filename',                                  │ │
+│ │                  │   'ignore',                                           │ │
+│ │                  │   'force_index'                                       │ │
 │ │                  }                                                       │ │
 │ │        indexer = None                                                    │ │
 │ │ indexer_kwargs = {}                                                      │ │
@@ -5069,13 +5442,13 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                 ]                                                        │ │
 │ │         force = []                                                       │ │
 │ │        ignore = [                                                        │ │
-│ │                 │   re.compile('/\\.'),                                  │ │
-│ │                 │   re.compile('^/(code|models|sourcedata|stimuli)')     │ │
+│ │                 │   re.compile('^/(code|models|sourcedata|stimuli)'),    │ │
+│ │                 │   re.compile('/\\.')                                   │ │
 │ │                 ]                                                        │ │
 │ │        layout = BIDS Layout: ...hub/.github/code/data/ds002995 |         │ │
 │ │                 Subjects: 18 | Sessions: 24 | Runs: 144                  │ │
 │ │          self = <bids.layout.index.BIDSLayoutIndexer object at           │ │
-│ │                 0x7f11f8e91780>                                          │ │
+│ │                 0x7f4f1fdb6830>                                          │ │
 │ ╰──────────────────────────────────────────────────────────────────────────╯ │
 │                                                                              │
 │ /usr/local/lib/python3.10/site-packages/bids/layout/index.py:504 in          │
@@ -5149,25 +5522,25 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    ]                                                     │ │
 │ │         all_objs = [                                                     │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814cdc0>,                                      │ │
+│ │                    0x7f4f1ef40a30>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814c9d0>,                                      │ │
+│ │                    0x7f4f1ef40670>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814cca0>,                                      │ │
+│ │                    0x7f4f1ef40580>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814d450>,                                      │ │
+│ │                    0x7f4f1ef40df0>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814cfd0>,                                      │ │
+│ │                    0x7f4f1ef41750>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814cdf0>,                                      │ │
+│ │                    0x7f4f1ef40ee0>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814d840>,                                      │ │
+│ │                    0x7f4f1ef418a0>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814d720>,                                      │ │
+│ │                    0x7f4f1ef41810>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814db70>,                                      │ │
+│ │                    0x7f4f1ef41ba0>,                                      │ │
 │ │                    │   <bids.layout.models.FileAssociation object at     │ │
-│ │                    0x7f11f814d900>,                                      │ │
+│ │                    0x7f4f1ef41990>,                                      │ │
 │ │                    │   ... +2                                            │ │
 │ │                    ]                                                     │ │
 │ │    all_tag_dicts = [                                                     │ │
@@ -5323,7 +5696,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {},                                   │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00299… │ │
@@ -5338,7 +5711,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {'direction': 'PA'},                  │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00299… │ │
@@ -5354,7 +5727,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {},                                   │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00299… │ │
@@ -7694,7 +8067,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {},                                   │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00299… │ │
@@ -7709,7 +8082,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   │   │   │   {'task': 'tastemap'},                 │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │   │   │                                         │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00299… │ │
@@ -7718,7 +8091,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   }),                                               │ │
 │ │                    │   ... +1                                            │ │
 │ │                    }                                                     │ │
-│ │    file_ent_keys = {'datatype', 'run', 'session', 'subject', 'task'}     │ │
+│ │    file_ent_keys = {'run', 'datatype', 'subject', 'task', 'session'}     │ │
 │ │        file_ents = {                                                     │ │
 │ │                    │   'datatype': 'func',                               │ │
 │ │                    │   'run': 01,                                        │ │
@@ -7791,15 +8164,15 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │          js_file = '/home/runner/work/.github/.github/code/data/ds00299… │ │
 │ │          js_keys = {'task'}                                              │ │
 │ │            js_md = functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │          js_path = '/home/runner/work/.github/.github/code/data/ds00299… │ │
 │ │        json_data = []                                                    │ │
 │ │         json_key = '.json/events'                                        │ │
 │ │              key = '.json/events'                                        │ │
-│ │             keys = {'datatype', 'run', 'session', 'subject', 'task'}     │ │
+│ │             keys = {'run', 'datatype', 'subject', 'task', 'session'}     │ │
 │ │        load_json = <functools._lru_cache_wrapper object at               │ │
-│ │                    0x7f11f879de80>                                       │ │
+│ │                    0x7f4f1f8e5e80>                                       │ │
 │ │          matches = [True]                                                │ │
 │ │           md_key = 'run'                                                 │ │
 │ │           md_val = {                                                     │ │
@@ -7813,20 +8186,20 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │           parent = PosixUPath('/')                                       │ │
 │ │             path = '/home/runner/work/.github/.github/code/data/ds00299… │ │
 │ │          payload = functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │         payloads = [                                                     │ │
 │ │                    │   (                                                 │ │
 │ │                    │   │                                                 │ │
 │ │                    functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │   │                                                 │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00299… │ │
 │ │                    │   )                                                 │ │
 │ │                    ]                                                     │ │
 │ │               pl = functools.partial(<functools._lru_cache_wrapper       │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │      seen_assocs = {                                                     │ │
 │ │                    │                                                     │ │
@@ -7852,7 +8225,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │                    │   ... +2                                            │ │
 │ │                    }                                                     │ │
 │ │             self = <bids.layout.index.BIDSLayoutIndexer object at        │ │
-│ │                    0x7f11f8e91780>                                       │ │
+│ │                    0x7f4f1fdb6830>                                       │ │
 │ │              src = '/home/runner/work/.github/.github/code/data/ds00299… │ │
 │ │           suffix = 'events'                                              │ │
 │ │                t = <Tag                                                  │ │
@@ -7871,7 +8244,7 @@ Parsing and validating BIDS dataset. This may take a while...
 │ │         to_store = (                                                     │ │
 │ │                    │   {'task': 'tastemap'},                             │ │
 │ │                    │   functools.partial(<functools._lru_cache_wrapper   │ │
-│ │                    object at 0x7f11f879de80>, <BIDSJSONFile              │ │
+│ │                    object at 0x7f4f1f8e5e80>, <BIDSJSONFile              │ │
 │ │                    filename='/home/runner/work/.github/.github/code/dat… │ │
 │ │                    │                                                     │ │
 │ │                    '/home/runner/work/.github/.github/code/data/ds00299… │ │
@@ -7928,12 +8301,12 @@ Running initial checks of inputs...
 │ │ existing_subs_dict = {                                                   │ │
 │ │                      │   'sub-01': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:e719663b-3d2f-4947-a13f-167f5e1554b… │ │
+│ │                      identifier='nb:f824ad7d-0da4-4e1e-b095-d90dfc84031… │ │
 │ │                      │   │   hasLabel='sub-01',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:0729a92f-f9e8-451f-94a5-4c87d9c4a3b… │ │
+│ │                      identifier='nb:1a455c89-9a95-4e5b-beef-b482e47eb1b… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -7947,12 +8320,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-03': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:25dfe224-dedc-494b-bd0c-a6ffd411f30… │ │
+│ │                      identifier='nb:de93d015-353c-450e-ae85-dbd08f9dda8… │ │
 │ │                      │   │   hasLabel='sub-03',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:4a40961d-aa66-4871-87ac-94d71c9c4c8… │ │
+│ │                      identifier='nb:65515802-7880-43ee-9750-0f3018f27ed… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -7966,12 +8339,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-05': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:263a1407-6ed2-4dbf-bd44-3b72a3ab588… │ │
+│ │                      identifier='nb:221a8c8f-8631-4ef0-88c7-70b252d15f5… │ │
 │ │                      │   │   hasLabel='sub-05',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:7c36a163-0586-4486-9fee-4a6d8ada026… │ │
+│ │                      identifier='nb:a6e57cec-507d-4c0f-8ca0-1c996275f15… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -7985,12 +8358,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-06': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:cf50fd21-8f17-420b-8699-3103c441eae… │ │
+│ │                      identifier='nb:f01e782c-a59f-4322-ab08-d874ad0bf09… │ │
 │ │                      │   │   hasLabel='sub-06',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:d3eacad9-19f7-46f5-b032-4ae51bf5ba9… │ │
+│ │                      identifier='nb:c5067a5b-ff57-4a2e-aa60-3507208aab4… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -8004,12 +8377,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-08': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:966cdfb5-947e-426e-8296-0dc756e88a1… │ │
+│ │                      identifier='nb:6adbf645-6420-4c37-a4da-eed6ffc58d6… │ │
 │ │                      │   │   hasLabel='sub-08',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:c7907897-68e1-4266-89e7-8884bdcac14… │ │
+│ │                      identifier='nb:f2fdcdfd-bf85-43e0-8995-ea39ae272c2… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -8023,12 +8396,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-09': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:18bc22ee-7dc1-4beb-b227-05fef63c6dc… │ │
+│ │                      identifier='nb:7677a2ca-faf4-452b-b3df-f9ee8a07758… │ │
 │ │                      │   │   hasLabel='sub-09',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:b7a27060-9541-48dc-8522-05a3cfc83f8… │ │
+│ │                      identifier='nb:546cfa6c-73ad-4f62-a059-26223573a01… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -8042,12 +8415,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-11': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:dd197832-1721-4faa-81be-d6b79660160… │ │
+│ │                      identifier='nb:72342d57-9220-419a-beb6-8839bab3db9… │ │
 │ │                      │   │   hasLabel='sub-11',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:dc98e287-3359-4da8-a706-01814c3f53c… │ │
+│ │                      identifier='nb:1fafda59-1bb0-4632-9cea-95fad9b305e… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -8061,12 +8434,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-12': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:6b3a10c0-9ab4-4f58-885e-248d4a5b3a9… │ │
+│ │                      identifier='nb:3892ce9b-a7af-41b1-90ad-e6f4c135a32… │ │
 │ │                      │   │   hasLabel='sub-12',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:abb43f39-c1c9-41a2-a46c-d7c6168233f… │ │
+│ │                      identifier='nb:27338bc5-0a9e-4894-9634-fadb86e30a6… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -8080,12 +8453,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-13': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:a43a6a05-694b-4f43-898e-68f835cd992… │ │
+│ │                      identifier='nb:c5b0d884-bb8c-4991-bc53-bd27c6bea32… │ │
 │ │                      │   │   hasLabel='sub-13',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:865529aa-766b-436e-8ce8-eed9e200aea… │ │
+│ │                      identifier='nb:cebdb767-733d-475c-b36d-26fa73438eb… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -8099,12 +8472,12 @@ Running initial checks of inputs...
 │ │                      │   ),                                              │ │
 │ │                      │   'sub-14': Subject(                              │ │
 │ │                      │   │                                               │ │
-│ │                      identifier='nb:9bceec55-4376-4bc3-9012-0ac95e204fb… │ │
+│ │                      identifier='nb:1fbfd69d-96fa-4af7-8ba2-019db48d609… │ │
 │ │                      │   │   hasLabel='sub-14',                          │ │
 │ │                      │   │   hasSession=[                                │ │
 │ │                      │   │   │   PhenotypicSession(                      │ │
 │ │                      │   │   │   │                                       │ │
-│ │                      identifier='nb:8c6fb68a-652f-4fb2-951d-57e5ce21002… │ │
+│ │                      identifier='nb:89576ecb-000d-4de7-9c5a-f5f7b8f0eff… │ │
 │ │                      │   │   │   │   hasLabel='ses-unnamed',             │ │
 │ │                      │   │   │   │   hasAge=None,                        │ │
 │ │                      │   │   │   │   hasSex=None,                        │ │
@@ -8120,7 +8493,7 @@ Running initial checks of inputs...
 │ │                      }                                                   │ │
 │ │     jsonld_dataset = Dataset(                                            │ │
 │ │                      │                                                   │ │
-│ │                      identifier='nb:7a9e836d-45bf-4f36-a261-74fae5817b2… │ │
+│ │                      identifier='nb:c9e4b4a4-2323-4b31-a1b3-2c6e1f74bb6… │ │
 │ │                      │   hasLabel='Head-to-Ball Impacts in Collegiate    │ │
 │ │                      Soccer Players',                                    │ │
 │ │                      │                                                   │ │
@@ -8128,12 +8501,12 @@ Running initial checks of inputs...
 │ │                      │   hasSamples=[                                    │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:e719663b-3d2f-4947-a13f-167f5e1554b… │ │
+│ │                      identifier='nb:f824ad7d-0da4-4e1e-b095-d90dfc84031… │ │
 │ │                      │   │   │   hasLabel='sub-01',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:0729a92f-f9e8-451f-94a5-4c87d9c4a3b… │ │
+│ │                      identifier='nb:1a455c89-9a95-4e5b-beef-b482e47eb1b… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8147,12 +8520,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:25dfe224-dedc-494b-bd0c-a6ffd411f30… │ │
+│ │                      identifier='nb:de93d015-353c-450e-ae85-dbd08f9dda8… │ │
 │ │                      │   │   │   hasLabel='sub-03',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:4a40961d-aa66-4871-87ac-94d71c9c4c8… │ │
+│ │                      identifier='nb:65515802-7880-43ee-9750-0f3018f27ed… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8166,12 +8539,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:263a1407-6ed2-4dbf-bd44-3b72a3ab588… │ │
+│ │                      identifier='nb:221a8c8f-8631-4ef0-88c7-70b252d15f5… │ │
 │ │                      │   │   │   hasLabel='sub-05',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:7c36a163-0586-4486-9fee-4a6d8ada026… │ │
+│ │                      identifier='nb:a6e57cec-507d-4c0f-8ca0-1c996275f15… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8185,12 +8558,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:cf50fd21-8f17-420b-8699-3103c441eae… │ │
+│ │                      identifier='nb:f01e782c-a59f-4322-ab08-d874ad0bf09… │ │
 │ │                      │   │   │   hasLabel='sub-06',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:d3eacad9-19f7-46f5-b032-4ae51bf5ba9… │ │
+│ │                      identifier='nb:c5067a5b-ff57-4a2e-aa60-3507208aab4… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8204,12 +8577,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:966cdfb5-947e-426e-8296-0dc756e88a1… │ │
+│ │                      identifier='nb:6adbf645-6420-4c37-a4da-eed6ffc58d6… │ │
 │ │                      │   │   │   hasLabel='sub-08',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:c7907897-68e1-4266-89e7-8884bdcac14… │ │
+│ │                      identifier='nb:f2fdcdfd-bf85-43e0-8995-ea39ae272c2… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8223,12 +8596,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:18bc22ee-7dc1-4beb-b227-05fef63c6dc… │ │
+│ │                      identifier='nb:7677a2ca-faf4-452b-b3df-f9ee8a07758… │ │
 │ │                      │   │   │   hasLabel='sub-09',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:b7a27060-9541-48dc-8522-05a3cfc83f8… │ │
+│ │                      identifier='nb:546cfa6c-73ad-4f62-a059-26223573a01… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8242,12 +8615,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:dd197832-1721-4faa-81be-d6b79660160… │ │
+│ │                      identifier='nb:72342d57-9220-419a-beb6-8839bab3db9… │ │
 │ │                      │   │   │   hasLabel='sub-11',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:dc98e287-3359-4da8-a706-01814c3f53c… │ │
+│ │                      identifier='nb:1fafda59-1bb0-4632-9cea-95fad9b305e… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8261,12 +8634,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:6b3a10c0-9ab4-4f58-885e-248d4a5b3a9… │ │
+│ │                      identifier='nb:3892ce9b-a7af-41b1-90ad-e6f4c135a32… │ │
 │ │                      │   │   │   hasLabel='sub-12',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:abb43f39-c1c9-41a2-a46c-d7c6168233f… │ │
+│ │                      identifier='nb:27338bc5-0a9e-4894-9634-fadb86e30a6… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8280,12 +8653,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:a43a6a05-694b-4f43-898e-68f835cd992… │ │
+│ │                      identifier='nb:c5b0d884-bb8c-4991-bc53-bd27c6bea32… │ │
 │ │                      │   │   │   hasLabel='sub-13',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:865529aa-766b-436e-8ce8-eed9e200aea… │ │
+│ │                      identifier='nb:cebdb767-733d-475c-b36d-26fa73438eb… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8299,12 +8672,12 @@ Running initial checks of inputs...
 │ │                      │   │   ),                                          │ │
 │ │                      │   │   Subject(                                    │ │
 │ │                      │   │   │                                           │ │
-│ │                      identifier='nb:9bceec55-4376-4bc3-9012-0ac95e204fb… │ │
+│ │                      identifier='nb:1fbfd69d-96fa-4af7-8ba2-019db48d609… │ │
 │ │                      │   │   │   hasLabel='sub-14',                      │ │
 │ │                      │   │   │   hasSession=[                            │ │
 │ │                      │   │   │   │   PhenotypicSession(                  │ │
 │ │                      │   │   │   │   │                                   │ │
-│ │                      identifier='nb:8c6fb68a-652f-4fb2-951d-57e5ce21002… │ │
+│ │                      identifier='nb:89576ecb-000d-4de7-9c5a-f5f7b8f0eff… │ │
 │ │                      │   │   │   │   │   hasLabel='ses-unnamed',         │ │
 │ │                      │   │   │   │   │   hasAge=None,                    │ │
 │ │                      │   │   │   │   │   hasSex=None,                    │ │
@@ -8339,16 +8712,16 @@ Running initial checks of inputs...
 │                                                                              │
 │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
 │ │           missing_subs = [                                               │ │
-│ │                          │   'sub-s18',                                  │ │
-│ │                          │   'sub-s03',                                  │ │
+│ │                          │   'sub-s23',                                  │ │
+│ │                          │   'sub-s14',                                  │ │
 │ │                          │   'sub-s01',                                  │ │
-│ │                          │   'sub-s16',                                  │ │
-│ │                          │   'sub-s12',                                  │ │
-│ │                          │   'sub-s27',                                  │ │
-│ │                          │   'sub-s11',                                  │ │
-│ │                          │   'sub-s24',                                  │ │
+│ │                          │   'sub-s06',                                  │ │
+│ │                          │   'sub-s03',                                  │ │
+│ │                          │   'sub-s21',                                  │ │
 │ │                          │   'sub-s29',                                  │ │
-│ │                          │   'sub-s17',                                  │ │
+│ │                          │   'sub-s18',                                  │ │
+│ │                          │   'sub-s19',                                  │ │
+│ │                          │   'sub-s09',                                  │ │
 │ │                          │   ... +14                                     │ │
 │ │                          ]                                               │ │
 │ │         pheno_subjects = dict_keys(['sub-01', 'sub-03', 'sub-05',        │ │
@@ -8376,10 +8749,10 @@ Running initial checks of inputs...
 ╰──────────────────────────────────────────────────────────────────────────────╯
 LookupError: The specified BIDS directory contains subject IDs not found in the 
 provided json-ld file:
-['sub-s18', 'sub-s03', 'sub-s01', 'sub-s16', 'sub-s12', 'sub-s27', 'sub-s11', 
-'sub-s24', 'sub-s29', 'sub-s17', 'sub-s15', 'sub-s22', 'sub-s19', 'sub-s05', 
-'sub-s28', 'sub-s25', 'sub-s06', 'sub-s26', 'sub-s08', 'sub-s21', 'sub-s13', 
-'sub-s23', 'sub-s09', 'sub-s14']
+['sub-s23', 'sub-s14', 'sub-s01', 'sub-s06', 'sub-s03', 'sub-s21', 'sub-s29', 
+'sub-s18', 'sub-s19', 'sub-s09', 'sub-s24', 'sub-s12', 'sub-s26', 'sub-s25', 
+'sub-s27', 'sub-s16', 'sub-s22', 'sub-s15', 'sub-s11', 'sub-s28', 'sub-s05', 
+'sub-s17', 'sub-s13', 'sub-s08']
 Subject IDs are case sensitive. Please check that the BIDS directory corresponds
 to the dataset in the provided .jsonld.
 cp: cannot stat '/home/runner/work/.github/.github/code/data/ds002940/pheno_bids.jsonld': No such file or directory
@@ -10704,138 +11077,6 @@ Try 'bagel bids --help' for help.
 ╰──────────────────────────────────────────────────────────────────────────────╯
 cp: cannot stat '/home/runner/work/.github/.github/code/data/ds000214/pheno_bids.jsonld': No such file or directory
 ds000214: CLI failed
-Repo info: ds006033,"22b2eb653c06f80b95ec5e9003dfb62fa73eacec"
-ds006033: Running the CLI
-latest: Pulling from neurobagel/bagelcli
-Digest: sha256:b32f73cdc950c53d59443c9927a6c3671a7ba1c651e05d67f54f3a938c76748e
-Status: Image is up to date for neurobagel/bagelcli:latest
-docker.io/neurobagel/bagelcli:latest
-[INFO] Attempting a clone into /home/runner/work/.github/.github/code/data/ds006033 
-[INFO] Attempting to clone from https://github.com/OpenNeuroDatasets-JSONLD/ds006033.git to /home/runner/work/.github/.github/code/data/ds006033 
-[INFO] Start enumerating objects 
-[INFO] Start counting objects 
-[INFO] Start compressing objects 
-[INFO] Start receiving objects 
-[INFO] Start resolving deltas 
-[INFO] Completed clone attempts for Dataset(/home/runner/work/.github/.github/code/data/ds006033) 
-[INFO] Remote origin not usable by git-annex; setting annex-ignore 
-[INFO] https://github.com/OpenNeuroDatasets-JSONLD/ds006033.git/config download failed: Not Found 
-install(ok): /home/runner/work/.github/.github/code/data/ds006033 (dataset)
-╭───────────────────── Traceback (most recent call last) ──────────────────────╮
-│ /usr/local/lib/python3.10/site-packages/bagel/cli.py:99 in pheno             │
-│                                                                              │
-│    96 │                                                                      │
-│    97 │   data_dictionary = file_utils.load_json(dictionary)                 │
-│    98 │   pheno_df = file_utils.load_tabular(pheno)                          │
-│ ❱  99 │   pheno_utils.validate_inputs(data_dictionary, pheno_df)             │
-│   100 │                                                                      │
-│   101 │   # NOTE: `space` determines the amount of padding (in num. characte │
-│   102 │   # It is currently calculated as = (length of the longer string, in │
-│                                                                              │
-│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
-│ │ data_dictionary = {                                                      │ │
-│ │                   │   'participant_id': {                                │ │
-│ │                   │   │   'Description': 'Unique participant identifier' │ │
-│ │                   │   },                                                 │ │
-│ │                   │   'age': {'Description': 'Age of the participant'},  │ │
-│ │                   │   'handedness': {                                    │ │
-│ │                   │   │   'Description': 'Dominant hand of the           │ │
-│ │                   participant'                                           │ │
-│ │                   │   },                                                 │ │
-│ │                   │   'nationality': {                                   │ │
-│ │                   │   │   'Description': 'Nationality of the             │ │
-│ │                   participant'                                           │ │
-│ │                   │   },                                                 │ │
-│ │                   │   'sex': {                                           │ │
-│ │                   │   │   'Description': 'Biological sex of the          │ │
-│ │                   participant'                                           │ │
-│ │                   │   }                                                  │ │
-│ │                   }                                                      │ │
-│ │      dictionary = PosixPath('/home/runner/work/.github/.github/code/dat… │ │
-│ │            name = 'Synchronous EEG and fMRI dataset on inner speech'     │ │
-│ │          output = PosixPath('/home/runner/work/.github/.github/code/dat… │ │
-│ │       overwrite = False                                                  │ │
-│ │           pheno = PosixPath('/home/runner/work/.github/.github/code/dat… │ │
-│ │        pheno_df =   participant_id age handedness nationality     sex    │ │
-│ │                   0         sub-03  35      right      Indian    male    │ │
-│ │                   1         sub-02  35      right     Swedish    male    │ │
-│ │                   2         sub-01  25      right     Swedish  female    │ │
-│ │          portal = 'https://github.com/OpenNeuroDatasets-JSONLD/ds006033… │ │
-│ ╰──────────────────────────────────────────────────────────────────────────╯ │
-│                                                                              │
-│ /usr/local/lib/python3.10/site-packages/bagel/utilities/pheno_utils.py:475   │
-│ in validate_inputs                                                           │
-│                                                                              │
-│   472                                                                        │
-│   473 def validate_inputs(data_dict: dict, pheno_df: pd.DataFrame) -> None:  │
-│   474 │   """Determines whether input data are valid"""                      │
-│ ❱ 475 │   validate_data_dict(data_dict)                                      │
-│   476 │                                                                      │
-│   477 │   if not are_inputs_compatible(data_dict, pheno_df):                 │
-│   478 │   │   raise LookupError(                                             │
-│                                                                              │
-│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
-│ │ data_dict = {                                                            │ │
-│ │             │   'participant_id': {                                      │ │
-│ │             │   │   'Description': 'Unique participant identifier'       │ │
-│ │             │   },                                                       │ │
-│ │             │   'age': {'Description': 'Age of the participant'},        │ │
-│ │             │   'handedness': {                                          │ │
-│ │             │   │   'Description': 'Dominant hand of the participant'    │ │
-│ │             │   },                                                       │ │
-│ │             │   'nationality': {                                         │ │
-│ │             │   │   'Description': 'Nationality of the participant'      │ │
-│ │             │   },                                                       │ │
-│ │             │   'sex': {                                                 │ │
-│ │             │   │   'Description': 'Biological sex of the participant'   │ │
-│ │             │   }                                                        │ │
-│ │             }                                                            │ │
-│ │  pheno_df =   participant_id age handedness nationality     sex          │ │
-│ │             0         sub-03  35      right      Indian    male          │ │
-│ │             1         sub-02  35      right     Swedish    male          │ │
-│ │             2         sub-01  25      right     Swedish  female          │ │
-│ ╰──────────────────────────────────────────────────────────────────────────╯ │
-│                                                                              │
-│ /usr/local/lib/python3.10/site-packages/bagel/utilities/pheno_utils.py:375   │
-│ in validate_data_dict                                                        │
-│                                                                              │
-│   372 │   │   ) from e                                                       │
-│   373 │                                                                      │
-│   374 │   if get_annotated_columns(data_dict) == []:                         │
-│ ❱ 375 │   │   raise LookupError(                                             │
-│   376 │   │   │   "The provided data dictionary must contain at least one co │
-│   377 │   │   )                                                              │
-│   378                                                                        │
-│                                                                              │
-│ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
-│ │ data_dict = {                                                            │ │
-│ │             │   'participant_id': {                                      │ │
-│ │             │   │   'Description': 'Unique participant identifier'       │ │
-│ │             │   },                                                       │ │
-│ │             │   'age': {'Description': 'Age of the participant'},        │ │
-│ │             │   'handedness': {                                          │ │
-│ │             │   │   'Description': 'Dominant hand of the participant'    │ │
-│ │             │   },                                                       │ │
-│ │             │   'nationality': {                                         │ │
-│ │             │   │   'Description': 'Nationality of the participant'      │ │
-│ │             │   },                                                       │ │
-│ │             │   'sex': {                                                 │ │
-│ │             │   │   'Description': 'Biological sex of the participant'   │ │
-│ │             │   }                                                        │ │
-│ │             }                                                            │ │
-│ ╰──────────────────────────────────────────────────────────────────────────╯ │
-╰──────────────────────────────────────────────────────────────────────────────╯
-LookupError: The provided data dictionary must contain at least one column with 
-Neurobagel annotations.
-Usage: bagel bids [OPTIONS]
-Try 'bagel bids --help' for help.
-╭─ Error ──────────────────────────────────────────────────────────────────────╮
-│ Invalid value for '--jsonld-path' / '-p': File                               │
-│ '/home/runner/work/.github/.github/code/data/ds006033/pheno.jsonld' does not │
-│ exist.                                                                       │
-╰──────────────────────────────────────────────────────────────────────────────╯
-cp: cannot stat '/home/runner/work/.github/.github/code/data/ds006033/pheno_bids.jsonld': No such file or directory
-ds006033: CLI failed
 Repo info: ds005873,"a2a11bc55475783adeeb5bd2950782ac062a75aa"
 ds005873: Running the CLI
 latest: Pulling from neurobagel/bagelcli
@@ -10981,8 +11222,8 @@ docker.io/neurobagel/bagelcli:latest
 [INFO] Remote origin not usable by git-annex; setting annex-ignore 
 [INFO] https://github.com/OpenNeuroDatasets-JSONLD/ds005917.git/config download failed: Not Found 
 [INFO] Cannot run git-annex-remote-openneuro -- It is not installed in PATH (/usr/lib/git-core:/opt/hostedtoolcache/Python/3.10.16/x64/bin:/opt/hostedtoolcache/Python/3.10.16/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin) 
-[INFO] Cannot run git-annex-remote-openneuro -- It is not installed in PATH (/usr/lib/git-core:/opt/hostedtoolcache/Python/3.10.16/x64/bin:/opt/hostedtoolcache/Python/3.10.16/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin)
-|   unable to use external special remote git-annex-remote-openneuro 
+[INFO] Cannot run git-annex-remote-openneuro -- It is not installed in PATH (/usr/lib/git-core:/opt/hostedtoolcache/Python/3.10.16/x64/bin:/opt/hostedtoolcache/Python/3.10.16/x64:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin) 
+[INFO] unable to use external special remote git-annex-remote-openneuro 
 install(ok): /home/runner/work/.github/.github/code/data/ds005917 (dataset)
 ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
 │ /usr/local/lib/python3.10/site-packages/bagel/cli.py:99 in pheno             │
@@ -18288,7 +18529,7 @@ Try 'bagel bids --help' for help.
 ╰──────────────────────────────────────────────────────────────────────────────╯
 cp: cannot stat '/home/runner/work/.github/.github/code/data/ds005003/pheno_bids.jsonld': No such file or directory
 ds005003: CLI failed
-Repo info: ds003104,""
+Repo info: ds003104,"2a80ac980cb65bcca49c6e2d737affb2387c6967"
 ds003104: Running the CLI
 latest: Pulling from neurobagel/bagelcli
 Digest: sha256:b32f73cdc950c53d59443c9927a6c3671a7ba1c651e05d67f54f3a938c76748e
