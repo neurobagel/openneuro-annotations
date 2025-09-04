@@ -1,61 +1,63 @@
 {
-    "sex": {
-        "Description": "(Self-reported) sex of participant",
-        "Levels": {
-            "M": "male",
-            "F": "female"
+  "sex": {
+    "Description": "(Self-reported) sex of participant",
+    "Levels": {
+      "M": "male",
+      "F": "female"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
         },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
         }
-    },
-    "age": {
-        "Description": "Age of participant, rounded to nearest integer",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromFloat",
-                "Label": "float data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "validation_session": {
-        "Description": "Which session was used for the validation set. For participants with two sessions, the other session was used for exploration.",
-        "Levels": {
-            "1": "The first session was used for validation (if present, the second session was used for exploration)",
-            "2": "The second session was used for validation (the first session was used for exploration)",
-            "n/a": "The data was not used for the (validation) analyses"
-        }
-    },
-    "participant_id": {
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        },
-        "Description": "There should have been a description here, but there wasn't. :("
+      },
+      "VariableType": "Categorical"
     }
+  },
+  "age": {
+    "Description": "Age of participant, rounded to nearest integer",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "validation_session": {
+    "Description": "Which session was used for the validation set. For participants with two sessions, the other session was used for exploration.",
+    "Levels": {
+      "1": "The first session was used for validation (if present, the second session was used for exploration)",
+      "2": "The second session was used for validation (the first session was used for exploration)",
+      "n/a": "The data was not used for the (validation) analyses"
+    }
+  },
+  "participant_id": {
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
+    },
+    "Description": "There should have been a description here, but there wasn't. :("
+  }
 }

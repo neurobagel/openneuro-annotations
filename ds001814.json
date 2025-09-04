@@ -1,78 +1,80 @@
 {
-    "participant_id": {
-        "LongName": "Participant ID number",
-        "Description": "ID number assigned to participant (prefix sub-).",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "gender": {
-        "LongName": "Gender",
-        "Description": "Participant's reported gender.",
-        "Levels": {
-            "F": "female",
-            "M": "male"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "age": {
-        "LongName": "Age in years",
-        "Description": "Age of participant in years.",
-        "Units": "years",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromInt",
-                "Label": "integer data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "scanner": {
-        "LongName": "MRI scanner",
-        "Description": "Type of Siemens scanner data used to collect data.",
-        "Levels": {
-            "Trio": "Siemens MAGNETOM Trio 3T",
-            "Prisma": "Siemens MAGNETOM Prisma 3T"
-        }
-    },
-    "exclude": {
-        "LongName": "Exclude",
-        "Description": "Whether participant was included in analysis."
-    },
-    "exclude_reason": {
-        "LongName": "Reason for exclusion",
-        "Description": "Specific reason why participant was excluded from analysis.",
-        "Levels": {
-            "Misisng DICOMS": "Corrupted fMRI acquisition",
-            "No variability": "Showed no behavioral variability",
-            "Missing RT": "Missing responses for more than 20% of trials"
-        }
+  "participant_id": {
+    "LongName": "Participant ID number",
+    "Description": "ID number assigned to participant (prefix sub-).",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "gender": {
+    "LongName": "Gender",
+    "Description": "Participant's reported gender.",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "age": {
+    "LongName": "Age in years",
+    "Description": "Age of participant in years.",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromInt",
+        "Label": "integer data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "scanner": {
+    "LongName": "MRI scanner",
+    "Description": "Type of Siemens scanner data used to collect data.",
+    "Levels": {
+      "Trio": "Siemens MAGNETOM Trio 3T",
+      "Prisma": "Siemens MAGNETOM Prisma 3T"
+    }
+  },
+  "exclude": {
+    "LongName": "Exclude",
+    "Description": "Whether participant was included in analysis."
+  },
+  "exclude_reason": {
+    "LongName": "Reason for exclusion",
+    "Description": "Specific reason why participant was excluded from analysis.",
+    "Levels": {
+      "Misisng DICOMS": "Corrupted fMRI acquisition",
+      "No variability": "Showed no behavioral variability",
+      "Missing RT": "Missing responses for more than 20% of trials"
+    }
+  }
 }
