@@ -1,77 +1,80 @@
 {
-    "group": {
-        "Description": "group the participant belonged to in the experimental paradigm",
-        "Levels": {
-            "CONTROL": "healthy subject",
-            "PD-denovo": "de novo Parkinson's disease patient"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Diagnosis",
-                "Label": ""
-            },
-            "Levels": {
-                "CONTROL": {
-                    "TermURL": "ncit:C94342",
-                    "Label": ""
-                },
-                "PD-denovo": {
-                    "TermURL": "snomed:49049000",
-                    "Label": ""
-                }
-            }
-        }
+  "group": {
+    "Description": "group the participant belonged to in the experimental paradigm",
+    "Levels": {
+      "CONTROL": "healthy subject",
+      "PD-denovo": "de novo Parkinson's disease patient"
     },
-    "age": {
-        "Description": "age of the participant",
-        "Units": "years",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromFloat",
-                "Label": "float data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "gender": {
-        "Description": "gender of the participant",
-        "Levels": {
-            "m": "male",
-            "f": "female"
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Diagnosis",
+        "Label": ""
+      },
+      "Levels": {
+        "CONTROL": {
+          "TermURL": "ncit:C94342",
+          "Label": ""
         },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "f": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "m": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
+        "PD-denovo": {
+          "TermURL": "snomed:49049000",
+          "Label": ""
         }
-    },
-    "participant_id": {
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        },
-        "Description": "There should have been a description here, but there wasn't. :("
+      },
+      "VariableType": "Categorical"
     }
+  },
+  "age": {
+    "Description": "age of the participant",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "gender": {
+    "Description": "gender of the participant",
+    "Levels": {
+      "m": "male",
+      "f": "female"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "f": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "m": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "participant_id": {
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
+    },
+    "Description": "There should have been a description here, but there wasn't. :("
+  }
 }

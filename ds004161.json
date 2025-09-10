@@ -1,107 +1,109 @@
 {
-    "participant_id": {
-        "Description": "Participant identifier",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "experimental_id": {
-        "Description": "Animal identification number"
-    },
-    "age": {
-        "Description": "Age (in years, rounded down) at session 1",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromInt",
-                "Label": "integer data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "sex": {
-        "Description": "Sex of the animals",
-        "Levels": {
-            "F": "female",
-            "M": "male"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "group": {
-        "Description": "The animals (n=24) are divided into two groups: i/ a control group which are simply housed in our animal house and visited daily with neutral interactions (n=12). ii/ a group of animals which are subjected to stressful experiences of various kinds (transport by truck, wet straw, dog barking, etc.). This group of stressed animals can be segregated into two groups of low responders (n=6) and high responders (n=6) according to their endocrine response to the stress procedure using a k-means clustering test. Based on its endocrine response and Kmean clustering results, sub-08 has been defined as an outlier."
-    },
-    "ses01_protocol": {
-        "Description": "Session 1 imaging protocol",
-        "Levels": {
-            "1a": "Complete protocol session : resting state fMRI, 3 Shell dwi, T1 3D (tfl3d1_ns)",
-            "1b": "Incomplete protocol session : resting state fMRI only",
-            "1c": "Incomplete protocol session : 3 Shell dwi only",
-            "1d": "Incomplete protocol session : 3 Shell dwi and T1 3D (tfl3d1_ns) only",
-            "1e": "Incomplete protocol session :  resting state fMRI and 3 Shell dwi only"
-        }
-    },
-    "ses02_protocol": {
-        "Description": "Session 2 imaging protocol",
-        "Levels": {
-            "1a": "Complete protocol session : resting state fMRI, 3 Shell dwi, T1 3D (tfl3d1_ns)",
-            "1b": "Incomplete protocol session : resting state fMRI only",
-            "1c": "Incomplete protocol session : 3 Shell dwi only",
-            "1d": "Incomplete protocol session : 3 Shell dwi and T1 3D (tfl3d1_ns) only",
-            "1e": "Incomplete protocol session :  resting state fMRI and 3 Shell dwi only"
-        }
-    },
-    "Cortisolemia_ses-1": {
-        "Description": "Blood concentration of cortisol at the session 1 (pg.ml-1)."
-    },
-    "Cortisolemia_ses-2": {
-        "Description": "Blood concentration of cortisol at the session 2 (pg.ml-1). Used in the kmeans procedure for stress group clustering."
-    },
-    "Cortisolemia_variation": {
-        "Description": "Variation of lood concentration of cortisol between session 1 and session 2 (pg.ml-1). Used in the kmeans procedure for stress group clustering."
-    },
-    "session_id": {
-        "Description": "Session identifier"
-    },
-    "size": {
-        "LongName": "Long (unabbreviated) name of the column",
-        "Description": "Description of the the column",
-        "Levels": {
-            "Key": "Value (This is for categorical variables: a dictionary of possible values (keys) and their descriptions (values))"
-        },
-        "Units": "Measurement units. [<prefix symbol>]<unit symbol> format following the SI standard is RECOMMENDED"
-    },
-    "weight": {
-        "LongName": "Long (unabbreviated) name of the column",
-        "Description": "Description of the the column",
-        "Levels": {
-            "Key": "Value (This is for categorical variables: a dictionary of possible values (keys) and their descriptions (values))"
-        },
-        "Units": "Measurement units. [<prefix symbol>]<unit symbol> format following the SI standard is RECOMMENDED"
+  "participant_id": {
+    "Description": "Participant identifier",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "experimental_id": {
+    "Description": "Animal identification number"
+  },
+  "age": {
+    "Description": "Age (in years, rounded down) at session 1",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromInt",
+        "Label": "integer data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "sex": {
+    "Description": "Sex of the animals",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "group": {
+    "Description": "The animals (n=24) are divided into two groups: i/ a control group which are simply housed in our animal house and visited daily with neutral interactions (n=12). ii/ a group of animals which are subjected to stressful experiences of various kinds (transport by truck, wet straw, dog barking, etc.). This group of stressed animals can be segregated into two groups of low responders (n=6) and high responders (n=6) according to their endocrine response to the stress procedure using a k-means clustering test. Based on its endocrine response and Kmean clustering results, sub-08 has been defined as an outlier."
+  },
+  "ses01_protocol": {
+    "Description": "Session 1 imaging protocol",
+    "Levels": {
+      "1a": "Complete protocol session : resting state fMRI, 3 Shell dwi, T1 3D (tfl3d1_ns)",
+      "1b": "Incomplete protocol session : resting state fMRI only",
+      "1c": "Incomplete protocol session : 3 Shell dwi only",
+      "1d": "Incomplete protocol session : 3 Shell dwi and T1 3D (tfl3d1_ns) only",
+      "1e": "Incomplete protocol session :  resting state fMRI and 3 Shell dwi only"
+    }
+  },
+  "ses02_protocol": {
+    "Description": "Session 2 imaging protocol",
+    "Levels": {
+      "1a": "Complete protocol session : resting state fMRI, 3 Shell dwi, T1 3D (tfl3d1_ns)",
+      "1b": "Incomplete protocol session : resting state fMRI only",
+      "1c": "Incomplete protocol session : 3 Shell dwi only",
+      "1d": "Incomplete protocol session : 3 Shell dwi and T1 3D (tfl3d1_ns) only",
+      "1e": "Incomplete protocol session :  resting state fMRI and 3 Shell dwi only"
+    }
+  },
+  "Cortisolemia_ses-1": {
+    "Description": "Blood concentration of cortisol at the session 1 (pg.ml-1)."
+  },
+  "Cortisolemia_ses-2": {
+    "Description": "Blood concentration of cortisol at the session 2 (pg.ml-1). Used in the kmeans procedure for stress group clustering."
+  },
+  "Cortisolemia_variation": {
+    "Description": "Variation of lood concentration of cortisol between session 1 and session 2 (pg.ml-1). Used in the kmeans procedure for stress group clustering."
+  },
+  "session_id": {
+    "Description": "Session identifier"
+  },
+  "size": {
+    "LongName": "Long (unabbreviated) name of the column",
+    "Description": "Description of the the column",
+    "Levels": {
+      "Key": "Value (This is for categorical variables: a dictionary of possible values (keys) and their descriptions (values))"
+    },
+    "Units": "Measurement units. [<prefix symbol>]<unit symbol> format following the SI standard is RECOMMENDED"
+  },
+  "weight": {
+    "LongName": "Long (unabbreviated) name of the column",
+    "Description": "Description of the the column",
+    "Levels": {
+      "Key": "Value (This is for categorical variables: a dictionary of possible values (keys) and their descriptions (values))"
+    },
+    "Units": "Measurement units. [<prefix symbol>]<unit symbol> format following the SI standard is RECOMMENDED"
+  }
 }

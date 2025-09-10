@@ -1,115 +1,117 @@
 {
-    "participant_id": {
-        "Description": "Unique participant identifier",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "age": {
-        "Description": "Age of the participant at time of testing",
-        "Units": "years",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromInt",
-                "Label": "integer data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "sex": {
-        "Description": "Biological sex of the participant",
-        "Levels": {
-            "F": "female",
-            "M": "male"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "high_density_grid": {
-        "Description": "Whether this patient had recordings with a high-density grid",
-        "Levels": {
-            "yes": "Patient had some of the measurements with HD grid",
-            "no": "No HD recordings for this patient",
-            "n/a": "Does not apply, this is not a patient"
-        }
-    },
-    "handedness": {
-        "Description": "Dominant hand of the participant according to the Edinburgh Handedness Questionnaire",
-        "Levels": {
-            "R": "Right",
-            "L": "Left",
-            "originally R, but switched to L": "Patient originally had right hand as dominant but later switched to left",
-            "n/a": "Assessment of handedness is not available for this patient"
-        }
-    },
-    "language_dominance": {
-        "Description": "Language-dominant hemisphere of the participant as tested with one or combination of techniques in specified in language_dominance_technique",
-        "Levels": {
-            "R": "Right",
-            "L": "Left",
-            "possibly L": "Possibly left",
-            "possibly bilateral": "Possibly both hemispheres",
-            "n/a": "Assessment of language dominance is not available for this patient"
-        }
-    },
-    "language_dominance_technique": {
-        "Description": "Technique used to determine the language-dominant hemisphere of the participant",
-        "Levels": {
-            "fTCD": "functional transcranial Doppler sonography",
-            "fMRI": "functional magnetic resonance imaging",
-            "Wada": "intracarotid amobarbital test",
-            "ECS": "electrocortical stimulation",
-            "unspecified": "technique was not specified",
-            "n/a": "Assessment of language dominance is not available for this patient"
-        }
-    },
-    "iEEG": {
-        "Description": "Presence of intracranial electroencephalography (iEEG) recordings for the patient",
-        "Levels": {
-            "yes": "IEEG recordings for this patient are available",
-            "no": "Patient did not participate in iEEG recordings"
-        }
-    },
-    "fMRI": {
-        "Description": "Presence of functional magnetic resonance imaging (fMRI) recordings for the patient",
-        "Levels": {
-            "yes": "FMRI recordings for this patient are available",
-            "no": "Patient did not participate in fMRI recordings"
-        }
-    },
-    "iEEG_hemisphere": {
-        "Description": "Hemisphere where iEEG electrodes were implanted",
-        "Levels": {
-            "L": "Left",
-            "R": "Right",
-            "LR": "Both left and right hemispheres were implanted",
-            "n/a": "Patient was not implanted with iEEG electrodes"
-        }
+  "participant_id": {
+    "Description": "Unique participant identifier",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "age": {
+    "Description": "Age of the participant at time of testing",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromInt",
+        "Label": "integer data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "sex": {
+    "Description": "Biological sex of the participant",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "high_density_grid": {
+    "Description": "Whether this patient had recordings with a high-density grid",
+    "Levels": {
+      "yes": "Patient had some of the measurements with HD grid",
+      "no": "No HD recordings for this patient",
+      "n/a": "Does not apply, this is not a patient"
+    }
+  },
+  "handedness": {
+    "Description": "Dominant hand of the participant according to the Edinburgh Handedness Questionnaire",
+    "Levels": {
+      "R": "Right",
+      "L": "Left",
+      "originally R, but switched to L": "Patient originally had right hand as dominant but later switched to left",
+      "n/a": "Assessment of handedness is not available for this patient"
+    }
+  },
+  "language_dominance": {
+    "Description": "Language-dominant hemisphere of the participant as tested with one or combination of techniques in specified in language_dominance_technique",
+    "Levels": {
+      "R": "Right",
+      "L": "Left",
+      "possibly L": "Possibly left",
+      "possibly bilateral": "Possibly both hemispheres",
+      "n/a": "Assessment of language dominance is not available for this patient"
+    }
+  },
+  "language_dominance_technique": {
+    "Description": "Technique used to determine the language-dominant hemisphere of the participant",
+    "Levels": {
+      "fTCD": "functional transcranial Doppler sonography",
+      "fMRI": "functional magnetic resonance imaging",
+      "Wada": "intracarotid amobarbital test",
+      "ECS": "electrocortical stimulation",
+      "unspecified": "technique was not specified",
+      "n/a": "Assessment of language dominance is not available for this patient"
+    }
+  },
+  "iEEG": {
+    "Description": "Presence of intracranial electroencephalography (iEEG) recordings for the patient",
+    "Levels": {
+      "yes": "IEEG recordings for this patient are available",
+      "no": "Patient did not participate in iEEG recordings"
+    }
+  },
+  "fMRI": {
+    "Description": "Presence of functional magnetic resonance imaging (fMRI) recordings for the patient",
+    "Levels": {
+      "yes": "FMRI recordings for this patient are available",
+      "no": "Patient did not participate in fMRI recordings"
+    }
+  },
+  "iEEG_hemisphere": {
+    "Description": "Hemisphere where iEEG electrodes were implanted",
+    "Levels": {
+      "L": "Left",
+      "R": "Right",
+      "LR": "Both left and right hemispheres were implanted",
+      "n/a": "Patient was not implanted with iEEG electrodes"
+    }
+  }
 }
