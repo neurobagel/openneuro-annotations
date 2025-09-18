@@ -1,54 +1,56 @@
 {
-    "participant_id": {
-        "LongName": "patient idnetification",
-        "Description": "anonymized, BIDS compatible identification",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "sex": {
-        "Levels": {
-            "M": "Male",
-            "F": "Female"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        },
-        "Description": "There should have been a description here, but there wasn't. :("
-    },
-    "age": {
-        "Description": "Age of the subject at time of scan with 3 digits",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromInt",
-                "Label": "integer data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
+  "participant_id": {
+    "LongName": "patient idnetification",
+    "Description": "anonymized, BIDS compatible identification",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "sex": {
+    "Levels": {
+      "M": "Male",
+      "F": "Female"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    },
+    "Description": "There should have been a description here, but there wasn't. :("
+  },
+  "age": {
+    "Description": "Age of the subject at time of scan with 3 digits",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromInt",
+        "Label": "integer data"
+      },
+      "VariableType": "Continuous"
+    }
+  }
 }

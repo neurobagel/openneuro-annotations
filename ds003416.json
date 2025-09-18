@@ -1,56 +1,58 @@
 {
-    "participant_id": {
-        "Description": "subject identifier of the form c<cohort>s<subject>",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "session_id": {
-        "Description": "imaging session identifier of the form s<site (and scanner if applicable)>x<session>"
-    },
-    "age": {
-        "Description": "age of the participant during the imaging session as reported by the participant",
-        "Units": "years",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromFloat",
-                "Label": "float data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "sex": {
-        "Description": "sex of the participant as reported by the participant",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "female": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "male": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "handedness": {
-        "Description": "handedness of the participant as reported by the participant"
+  "participant_id": {
+    "Description": "subject identifier of the form c<cohort>s<subject>",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "session_id": {
+    "Description": "imaging session identifier of the form s<site (and scanner if applicable)>x<session>"
+  },
+  "age": {
+    "Description": "age of the participant during the imaging session as reported by the participant",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "sex": {
+    "Description": "sex of the participant as reported by the participant",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "female": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "male": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "handedness": {
+    "Description": "handedness of the participant as reported by the participant"
+  }
 }

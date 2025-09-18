@@ -1,130 +1,133 @@
 {
-    "participant_id": {
-        "LongName": "Participant ID number",
-        "Description": "ID number assigned to participant (prefix sub-).",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "study_id": {
-        "LongName": "Study ID number",
-        "Description": "Anonymized participant identifier in larger DBS study."
-    },
-    "gender": {
-        "LongName": "Gender",
-        "Description": "Participant's reported gender.",
-        "Levels": {
-            "F": "female",
-            "M": "male"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "age": {
-        "LongName": "Age in years",
-        "Description": "Age of participant in years (rounded to protect identities).",
-        "Units": "years",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromInt",
-                "Label": "integer data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "behavior": {
-        "LongName": "Behavior availability",
-        "Description": "Whether affective MSIT behavioral data is available for the participant."
-    },
-    "mri": {
-        "LongName": "MRI availability",
-        "Description": "Whether an anatomical MRI scan is available for the participant."
-    },
-    "eeg": {
-        "LongName": "EEG availability",
-        "Description": "Whether task EEG data is available for the participant."
-    },
-    "rest": {
-        "LongName": "Resting state EEG availability",
-        "Description": "Whether resting state EEG data is available for the participant."
-    },
-    "dx": {
-        "LongName": "Psychiatric diagnosis",
-        "Description": "Primary diagnosis for participant.",
-        "Levels": {
-            "MDD": "major depressive disorder",
-            "OCD": "obsessive compulsive disorder"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Diagnosis",
-                "Label": ""
-            },
-            "Levels": {
-                "MDD": {
-                    "TermURL": "snomed:370143000",
-                    "Label": ""
-                },
-                "OCD": {
-                    "TermURL": "snomed:191736004",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "ybocs_bl": {
-        "LongName": "Y-BOCS at baseline",
-        "Description": "Summary score on the Yale-Brown Obessive Compulsive Scale (Y-BOCS) immediately prior to surgery."
-    },
-    "ybocs_fu": {
-        "LongName": "Y-BOCS at follow-up",
-        "Description": "Summary score on the Yale-Brown Obessive Compulsive Scale (Y-BOCS) at follow-up visit (i.e. time of EEG data collection)."
-    },
-    "madrs_bl": {
-        "LongName": "MADRS at baseline",
-        "Description": "Summary score on the Montgomery-Asberg Depression Rating Scale (MADRS) immediately prior to surgery."
-    },
-    "madrs_fu": {
-        "LongName": "MADRS at follow-up",
-        "Description": "Summary score on the Montgomery-Asberg Depression Rating Scale (MADRS) at follow-up visit (i.e. time of EEG data collection)."
-    },
-    "responder": {
-        "LongName": "Responder to DBS treatment",
-        "Description": "Whether the participant achieved clinical response at any point during his/her clinical trial; the criterion was a 50% drop in MADRS or a 35% drop in YBOCS. This may not have corresponded to the score at the time of study data collection."
-    },
-    "hypomania": {
-        "LongName": "Post-surgery hypomanic episode",
-        "Description": "Whether the participant ever experienced a hypomanic episode following DBS surgery."
-    },
-    "dbs_stim_freq": {
-        "LongName": "DBS stimulation frequency",
-        "Description": "Frequency of participant's chronic deep brain stimulation.",
-        "Units": "hertz"
+  "participant_id": {
+    "LongName": "Participant ID number",
+    "Description": "ID number assigned to participant (prefix sub-).",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "study_id": {
+    "LongName": "Study ID number",
+    "Description": "Anonymized participant identifier in larger DBS study."
+  },
+  "gender": {
+    "LongName": "Gender",
+    "Description": "Participant's reported gender.",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "age": {
+    "LongName": "Age in years",
+    "Description": "Age of participant in years (rounded to protect identities).",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromInt",
+        "Label": "integer data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "behavior": {
+    "LongName": "Behavior availability",
+    "Description": "Whether affective MSIT behavioral data is available for the participant."
+  },
+  "mri": {
+    "LongName": "MRI availability",
+    "Description": "Whether an anatomical MRI scan is available for the participant."
+  },
+  "eeg": {
+    "LongName": "EEG availability",
+    "Description": "Whether task EEG data is available for the participant."
+  },
+  "rest": {
+    "LongName": "Resting state EEG availability",
+    "Description": "Whether resting state EEG data is available for the participant."
+  },
+  "dx": {
+    "LongName": "Psychiatric diagnosis",
+    "Description": "Primary diagnosis for participant.",
+    "Levels": {
+      "MDD": "major depressive disorder",
+      "OCD": "obsessive compulsive disorder"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Diagnosis",
+        "Label": ""
+      },
+      "Levels": {
+        "MDD": {
+          "TermURL": "snomed:370143000",
+          "Label": ""
+        },
+        "OCD": {
+          "TermURL": "snomed:191736004",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "ybocs_bl": {
+    "LongName": "Y-BOCS at baseline",
+    "Description": "Summary score on the Yale-Brown Obessive Compulsive Scale (Y-BOCS) immediately prior to surgery."
+  },
+  "ybocs_fu": {
+    "LongName": "Y-BOCS at follow-up",
+    "Description": "Summary score on the Yale-Brown Obessive Compulsive Scale (Y-BOCS) at follow-up visit (i.e. time of EEG data collection)."
+  },
+  "madrs_bl": {
+    "LongName": "MADRS at baseline",
+    "Description": "Summary score on the Montgomery-Asberg Depression Rating Scale (MADRS) immediately prior to surgery."
+  },
+  "madrs_fu": {
+    "LongName": "MADRS at follow-up",
+    "Description": "Summary score on the Montgomery-Asberg Depression Rating Scale (MADRS) at follow-up visit (i.e. time of EEG data collection)."
+  },
+  "responder": {
+    "LongName": "Responder to DBS treatment",
+    "Description": "Whether the participant achieved clinical response at any point during his/her clinical trial; the criterion was a 50% drop in MADRS or a 35% drop in YBOCS. This may not have corresponded to the score at the time of study data collection."
+  },
+  "hypomania": {
+    "LongName": "Post-surgery hypomanic episode",
+    "Description": "Whether the participant ever experienced a hypomanic episode following DBS surgery."
+  },
+  "dbs_stim_freq": {
+    "LongName": "DBS stimulation frequency",
+    "Description": "Frequency of participant's chronic deep brain stimulation.",
+    "Units": "hertz"
+  }
 }
