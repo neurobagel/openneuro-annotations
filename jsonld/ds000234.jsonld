@@ -2,9 +2,9 @@
   "@context": {
     "nb": "http://neurobagel.org/vocab/",
     "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
-    "nidm": "http://purl.org/nidash/nidm#",
-    "cogatlas": "https://www.cognitiveatlas.org/task/id/",
     "ncit": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "np": "https://github.com/nipoppy/pipeline-catalog/tree/main/processing/",
     "Acquisition": "nb:Acquisition",
     "identifier": "@id",
     "hasContrastType": {
@@ -14,6 +14,13 @@
     "Assessment": "nb:Assessment",
     "Bagel": "nb:Bagel",
     "BaseModel": "nb:BaseModel",
+    "CompletedPipeline": "nb:CompletedPipeline",
+    "hasPipelineVersion": {
+      "@id": "nb:hasPipelineVersion"
+    },
+    "hasPipelineName": {
+      "@id": "nb:hasPipelineName"
+    },
     "ControlledTerm": "nb:ControlledTerm",
     "Dataset": "nb:Dataset",
     "hasLabel": {
@@ -34,6 +41,9 @@
     "hasAcquisition": {
       "@id": "nb:hasAcquisition"
     },
+    "hasCompletedPipeline": {
+      "@id": "nb:hasCompletedPipeline"
+    },
     "PhenotypicSession": "nb:PhenotypicSession",
     "hasAge": {
       "@id": "nb:hasAge"
@@ -50,6 +60,7 @@
     "hasAssessment": {
       "@id": "nb:hasAssessment"
     },
+    "Pipeline": "nb:Pipeline",
     "Session": "nb:Session",
     "Sex": "nb:Sex",
     "Subject": "nb:Subject",
@@ -58,17 +69,17 @@
     },
     "SubjectGroup": "nb:SubjectGroup"
   },
-  "identifier": "nb:362d2067-4450-449a-8bcc-db81177d7cd2",
+  "identifier": "nb:51d1554e-975b-4312-97ac-c0cbccab5249",
   "hasLabel": "Whole-brain background-suppressed pCASL MRI with 1D-accelerated 3D RARE Stack-Of-Spirals Readout- Dataset 1",
   "hasPortalURI": "https://github.com/OpenNeuroDatasets-JSONLD/ds000234.git",
   "hasSamples": [
     {
-      "identifier": "nb:d245a01a-62cd-4e66-8c8f-816d4a7fbc57",
+      "identifier": "nb:d79b647f-4010-454b-9c46-264f7eaba305",
       "hasLabel": "sub-01",
       "hasSession": [
         {
-          "identifier": "nb:4e26c945-2a5c-4df6-b101-285f829270ac",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:7bcd32bc-6bca-4d2a-9fc1-9c4b4cbdea23",
+          "hasLabel": "ses-unnamed",
           "hasAge": 28.0,
           "hasSex": {
             "identifier": "snomed:248152002",
@@ -77,12 +88,28 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:5097fb82-2db2-4dc7-84a8-a2f40deafc9e",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:2bd38582-af56-4e06-b201-0f0fd25a2ae9",
+          "hasLabel": "ses-unnamed",
           "hasFilePath": "/ds000234/sub-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:10629317-1884-4e6e-af37-44aece7ff390",
+              "identifier": "nb:32da0c97-f9c8-4706-bb30-d9c02f2cda12",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:32ec7784-3c77-4f75-964e-f08aca7d715f",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:6cb89c01-8107-4f9f-9a1d-602d38dacb7a",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -96,12 +123,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:ac24e847-9fa7-40b7-9a7a-9f87fb23ecb9",
+      "identifier": "nb:0e751eda-fdb7-447e-b62d-42f1ec8b31f3",
       "hasLabel": "sub-02",
       "hasSession": [
         {
-          "identifier": "nb:32229217-4345-4390-a3da-32b5e74caf1a",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:a1bb57e3-643a-4ac9-9711-94bc36f8ec12",
+          "hasLabel": "ses-unnamed",
           "hasAge": 35.0,
           "hasSex": {
             "identifier": "snomed:248153007",
@@ -110,12 +137,28 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:c1ddcfac-4958-4ed5-8e15-74d0df5f5834",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:cc0fa111-86c7-4e76-ae0b-3f8ade1d022b",
+          "hasLabel": "ses-unnamed",
           "hasFilePath": "/ds000234/sub-02",
           "hasAcquisition": [
             {
-              "identifier": "nb:d6d3d35e-b0a4-4980-a7dd-5dca8cedb364",
+              "identifier": "nb:4f2abfc4-efc3-4f68-9959-cfa49eb9da3e",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:40503019-562e-40ed-a3c3-a886cbc9e91f",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0ccefad0-285b-4947-8d26-94d4ae980c72",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -129,12 +172,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:d54508bb-310f-4c58-b85c-1dcd05f4ac65",
+      "identifier": "nb:f33c5285-a916-4290-8dae-825ec861fc6d",
       "hasLabel": "sub-03",
       "hasSession": [
         {
-          "identifier": "nb:e692dc25-2218-423d-b98d-dc20b302a221",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:20b40c3f-9757-4596-aa90-1666f7405c14",
+          "hasLabel": "ses-unnamed",
           "hasAge": 55.0,
           "hasSex": {
             "identifier": "snomed:248153007",
@@ -143,12 +186,28 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:3b20da69-5484-47ef-a22a-04ed21ecbf43",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:8469f138-5955-4f31-8b30-42258b879ae4",
+          "hasLabel": "ses-unnamed",
           "hasFilePath": "/ds000234/sub-03",
           "hasAcquisition": [
             {
-              "identifier": "nb:cf0b206d-03fa-459e-9c9a-79c16ebfd0af",
+              "identifier": "nb:d835297b-efee-4c1e-be4c-966c939a9865",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:6d90b9e6-138e-46ef-a92f-890cedb2497d",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e02f3166-603b-4966-84a2-929e685bc9f2",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -162,12 +221,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:658359e9-646c-4dd5-a6c7-d43910285a0d",
+      "identifier": "nb:3b96cb22-8172-403d-871c-6bff7622c7d4",
       "hasLabel": "sub-04",
       "hasSession": [
         {
-          "identifier": "nb:190912cb-4f07-443f-be0c-7b5f84eca9af",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:bb36ca3b-f061-4ac0-b426-4502f1d733f4",
+          "hasLabel": "ses-unnamed",
           "hasAge": 27.0,
           "hasSex": {
             "identifier": "snomed:248153007",
@@ -176,12 +235,28 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:50da7dd7-c448-4d15-b624-d3c790e121f7",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:ed8d88ab-d3cf-472e-857a-e0412f0a492d",
+          "hasLabel": "ses-unnamed",
           "hasFilePath": "/ds000234/sub-04",
           "hasAcquisition": [
             {
-              "identifier": "nb:945f2fd5-84e8-42e3-b039-7bb1bf5d7bd2",
+              "identifier": "nb:aa7dc742-9d77-4b6a-92b6-892d1ebdfe7a",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:cbafb2e4-b04a-41c5-8556-0841b3e2e831",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:9b6f25ef-783e-4491-9948-44a235aacfb4",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -195,12 +270,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:4fd153e2-91c2-4628-99ff-141ecc317c1d",
+      "identifier": "nb:a0a191da-c3ea-4a24-bc6b-d34e5e5cc304",
       "hasLabel": "sub-05",
       "hasSession": [
         {
-          "identifier": "nb:0be3e98e-d296-41bd-937c-1086df7ab000",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:65255c3f-c561-4ee2-9a7d-a5cf4abf5411",
+          "hasLabel": "ses-unnamed",
           "hasAge": 31.0,
           "hasSex": {
             "identifier": "snomed:248153007",
@@ -209,12 +284,28 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:1a11fb08-41d5-488c-9a3a-75cee9f9f66f",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:68135df2-c409-4d6d-9645-77162ba3abbf",
+          "hasLabel": "ses-unnamed",
           "hasFilePath": "/ds000234/sub-05",
           "hasAcquisition": [
             {
-              "identifier": "nb:1208d0bd-0a43-430b-b6d6-015d5ebaee94",
+              "identifier": "nb:13b1ad6f-aa76-45b0-b248-6a8ef9d25c8e",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:22035908-4913-4cbd-ba83-4085d530963e",
+              "hasContrastType": {
+                "identifier": "nidm:ArterialSpinLabeling",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:fd8f1601-47d8-4bdc-9455-301793aad914",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
