@@ -2,9 +2,9 @@
   "@context": {
     "nb": "http://neurobagel.org/vocab/",
     "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
-    "nidm": "http://purl.org/nidash/nidm#",
-    "cogatlas": "https://www.cognitiveatlas.org/task/id/",
     "ncit": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "np": "https://github.com/nipoppy/pipeline-catalog/tree/main/processing/",
     "Acquisition": "nb:Acquisition",
     "identifier": "@id",
     "hasContrastType": {
@@ -14,6 +14,13 @@
     "Assessment": "nb:Assessment",
     "Bagel": "nb:Bagel",
     "BaseModel": "nb:BaseModel",
+    "CompletedPipeline": "nb:CompletedPipeline",
+    "hasPipelineVersion": {
+      "@id": "nb:hasPipelineVersion"
+    },
+    "hasPipelineName": {
+      "@id": "nb:hasPipelineName"
+    },
     "ControlledTerm": "nb:ControlledTerm",
     "Dataset": "nb:Dataset",
     "hasLabel": {
@@ -34,6 +41,9 @@
     "hasAcquisition": {
       "@id": "nb:hasAcquisition"
     },
+    "hasCompletedPipeline": {
+      "@id": "nb:hasCompletedPipeline"
+    },
     "PhenotypicSession": "nb:PhenotypicSession",
     "hasAge": {
       "@id": "nb:hasAge"
@@ -50,6 +60,7 @@
     "hasAssessment": {
       "@id": "nb:hasAssessment"
     },
+    "Pipeline": "nb:Pipeline",
     "Session": "nb:Session",
     "Sex": "nb:Sex",
     "Subject": "nb:Subject",
@@ -58,35 +69,51 @@
     },
     "SubjectGroup": "nb:SubjectGroup"
   },
-  "identifier": "nb:7d3d6a95-1719-4326-a067-cbf133e416e5",
+  "identifier": "nb:a4ddddfd-7a82-4241-9fe1-a028ff68b6d7",
   "hasLabel": "Auditory Cortex Mapping Dataset",
   "hasPortalURI": "https://github.com/OpenNeuroDatasets-JSONLD/ds003082.git",
   "hasSamples": [
     {
-      "identifier": "nb:cfc53df2-8b58-400e-9b42-ad8a57dede79",
+      "identifier": "nb:cb1c0b6d-71b1-4237-97ce-7105bc317a9e",
       "hasLabel": "sub-emptyroom",
       "hasSession": [
         {
-          "identifier": "nb:b7c2ac65-38db-4638-ba28-975da3a23125",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:7c76d130-3add-4ae4-aaa3-f88fe8464eb1",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         }
       ],
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:0c7a4873-8a6b-4bc7-aad5-b8e52c797822",
+      "identifier": "nb:13b93235-1462-469e-b4df-8ee119504a19",
       "hasLabel": "sub-0001",
       "hasSession": [
         {
-          "identifier": "nb:9045a0ca-2938-48c3-885c-129a5a63c600",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:2cbb8b87-b90f-4e86-b032-800050ba3734",
+          "hasLabel": "ses-unnamed",
           "hasAge": 23.0,
           "hasSex": {
             "identifier": "snomed:248152002",
             "schemaKey": "Sex"
           },
           "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:1115360a-188d-485f-8c91-4f5462561dae",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003082/sub-0001",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:83343a30-cb97-4050-b971-a0a0fe8130b8",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
         }
       ],
       "schemaKey": "Subject"

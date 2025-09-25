@@ -2,9 +2,9 @@
   "@context": {
     "nb": "http://neurobagel.org/vocab/",
     "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
-    "nidm": "http://purl.org/nidash/nidm#",
-    "cogatlas": "https://www.cognitiveatlas.org/task/id/",
     "ncit": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "np": "https://github.com/nipoppy/pipeline-catalog/tree/main/processing/",
     "Acquisition": "nb:Acquisition",
     "identifier": "@id",
     "hasContrastType": {
@@ -14,6 +14,13 @@
     "Assessment": "nb:Assessment",
     "Bagel": "nb:Bagel",
     "BaseModel": "nb:BaseModel",
+    "CompletedPipeline": "nb:CompletedPipeline",
+    "hasPipelineVersion": {
+      "@id": "nb:hasPipelineVersion"
+    },
+    "hasPipelineName": {
+      "@id": "nb:hasPipelineName"
+    },
     "ControlledTerm": "nb:ControlledTerm",
     "Dataset": "nb:Dataset",
     "hasLabel": {
@@ -34,6 +41,9 @@
     "hasAcquisition": {
       "@id": "nb:hasAcquisition"
     },
+    "hasCompletedPipeline": {
+      "@id": "nb:hasCompletedPipeline"
+    },
     "PhenotypicSession": "nb:PhenotypicSession",
     "hasAge": {
       "@id": "nb:hasAge"
@@ -50,6 +60,7 @@
     "hasAssessment": {
       "@id": "nb:hasAssessment"
     },
+    "Pipeline": "nb:Pipeline",
     "Session": "nb:Session",
     "Sex": "nb:Sex",
     "Subject": "nb:Subject",
@@ -58,39 +69,39 @@
     },
     "SubjectGroup": "nb:SubjectGroup"
   },
-  "identifier": "nb:4f2542d8-d380-443d-ab34-a247740ab436",
+  "identifier": "nb:fc66f3b9-8092-4520-8e5f-39020d09fda1",
   "hasLabel": "MIND DATA",
   "hasPortalURI": "https://github.com/OpenNeuroDatasets-JSONLD/ds004107.git",
   "hasSamples": [
     {
-      "identifier": "nb:a15f249f-180a-4818-b6b6-88fbc9d8f309",
+      "identifier": "nb:f73de725-c70a-4b80-91c4-90ce9953dede",
       "hasLabel": "sub-emptyroom",
       "hasSession": [
         {
-          "identifier": "nb:b84951ec-a1d9-4fae-b303-bbddb364756c",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:69198bf7-27de-4936-9203-486ded3e06c1",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         }
       ],
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:5deba353-1f10-433b-aeac-10a624c47d5f",
+      "identifier": "nb:6d776351-cc4a-467c-9ef1-8106b0034a0e",
       "hasLabel": "sub-mind002",
       "hasSession": [
         {
-          "identifier": "nb:0028886a-8c32-4ee4-bbc5-dcdaf4f70020",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:60b408cc-94a9-43b6-93e1-63ddfa867094",
+          "hasLabel": "ses-unnamed",
           "hasAge": 34.0,
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:075c4214-a7ae-4904-ac0b-7ac73889d06a",
+          "identifier": "nb:4293fada-7332-494d-b9a5-c83392ad8a99",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind002/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:bb89d3ff-5f64-4939-bbe3-7628a3cc40db",
+              "identifier": "nb:26969189-eb23-4b78-a519-b86382a97ac0",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -104,22 +115,22 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:8084b19a-1c4d-4fe3-bb54-82af9885e3ad",
+      "identifier": "nb:a1ba6b39-829e-475f-b68b-4fefcbba5c8f",
       "hasLabel": "sub-mind003",
       "hasSession": [
         {
-          "identifier": "nb:e3a9b103-9f03-42c8-86d8-01a08307a556",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:965a5800-7f14-4964-b360-5eb3cbbff811",
+          "hasLabel": "ses-unnamed",
           "hasAge": 40.0,
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:8b992a2b-808c-4f66-9a99-935c68e63102",
+          "identifier": "nb:4dc26849-12b8-4c81-acd5-8a223cc5aa74",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind003/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:08c62271-c4ff-4f10-b6ed-f8d816b41812",
+              "identifier": "nb:8f258374-91e4-46d9-a790-e1dd50ac8aa6",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -133,21 +144,21 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:b0c991d9-6687-4bff-8f0f-3207b1bae104",
+      "identifier": "nb:afaaced2-a52a-4546-bc24-a953e1d63f0f",
       "hasLabel": "sub-mind004",
       "hasSession": [
         {
-          "identifier": "nb:01965153-da7f-481b-ad6d-452b4e5ce04b",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:a9840f5d-8415-44b9-a14b-5d5eb331dcfd",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:c3da97d8-d4c7-4bb9-a776-547e761414a1",
+          "identifier": "nb:d548a82f-9b1b-418b-861b-62310bd60688",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind004/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:30760cf9-989b-43ee-96b6-af7b8df4d9cf",
+              "identifier": "nb:160029ae-53db-4468-9803-e56352e0156d",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -161,21 +172,21 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:e682b96a-d827-4a14-9631-dadcf8328a93",
+      "identifier": "nb:737ac996-001d-46e3-8cc2-496fc1731c71",
       "hasLabel": "sub-mind006",
       "hasSession": [
         {
-          "identifier": "nb:94cba9e3-5d2d-40be-8189-6cdaee96ee3d",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:e1d2d44a-a6ef-45a0-b415-b3059c03755a",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:82f959de-d9e7-4b2a-b446-b28bb95ebd7a",
+          "identifier": "nb:55f8a551-5fac-4c15-ae4b-5b9bc04ae236",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind006/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:6e9a8d1f-4262-48df-bd37-75fe218ae073",
+              "identifier": "nb:aeba231a-1fa0-4ed7-a61e-d4c4ede4da22",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -189,21 +200,21 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:e4d0b136-d592-4945-ac57-c9a411f0467f",
+      "identifier": "nb:211b6b1f-86fd-419e-95c9-924a998d1b71",
       "hasLabel": "sub-mind007",
       "hasSession": [
         {
-          "identifier": "nb:6bc9b77c-9f81-4a7a-8e19-44107ff5c080",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:6e529aca-ccda-4d3f-8956-0b8877748064",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:a6b2ccc6-1477-482e-b5ee-10eb6359ae0e",
+          "identifier": "nb:424edc43-be53-4801-9440-9844b5652220",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind007/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:a3f757b8-14a1-4230-a049-dc1e39d8f1e3",
+              "identifier": "nb:ea899e57-9fab-4ef8-a23c-df918283566e",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -217,21 +228,21 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:c87eafbc-8cd8-45b6-b1d7-56c3a75efe7f",
+      "identifier": "nb:e3252c0c-0955-4684-b20c-4f62bb7fab8f",
       "hasLabel": "sub-mind008",
       "hasSession": [
         {
-          "identifier": "nb:a6bdf18b-60c8-4f4e-b6fb-1c4c90003a39",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:ad8509bd-5a30-440c-bf10-cb81d9f7d118",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:3c1de474-9510-4241-80b0-8f25cc5499b9",
+          "identifier": "nb:3bdd5e26-2e36-4b63-ba2b-6472080fa35a",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind008/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:62863133-9dba-448b-bbf9-a8f765545466",
+              "identifier": "nb:3b1e90b8-461a-4898-a7e9-c8e00e06746c",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -245,21 +256,21 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:b3898f7c-7ca4-428d-a1d7-ea00122e8d28",
+      "identifier": "nb:c95eb69a-417e-4a3f-8b81-1f7adbe76af7",
       "hasLabel": "sub-mind009",
       "hasSession": [
         {
-          "identifier": "nb:9efa44ab-f1e1-42a1-aee4-57319f7aa62c",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:c9548a05-0280-4ede-a822-ea2db11406c5",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:1e41bd12-f2ff-4cb1-8925-d93f29157e0a",
+          "identifier": "nb:0246b481-3775-4982-83ed-68368a7f997c",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind009/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:b24fc5bd-d0d3-45b3-861a-9f151c9a2842",
+              "identifier": "nb:1d1baffc-488e-4048-a3d8-50956904667f",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
@@ -273,21 +284,21 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:6a53b401-4112-4ae4-b5a0-7c9749677849",
+      "identifier": "nb:c451df24-7155-4ecb-b8b7-8113807dabb3",
       "hasLabel": "sub-mind010",
       "hasSession": [
         {
-          "identifier": "nb:cd9a787e-e63d-41b8-87c4-3160310e3ee3",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:bf4409c7-33ac-4eb1-bb45-f8ce6cd4f125",
+          "hasLabel": "ses-unnamed",
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:40772e19-318e-4965-afef-507279534a9d",
+          "identifier": "nb:58ddc0ef-24a1-493f-a2b9-baaaff488e58",
           "hasLabel": "ses-01",
           "hasFilePath": "/ds004107/sub-mind010/ses-01",
           "hasAcquisition": [
             {
-              "identifier": "nb:d847efbd-c6fc-49ad-8dfd-51e5e4826bd0",
+              "identifier": "nb:5ccb95af-2eab-4985-839b-03350465c5d8",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
                 "schemaKey": "Image"
