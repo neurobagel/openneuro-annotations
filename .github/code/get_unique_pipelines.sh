@@ -6,7 +6,6 @@ OUTPUT_FILE="openneuroderivatives_pipelines.txt"
 PROBLEM_REPOS_TRACKER_FILE="dataset_description_problem_repos.tmp"
 
 # Return every repository name excluding .github and OpenNeuroDerivatives
-# NOTE: The returned repo order will be in order of most recently created/updated
 nRepos=$(gh api graphql -f query='{
     organization(login: "'"${OWNER}"'" ) {
         repositories {
@@ -26,7 +25,7 @@ for repo in $repos; do
     file_url="https://raw.githubusercontent.com/$OWNER/$repo/refs/heads/main/$METADATA_FILE"
     if content=$(curl -sfL "$file_url"); then
         n_generating_pipelines=$(jq -r '.GeneratedBy | length' <<< "$content")
-        # Sanity check since GeneratedBy is a list
+        # Sanity check since GeneratedBy is a list for some reason
         if [ "$n_generating_pipelines" -ne 1 ]; then
             echo "WARNING: Dataset $repo has $n_generating_pipelines generating pipelines."
         fi
@@ -47,7 +46,7 @@ for repo in $repos; do
     ((counter++))
 done
 
-# Remove any blank lines, sort and remove duplicates
+# Sort and remove duplicates
 sort -u "$OUTPUT_FILE" -o "$OUTPUT_FILE"
 
 echo -e "\n$(wc -l < $OUTPUT_FILE) unique pipeline-version combos found."
