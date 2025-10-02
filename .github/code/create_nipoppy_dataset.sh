@@ -26,13 +26,14 @@ derivative_datasets="$(jq -r --arg ds "$DS_ID" '.[ $ds ] | keys[]' "$DERIVATIVES
 has_no_ses=0
 if ! python ${SCRIPT_DIR}/does_dataset_have_sessions.py "$DS_ID" "$NIPOPPY_DATASET_DIR/bids"; then
     has_no_ses=1
+    echo "${DS_ID}: No sessions found."
 fi
 
 while IFS= read -r derivative_ds; do
     pipeline_info="$(jq -c --arg ds "$DS_ID" --arg repo "$derivative_ds" '.[ $ds ][ $repo ]' "$DERIVATIVES_REPO_MAP")"
 
-    # Check that an entry for this derivative dataset exists and has pipeline info
-    if [ "$pipeline_info" != "null" ] && [ "$pipeline_info" != "{}" ]; then
+    # Check that the derivative dataset has pipeline info
+    if [ "$pipeline_info" != "{}" ]; then
         echo "${DS_ID}: Cloning derivative dataset ${derivative_ds}"
         derivative_ds_url="https://github.com/OpenNeuroDerivatives/${derivative_ds}.git"
         pipeline_name=$(jq -r '.name | ascii_downcase' <<< "$pipeline_info")
@@ -51,10 +52,9 @@ while IFS= read -r derivative_ds; do
             "${pipeline_config_dir}"
         )
         if [ $has_no_ses -eq 1 ]; then
-            echo "${DS_ID}: No sessions found, removing session ID placeholders in tracker.json."
             args+=("--no-sessions")
         fi
-
+        echo "${DS_ID}: Customizing config.json and tracker.json files for ${derivative_ds}"
         python ${SCRIPT_DIR}/customize_configs_for_pipeline.py "${args[@]}"
     else
         echo "${DS_ID}: WARNING No pipeline info found for ${derivative_ds} in ${DERIVATIVES_REPO_MAP}, skipping."
