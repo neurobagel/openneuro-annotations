@@ -118,7 +118,6 @@ def main(repo_table: Path, token: str):
         json.dump(map_dict, f, indent=2)
 
 
-# Example usage
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Build repo map from a TSV of derivative repos")
     parser.add_argument('input', type=str, help='Path to input TSV (repo_name <tab> repo_url)')
