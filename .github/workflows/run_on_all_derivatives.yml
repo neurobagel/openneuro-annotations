@@ -2,8 +2,9 @@ name: Process all OpenNeuroDerivatives repos
 
 on:
   workflow_dispatch:
-  pull_request:
-    types: [opened, synchronize, edited]
+  push:
+    branches:
+      - main
 
 jobs:
   get-repos:
@@ -59,6 +60,6 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          echo git add repo_derivatives_map.json
-          echo git commit -m "[bot] Update repo_derivatives_map.json" || true
-          echo git push origin main
+          git add repo_derivatives_map.json
+          git commit -m "[bot] Update repo_derivatives_map.json" || true
+          git push origin main
