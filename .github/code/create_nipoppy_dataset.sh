@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-DS_ID=ds000001
+DS_ID=$1
 DS_URL="https://github.com/OpenNeuroDatasets/${DS_ID}.git"
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"

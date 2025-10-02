@@ -1,0 +1,45 @@
+name: Initialize Nipoppy dataset for OpenNeuroDatasets
+
+on:
+  workflow_dispatch:
+
+jobs:
+  define-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      dataset_ids: ${{ steps.get-datasets.outputs.dataset_ids }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      
+      - name: Get dataset IDs from mapping file
+        id: get-datasets
+        run: |
+          dataset_ids=$(jq -c 'keys' .github/dataset_derivatives_mapping.json)
+          echo "dataset_ids=$dataset_ids" >> "$GITHUB_OUTPUT"
+
+  init-dataset:
+    needs: define-matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        dataset_id: ${{ fromJson(needs.define-matrix.outputs.dataset_ids) }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install nipoppy
+
+      - name: Create Nipoppy dataset
+        run: |
+          .github/code/create_nipoppy_dataset.sh "${{ matrix.dataset_id }}"
