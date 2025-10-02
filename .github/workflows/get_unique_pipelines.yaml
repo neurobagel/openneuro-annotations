@@ -21,11 +21,11 @@ jobs:
         with:
           token: ${{ steps.generate-token.outputs.token }}
 
-      - name: Run script to get unique pipelines
-        run: .github/code/get_unique_pipelines.sh
-      
-      - name: Move output file to derivatives/
-        run: mv openneuroderivatives_pipelines.txt derivatives/
+      - name: Get all OpenNeuroDerivatives repo IDs
+        run: .github/code/get_all_openneuroderivatives_repos.sh all_openneuroderivatives_repos.tmp
+
+      - name: Get unique pipelines and versions
+        run: .github/code/get_unique_pipelines.sh all_openneuro_derivatives_repos.tmp derivatives/openneuroderivatives_pipelines.txt
 
       - name: Get GitHub App User ID
         id: get-user-id

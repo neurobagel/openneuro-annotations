@@ -1,11 +1,12 @@
 #!/bin/bash
 
 ALL_OPENNEURODERIVATIVES_REPOS=$1
+OUTPUT_FILE=$2
+
 N_REPOS=$(wc -l < "$ALL_OPENNEURODERIVATIVES_REPOS")
 
 OWNER="OpenNeuroDerivatives"
 METADATA_FILE="dataset_description.json"
-OUTPUT_FILE="openneuroderivatives_pipelines.txt"
 PROBLEM_REPOS_TRACKER_FILE="dataset_description_problem_repos.tmp"
 
 # Clear existing output file
