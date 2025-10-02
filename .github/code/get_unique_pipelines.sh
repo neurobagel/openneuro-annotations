@@ -1,27 +1,20 @@
 #!/bin/bash
 
+ALL_OPENNEURODERIVATIVES_REPOS=$1
+N_REPOS=$(wc -l < "$ALL_OPENNEURODERIVATIVES_REPOS")
+
 OWNER="OpenNeuroDerivatives"
 METADATA_FILE="dataset_description.json"
 OUTPUT_FILE="openneuroderivatives_pipelines.txt"
 PROBLEM_REPOS_TRACKER_FILE="dataset_description_problem_repos.tmp"
 
-# Return every repository name excluding .github and OpenNeuroDerivatives
-nRepos=$(gh api graphql -f query='{
-    organization(login: "'"${OWNER}"'" ) {
-        repositories {
-            totalCount
-        }
-    }
-}' | jq -r '.data.organization.repositories.totalCount')
-repos=$(gh repo list "$OWNER" --limit ${nRepos} --json name --jq '.[].name' | grep -v -E '^(\.github|OpenNeuroDerivatives)$')
-
 # Clear existing output file
 > "$OUTPUT_FILE"
 
-counter=1
 touch "$PROBLEM_REPOS_TRACKER_FILE"
-for repo in $repos; do
-    echo "($counter/$nRepos) Checking $repo"
+counter=1
+while IFS= read -r repo; do
+    echo "($counter/$N_REPOS) Checking $repo"
     file_url="https://raw.githubusercontent.com/$OWNER/$repo/refs/heads/main/$METADATA_FILE"
     if content=$(curl -sfL "$file_url"); then
         n_generating_pipelines=$(jq -r '.GeneratedBy | length' <<< "$content")
@@ -44,13 +37,13 @@ for repo in $repos; do
         echo "$repo" >> "$PROBLEM_REPOS_TRACKER_FILE"
     fi
     ((counter++))
-done
+done < "$ALL_OPENNEURODERIVATIVES_REPOS"
 
 # Sort and remove duplicates
 sort -u "$OUTPUT_FILE" -o "$OUTPUT_FILE"
 
 echo -e "\n$(wc -l < $OUTPUT_FILE) unique pipeline-version combos found."
-echo -e "dataset_description.json missing or unreadable for $(wc -l < $PROBLEM_REPOS_TRACKER_FILE)/$nRepos repos:"
+echo -e "dataset_description.json missing or unreadable for $(wc -l < $PROBLEM_REPOS_TRACKER_FILE)/$N_REPOS repos:"
 cat "$PROBLEM_REPOS_TRACKER_FILE"
 echo -e "Done."
 
