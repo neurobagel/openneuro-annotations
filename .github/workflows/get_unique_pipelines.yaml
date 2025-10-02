@@ -23,6 +23,8 @@ jobs:
 
       - name: Get all OpenNeuroDerivatives repo IDs
         run: .github/code/get_all_openneuroderivatives_repos.sh all_openneuroderivatives_repos.tmp
+        env: 
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Get unique pipelines and versions
         run: .github/code/get_unique_pipelines.sh all_openneuroderivatives_repos.tmp derivatives/openneuroderivatives_pipelines.txt
