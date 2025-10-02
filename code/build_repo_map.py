@@ -1,15 +1,14 @@
-import os
-from pathlib import Path
-import json
-from collections import defaultdict
-import base64
 import argparse
-
-import tqdm
-import pandas as pd
-import requests
+import base64
 import configparser
+import json
 import logging
+import os
+from collections import defaultdict
+from pathlib import Path
+
+import requests
+
 
 
 # Set up logger
