@@ -52,12 +52,6 @@ jobs:
             python ./code/build_repo_map.py "$repo_name" ./repo_derivatives_map.json
           done < ./openneuro-derivatives.tsv
 
-      - name: Get Neurobagel Bot App User ID
-        id: get-user-id
-        run: echo "user-id=$(gh api "/users/${{ steps.generate-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-
       - name: Configure git for Neurobagel Bot user
         run: |
           git config --global user.name '${{ steps.generate-token.outputs.app-slug }}[bot]'
