@@ -24,15 +24,24 @@ nipoppy init --dataset ${NIPOPPY_DATASET_DIR} --bids-source ${SOURCE_WORKDIR}/${
 # This creates a multi-line string variable
 derivative_datasets="$(jq -r --arg ds "$DS_ID" '.[ $ds ] | keys[]' "$DERIVATIVES_REPO_MAP")"
 
+has_ses=false
+if python ${SCRIPT_DIR}/does_dataset_have_sessions.py "$DS_ID" "$NIPOPPY_DATASET_DIR/bids"; then
+    has_ses=true
+fi
+
 # TODO: Decide what happens if no name or version are available (e.g., no dataset_description.json)
 while IFS= read -r derivative_ds; do
     echo "${DS_ID}: Cloning derivative dataset ${derivative_ds}"
+
     derivative_ds_url="https://github.com/OpenNeuroDerivatives/${derivative_ds}.git"
     pipeline_name=$(jq -r --arg ds "$DS_ID" --arg repo "$derivative_ds" '.[ $ds ][ $repo ].name | ascii_downcase' "$DERIVATIVES_REPO_MAP")
     pipeline_version=$(jq -r --arg ds "$DS_ID" --arg repo "$derivative_ds" '.[ $ds ][ $repo ].version' "$DERIVATIVES_REPO_MAP")
     derivative_dir="${NIPOPPY_DATASET_DIR}/derivatives/${pipeline_name}/${pipeline_version}/output"
     mkdir -p "${derivative_dir}"
     git clone -q "${derivative_ds_url}" "${derivative_dir}"
+
+    mkdir -p "${NIPOPPY_DATASET_DIR}/pipelines/processing/${pipeline_name}-${pipeline_version}"
+
 done <<< "$derivative_datasets"
 
 echo "${DS_ID}: Done."
