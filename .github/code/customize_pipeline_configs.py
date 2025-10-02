@@ -38,17 +38,20 @@ def remove_session_placeholders(tracker: dict) -> dict:
     return tracker
 
 
-def main(config: dict, tracker: dict, version: str, dataset_has_sessions: bool):
+def main():
     parser = argparse.ArgumentParser(description="Customize pipeline configurations")
-    parser.add_argument("config", type=str, help="Path to the config file")
-    parser.add_argument("tracker", type=str, help="Path to the tracker file")
+    parser.add_argument("config", type=Path, help="Path to the config.json")
+    parser.add_argument("tracker", type=Path, help="Path to the tracker.json")
     parser.add_argument("version", type=str, help="Pipeline version")
     parser.add_argument(
-        "dataset_has_sessions", action="store_true", help="Whether the dataset has sessions. One of true, false"
+        "--no-sessions", action="store_true", help="Indicate that the dataset does not have sessions"
     )
     args = parser.parse_args()
 
+    config = load_json(args.config)
+    tracker = load_json(args.tracker)
+
     config["VERSION"] = args.version
 
-    if not args.dataset_has_sessions:
+    if args.no_sessions:
         tracker = remove_session_placeholders(tracker)
