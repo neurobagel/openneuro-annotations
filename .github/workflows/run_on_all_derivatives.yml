@@ -2,6 +2,8 @@ name: Process all OpenNeuroDerivatives repos
 
 on:
   workflow_dispatch:
+  pull_request:
+    types: [opened, synchronize, edited]
 
 jobs:
   get-repos:
@@ -12,6 +14,14 @@ jobs:
 
       - name: Find repos
         run: ./code/find_openneuro.sh OpenNeuroDerivatives ./openneuro-derivatives.tsv
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13' 
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
 
       - name: Show repos
         run: cat openneuro-derivatives.tsv
