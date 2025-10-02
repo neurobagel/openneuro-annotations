@@ -42,8 +42,8 @@ jobs:
 
       - name: Commit and push record of unique pipelines
         run: |
-          if ! git diff --quiet derivatives/openneuroderivatives_pipelines.txt; then
-            git add derivatives/openneuroderivatives_pipelines.txt
+          git add derivatives/openneuroderivatives_pipelines.txt
+          if ! git diff --cached --quiet derivatives/openneuroderivatives_pipelines.txt; then
             git commit -m "[bot] Update record of unique pipelines in OpenNeuroDerivatives"
             git push
           fi
