@@ -1,0 +1,17 @@
+name: Process all OpenNeuroDerivatives repos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  get-repos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Find repos
+        run: ./code/find_openneuro.sh OpenNeuroDerivatives ./openneuro-derivatives.tsv
+
+      - name: Show repos
+        run: cat openneuro-derivatives.tsv
