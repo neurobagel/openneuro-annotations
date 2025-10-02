@@ -6,5 +6,6 @@ openneuro_datasets.tsv:
 openneuro_derivatives.tsv:
 	./find_openneuro.sh OpenNeuroDerivatives ./open_neuro_derivatives.tsv
 
-repo_map.json:
+repo_map.json: openneuro_derivatives.tsv
+	source ./.env
 	python build_repo_map.py

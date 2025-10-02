@@ -114,7 +114,7 @@ def main(repo_table: Path, token: str):
         except Exception as e:
             logger.error(f"Error while processing {repo_name}: {e}")
         
-    with open("outfile.json", "w") as f:
+    with open("repo_map.json", "w") as f:
         json.dump(map_dict, f, indent=2)
 
 
