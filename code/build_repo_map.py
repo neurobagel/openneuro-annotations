@@ -99,30 +99,32 @@ def get_content(response):
     return base64.b64decode(response.json()['content']).decode('utf-8')
 
 
-def main(repo_table: Path, token: str):
+def main(repo_name: str, map_file_path: Path, token: str):
     
-    repo_rows = pd.read_csv(repo_table, sep='\t', header=None).to_records()
-    map_dict = defaultdict(dict)
+    if map_file_path.exists():
+        with open(map_file_path, "r") as f:
+            loaded_dict = json.load(f)
+    else:
+        loaded_dict = {}
+    map_dict = defaultdict(dict, loaded_dict)
     
-    
-    for (_, repo_name, repo_url) in tqdm.tqdm(repo_rows, desc="Processing repos"):
-        try:
-            parent_url, parent_name = get_parent(repo_name=repo_name, token=token)
-            if parent_url:
-                pipeline_info = get_pipeline_info(repo_name=repo_name, token=token)
-                map_dict[parent_name][repo_name] = pipeline_info
-        except Exception as e:
-            logger.error(f"Error while processing {repo_name}: {e}")
+    try:
+        parent_url, parent_name = get_parent(repo_name=repo_name, token=token)
+        if parent_url:
+            pipeline_info = get_pipeline_info(repo_name=repo_name, token=token)
+            map_dict[parent_name][repo_name] = pipeline_info
+    except Exception as e:
+        logger.error(f"Error while processing {repo_name}: {e}")
         
-    with open("repo_map.json", "w") as f:
+    with open(map_file_path, "w") as f:
         json.dump(map_dict, f, indent=2)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Build repo map from a TSV of derivative repos")
-    parser.add_argument('input', type=str, help='Path to input TSV (repo_name <tab> repo_url)')
+    parser.add_argument('repo_name', type=str, help='Name of the derivative repo to run on')
+    parser.add_argument('map_file', type=str, help='Path to the .json repo map file')
     args = parser.parse_args()
 
-    table_path = Path(args.input)
     token = os.environ.get('NB_TOKEN', '')
-    main(table_path, token)
+    main(args.repo_name, Path(args.map_file), token)
