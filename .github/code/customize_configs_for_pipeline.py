@@ -13,13 +13,17 @@ def save_json(data: dict, path: Path):
         json.dump(data, f, indent=4)
 
 
-def remove_session_placeholders_from_paths(paths: list) -> list:
-    new_paths = []
-    for path in paths:
-        new_path = path.replace("[[NIPOPPY_BIDS_SESSION_ID]]/", "")
-        new_path = new_path.replace("_[[NIPOPPY_BIDS_SESSION_ID]]", "")
-        new_paths.append(new_path)
-    return new_paths
+def remove_session_placeholders_from_tracker(tracker: dict) -> dict:
+    tracker["PATHS"] = [
+        path.replace("[[NIPOPPY_BIDS_SESSION_ID]]/", "").replace("_[[NIPOPPY_BIDS_SESSION_ID]]", "") 
+        for path in tracker["PATHS"]
+    ]
+    if tracker.get("PARTICIPANT_SESSION_DIR"):
+        tracker["PARTICIPANT_SESSION_DIR"] = tracker["PARTICIPANT_SESSION_DIR"].replace(
+            "/[[NIPOPPY_BIDS_SESSION_ID]]/", ""
+        ).replace("[[NIPOPPY_BIDS_SESSION_ID]]/", "")  # Some Freesurfer trackers have session ID first
+
+    return tracker
 
 
 def parse_args() -> argparse.Namespace:
@@ -42,7 +46,7 @@ def main():
 
     config["VERSION"] = args.version
     if args.no_sessions:
-        tracker["PATHS"] = remove_session_placeholders_from_paths(tracker["PATHS"])
+        tracker = remove_session_placeholders_from_tracker(tracker)
 
     save_json(config, args.output_dir / "config.json")
     save_json(tracker, args.output_dir / "tracker.json")
