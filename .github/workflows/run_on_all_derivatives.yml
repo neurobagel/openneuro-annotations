@@ -29,19 +29,19 @@ jobs:
         with:
           python-version: '3.13' 
 
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip  
+          pip install -r requirements.txt
+
       - name: Process repos
         env:
           NB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
           while IFS=$'\t' read -r repo_name || [ -n "$repo_name" ]; do
             echo "Processing: $repo_name"
-            python ./github/code/build_repo_map.py "$repo_name" ./derivatives/repo_derivatives_map.json
+            python .github/code/build_repo_map.py "$repo_name" ./derivatives/repo_derivatives_map.json
           done < all_openneuroderivatives_repos.tmp
-
-      - name: Install requirements
-        run: |
-          python -m pip install --upgrade pip  
-          pip install -r requirements.txt
 
       - name: Get Neurobagel Bot App User ID
         id: get-user-id
