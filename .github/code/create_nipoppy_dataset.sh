@@ -73,3 +73,7 @@ if [ -f "$processing_status_file" ]; then
     cp "$processing_status_file" "${OUTPUT_DIR}/${DS_ID}.tsv"
     echo "${DS_ID}: Processing status file copied to ${OUTPUT_DIR}/${DS_ID}.tsv"
 fi
+
+# Clean up dataset directories to save space
+rm -rf "${SOURCE_WORKDIR}/${DS_ID}"
+rm -rf "${NIPOPPY_DATASET_DIR}"
