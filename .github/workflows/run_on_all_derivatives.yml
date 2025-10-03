@@ -10,24 +10,6 @@ jobs:
   get-repos:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
-
-      - name: Find repos
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: ./.github/code/find_openneuro.sh OpenNeuroDerivatives ./openneuro-derivatives.tsv
-
-      - name: Setup Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: '3.13' 
-
-      - name: Install requirements
-        run: |
-          python -m pip install --upgrade pip  
-          pip install -r requirements.txt
-
       - name: Generate a Neurobagel Bot token
         id: generate-token
         uses: actions/create-github-app-token@v2
@@ -35,20 +17,38 @@ jobs:
           app-id: ${{ vars.NB_BOT_ID }}
           private-key: ${{ secrets.NB_BOT_KEY }}
 
-      - name: Get Neurobagel Bot App User ID
-        id: get-user-id
-        run: echo "user-id=$(gh api "/users/${{ steps.generate-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
-        env:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Get all OpenNeuroDerivatives repo IDs
+        run: .github/code/get_all_openneuroderivatives_repos.sh all_openneuroderivatives_repos.tmp
+        env: 
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13' 
 
       - name: Process repos
         env:
           NB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
-          while IFS=$'\t' read -r repo_name repo_url || [ -n "$repo_name" ]; do
+          while IFS=$'\t' read -r repo_name || [ -n "$repo_name" ]; do
             echo "Processing: $repo_name"
             python ./github/code/build_repo_map.py "$repo_name" ./derivatives/repo_derivatives_map.json
-          done < ./openneuro-derivatives.tsv
+          done < all_openneuroderivatives_repos.tmp
+
+      - name: Install requirements
+        run: |
+          python -m pip install --upgrade pip  
+          pip install -r requirements.txt
+
+      - name: Get Neurobagel Bot App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api "/users/${{ steps.generate-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Configure git for Neurobagel Bot user
         run: |
@@ -59,4 +59,4 @@ jobs:
         run: |
           git add repo_derivatives_map.json
           git commit -m "[bot] Update repo_derivatives_map.json" || true
-          git push origin main
+          git push
