@@ -1,80 +1,82 @@
 {
-    "participant_id": {
-        "Description": "Unique participant label",
-        "Units": "n/a",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "gender": {
-        "Description": "Participant gender",
-        "Units": "n/a",
-        "Levels": {
-            "F": "Female",
-            "M": "Male"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "age": {
-        "Description": "Participant age (years)",
-        "Units": "years",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromInt",
-                "Label": "integer data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "group": {
-        "Description": "Participant group label",
-        "Units": "n/a",
-        "Levels": {
-            "student": "students",
-            "expert": "experts"
-        }
-    },
-    "scanner": {
-        "Description": "MRI scanner assignment (fixed for participant)",
-        "Units": "n/a",
-        "Levels": {
-            "prisma": "Siemens MAGNETOM Prisma",
-            "skyra": "Siemens MAGNETOM Skyra"
-        }
-    },
-    "missing_scans": {
-        "Description": "Participant is missing scans",
-        "Units": "n/a",
-        "Levels": {
-            "y": "Incomplete dataset",
-            "n": "Complete dataset"
-        }
+  "participant_id": {
+    "Description": "Unique participant label",
+    "Units": "n/a",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "gender": {
+    "Description": "Participant gender",
+    "Units": "n/a",
+    "Levels": {
+      "F": "Female",
+      "M": "Male"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "age": {
+    "Description": "Participant age (years)",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromInt",
+        "Label": "integer data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "group": {
+    "Description": "Participant group label",
+    "Units": "n/a",
+    "Levels": {
+      "student": "students",
+      "expert": "experts"
+    }
+  },
+  "scanner": {
+    "Description": "MRI scanner assignment (fixed for participant)",
+    "Units": "n/a",
+    "Levels": {
+      "prisma": "Siemens MAGNETOM Prisma",
+      "skyra": "Siemens MAGNETOM Skyra"
+    }
+  },
+  "missing_scans": {
+    "Description": "Participant is missing scans",
+    "Units": "n/a",
+    "Levels": {
+      "y": "Incomplete dataset",
+      "n": "Complete dataset"
+    }
+  }
 }

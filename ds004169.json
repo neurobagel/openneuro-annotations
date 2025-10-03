@@ -1,93 +1,95 @@
 {
-    "participant_id": {
-        "Description": "Participant identifier",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "family_id": {
-        "Description": "Family identifier (participants belonging to the same family share a family_id)"
-    },
-    "age": {
-        "Description": "Age (in years, rounded down) at session 1",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromInt",
-                "Label": "integer data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "age_ses02": {
-        "Description": "Age (in years, rounded down) at session 2"
-    },
-    "sex": {
-        "Description": "Sex of the participant as reported by the participant",
-        "Levels": {
-            "M": "male",
-            "F": "female"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            }
-        }
-    },
-    "handedness": {
-        "Description": "Handedness of the participant as reported by the participant (all QTIM participants are right-handed)",
-        "Levels": {
-            "right": "right"
-        }
-    },
-    "ses01_T1w_acq": {
-        "Description": "T1w acquisition orientation at session 1",
-        "Levels": {
-            "1": "coronal",
-            "2": "sagittal"
-        }
-    },
-    "ses02_T1w_acq": {
-        "Description": "T1w acquisition orientation at session 2",
-        "Levels": {
-            "1": "coronal",
-            "2": "sagittal"
-        }
-    },
-    "nback_seq": {
-        "Description": "Stimulus presentation time for the nback task. During data acqusition for the 12 year old  participants, the nback stimulus presentation time was increased as younger participants had difficulty with the 1 sec presentation",
-        "Levels": {
-            "1": "1000 milliseconds",
-            "2": "1500 milliseconds"
-        }
-    },
-    "group": {
-        "Description": "Is the participant part of the the test-retest or longitudinal subsample? Test-retest interval between scans approximately 3.5 months; longitudinal interval between scans approximately 3.5 years",
-        "Levels": {
-            "1": "test-retest",
-            "2": "longitudinal"
-        }
+  "participant_id": {
+    "Description": "Participant identifier",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "family_id": {
+    "Description": "Family identifier (participants belonging to the same family share a family_id)"
+  },
+  "age": {
+    "Description": "Age (in years, rounded down) at session 1",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromInt",
+        "Label": "integer data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "age_ses02": {
+    "Description": "Age (in years, rounded down) at session 2"
+  },
+  "sex": {
+    "Description": "Sex of the participant as reported by the participant",
+    "Levels": {
+      "M": "male",
+      "F": "female"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "VariableType": "Categorical"
+    }
+  },
+  "handedness": {
+    "Description": "Handedness of the participant as reported by the participant (all QTIM participants are right-handed)",
+    "Levels": {
+      "right": "right"
+    }
+  },
+  "ses01_T1w_acq": {
+    "Description": "T1w acquisition orientation at session 1",
+    "Levels": {
+      "1": "coronal",
+      "2": "sagittal"
+    }
+  },
+  "ses02_T1w_acq": {
+    "Description": "T1w acquisition orientation at session 2",
+    "Levels": {
+      "1": "coronal",
+      "2": "sagittal"
+    }
+  },
+  "nback_seq": {
+    "Description": "Stimulus presentation time for the nback task. During data acqusition for the 12 year old  participants, the nback stimulus presentation time was increased as younger participants had difficulty with the 1 sec presentation",
+    "Levels": {
+      "1": "1000 milliseconds",
+      "2": "1500 milliseconds"
+    }
+  },
+  "group": {
+    "Description": "Is the participant part of the the test-retest or longitudinal subsample? Test-retest interval between scans approximately 3.5 months; longitudinal interval between scans approximately 3.5 years",
+    "Levels": {
+      "1": "test-retest",
+      "2": "longitudinal"
+    }
+  }
 }

@@ -2,9 +2,9 @@
   "@context": {
     "nb": "http://neurobagel.org/vocab/",
     "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
-    "nidm": "http://purl.org/nidash/nidm#",
-    "cogatlas": "https://www.cognitiveatlas.org/task/id/",
     "ncit": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "np": "https://github.com/nipoppy/pipeline-catalog/tree/main/processing/",
     "Acquisition": "nb:Acquisition",
     "identifier": "@id",
     "hasContrastType": {
@@ -14,6 +14,13 @@
     "Assessment": "nb:Assessment",
     "Bagel": "nb:Bagel",
     "BaseModel": "nb:BaseModel",
+    "CompletedPipeline": "nb:CompletedPipeline",
+    "hasPipelineVersion": {
+      "@id": "nb:hasPipelineVersion"
+    },
+    "hasPipelineName": {
+      "@id": "nb:hasPipelineName"
+    },
     "ControlledTerm": "nb:ControlledTerm",
     "Dataset": "nb:Dataset",
     "hasLabel": {
@@ -34,6 +41,9 @@
     "hasAcquisition": {
       "@id": "nb:hasAcquisition"
     },
+    "hasCompletedPipeline": {
+      "@id": "nb:hasCompletedPipeline"
+    },
     "PhenotypicSession": "nb:PhenotypicSession",
     "hasAge": {
       "@id": "nb:hasAge"
@@ -50,6 +60,7 @@
     "hasAssessment": {
       "@id": "nb:hasAssessment"
     },
+    "Pipeline": "nb:Pipeline",
     "Session": "nb:Session",
     "Sex": "nb:Sex",
     "Subject": "nb:Subject",
@@ -58,17 +69,17 @@
     },
     "SubjectGroup": "nb:SubjectGroup"
   },
-  "identifier": "nb:36f95865-db47-4063-b0ad-2d86af6c4f6e",
+  "identifier": "nb:2440c762-e493-44e7-b74b-6a4f30bc0f54",
   "hasLabel": "Modafinil alters intrinsic functional connectivity of the right posterior insula: a pharmacological resting state fMRI study",
   "hasPortalURI": "https://github.com/OpenNeuroDatasets-JSONLD/ds000133.git",
   "hasSamples": [
     {
-      "identifier": "nb:004a5551-5914-4628-b874-85e926ce1c1e",
+      "identifier": "nb:4ae2c7c5-4a71-406f-8dd6-c4b1f22f3ef5",
       "hasLabel": "sub-01",
       "hasSession": [
         {
-          "identifier": "nb:e0817c0e-b54a-4c89-afa9-da07c1aa1231",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:65bb19e1-ebc0-434e-9fc2-43a402be09d1",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -76,38 +87,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:5ed33e46-52cb-473d-88fb-84076d09c92d",
+          "identifier": "nb:ebae05f7-b649-42e0-afe1-cb6ce915e08b",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-01/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:d59372a4-db55-40d4-95a5-6b15757f664b",
+              "identifier": "nb:5db65fe8-b71f-4825-9a30-df7e0caec5b9",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0fae37a7-fc6a-4149-85b6-e59210ab724a",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:328c0d88-ef9a-4497-8d74-f7dcf6fb980e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:ed76e9a7-defb-40c2-b408-595a141912b2",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:322caa49-14d3-4534-987e-b538d5488ebb",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:906e82b7-440b-4487-9bd4-25adc27547d2",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:29f0303f-8a9a-4ef1-84f5-28d4dd11d0db",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -116,38 +127,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:1d7334b1-b633-42f0-90be-147452f11164",
+          "identifier": "nb:30bdf31b-112e-4c68-873e-d94c1c7b6ec5",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-01/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:baa1b2ab-3d86-491b-8200-4d0ddd69bdc3",
+              "identifier": "nb:7608df23-4006-4b49-8c75-7f05b02693fa",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:c2e1d9c7-8073-4089-97d6-5b7d2d32bcf1",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b1ae2312-4dca-4f61-b763-14fe6563fa51",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:de330712-3d4c-45d4-86ad-1810d5c3ecd5",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:60d312e2-4cae-452e-bd64-f4da33869f49",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b848de23-00cc-4949-98d5-aa7cea0d09bd",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:079600b3-1f00-4939-80c3-300df5bfb730",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -159,12 +170,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:326b9d30-1db0-4516-a565-f19e1f6f8eb0",
+      "identifier": "nb:16663965-c86c-421b-9cbe-da945841c3c7",
       "hasLabel": "sub-02",
       "hasSession": [
         {
-          "identifier": "nb:13ec1b49-b8df-412d-a8e4-d64b7ca974eb",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:b45669b6-a5de-4df8-b160-e7eab804a465",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -172,38 +183,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:4732e12f-65a6-4a86-8349-26875e9283f5",
+          "identifier": "nb:e8002d43-e726-41eb-8e82-9876a1dc72b4",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-02/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:fadbc781-4bd6-4d2f-9951-af6c537cde5f",
+              "identifier": "nb:b6a9b1f1-76a1-45ed-a436-69d6df94bcbe",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:63b5ab75-3afa-4064-8cbb-63d97ffd021b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d25a311d-99cf-4164-9b68-777b59b524fe",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:80494ead-184d-4bd0-aba6-4bd6bd44a21a",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:bc91b090-aa70-4b09-8aa9-e164c03cc3b4",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6bc156fd-b8ce-4b10-9968-c7adea373281",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:bfc1556a-1ae6-49d7-8d79-44b887fe9f4f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -212,38 +223,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:bfe61a77-f04a-4c75-86ea-755c106d51c4",
+          "identifier": "nb:1a0c3658-1831-4790-b9a9-353a9e38f5ba",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-02/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:e908433c-1d78-49b3-9be2-0dac8306aac2",
+              "identifier": "nb:df28ea9c-d10c-452a-9359-ca1f420c8a90",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:22891365-1c35-4284-8e74-31ab456d0aca",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:2b37f0b8-2c70-47e2-ab78-5a082a97c03e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e21a3bcf-0677-4956-9bdc-e8b6901ea8d2",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:02f2b371-4c0f-4ba9-bbd7-e61fbb86ac48",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:99cdc80b-043b-4bf2-b9ee-5079f1a796ab",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:c2577266-b67e-4c6b-b7ef-f69c65aedf72",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -255,12 +266,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:cb0d27c3-092f-439b-9fda-e0f4614fa67f",
+      "identifier": "nb:9eb40476-65e9-4bb0-8e94-451f9e3b0106",
       "hasLabel": "sub-03",
       "hasSession": [
         {
-          "identifier": "nb:ef83a774-8a61-4ef9-bdd5-e6ad7b97d5b6",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:2e0876fd-df51-44bb-aba6-5ba88d9efa94",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -268,38 +279,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:3b7aac5a-667a-43c2-8f11-322b74f880cb",
+          "identifier": "nb:639762a9-dd13-4eae-b105-deaa69b77d68",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-03/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:d208be93-7f0e-4344-a979-9d10a051d59d",
+              "identifier": "nb:440d1005-528d-4946-b783-e8fdc336753c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:80201e63-c7bc-4755-a3fa-f18c99c7c6c3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b6547be3-d9d6-4003-8f0e-7c1fb5edccb0",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:7d26d5d2-a700-49ae-b062-41f5de476e49",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:194240f8-7d70-4188-896b-e5d97a457dec",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d97ab07e-2779-4d95-9bb3-acd9491228b0",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e4958477-5028-42d0-94b4-f2823c234124",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -308,38 +319,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:cccbc75a-73ca-491b-8e35-2e8bc74600d4",
+          "identifier": "nb:b6ae4ea6-393c-434d-bee0-bafd2632fe15",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-03/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:f03e7333-e334-44eb-a4ee-c46708a01d4a",
+              "identifier": "nb:c721f82a-fc75-46ba-aeb0-2fe8c451a5a3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:c0e0c224-00b3-4b8d-83ea-952101513431",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:44e6c55c-3015-4b4f-9f5c-9fd4eed4e361",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4efa59f8-b883-4676-9689-ad8c664039a3",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:7b527a3f-b97f-4890-88bc-d758f601adb1",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:065f4400-0a18-46ce-936e-3f44c810bf0e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:535b7fe3-cec3-40c7-bf1f-809865c8d218",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -351,12 +362,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:6eece076-1ca0-4386-93cc-f9beb87d0c87",
+      "identifier": "nb:8d2e98e1-150c-41f7-9f2d-1ec808237c15",
       "hasLabel": "sub-04",
       "hasSession": [
         {
-          "identifier": "nb:3c88d0cb-22eb-4e90-8f83-8017efcdebdd",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:820fb3b6-7f6f-4cba-ba54-6a8ce7659177",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -364,38 +375,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:4af21087-1447-4bdf-9e25-b1b1d5c2d710",
+          "identifier": "nb:a2f20af5-2202-4889-ad65-224cf087f4fc",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-04/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:261da7ee-d8fb-4b33-883c-83c9fa44f6da",
+              "identifier": "nb:8b2c1590-8ab8-484e-9aa8-1ed62c9c19cf",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:5cd4f36d-0ef8-4794-953a-63382b84344a",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0b2c8e51-0f3b-47fe-9747-4aaf3d346c82",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:6f6f4527-b839-43e2-8891-37fd84a057e2",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:96f80c1f-8a6e-4cf6-afec-c2e1263257dc",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:daae89ed-f6f7-4402-b6ed-b8300ab8aed7",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:f46dc345-3228-441e-95be-44fb587aceea",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -404,38 +415,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:e0a330f0-e190-4e00-8f68-d7fe390e460f",
+          "identifier": "nb:8845bc17-bfbe-4143-80ec-b56425df2f8e",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-04/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:2d0b3864-3399-4107-a28d-1bc4c5e1e092",
+              "identifier": "nb:fb504f45-2546-4232-920d-01406f833d6d",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:50e959bd-69ca-4a4c-8ce5-673f1e999887",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:aa9b37e0-87db-48b2-b8d4-f2cb42afdc33",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:502e9db9-8169-412f-b37f-0a3a55eb8759",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d7a99f44-764c-4b23-be77-c6e18651b12b",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:aff8b07e-5037-4795-9d0c-e5bea3917450",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:98d29ee5-814d-42d9-8caf-13a44598baff",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -447,12 +458,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:b3b2246b-35b5-4b25-8244-cd16981fee21",
+      "identifier": "nb:2779fe3d-9b52-45cb-87a7-2cab725c2886",
       "hasLabel": "sub-05",
       "hasSession": [
         {
-          "identifier": "nb:90cfefc5-61a0-4fae-a235-8497023eeea9",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:b93f21cc-1e86-410e-b812-a46e0af2fb8c",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -460,38 +471,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:5c337db7-e1c2-4bb6-ba47-23fe0f8c2ef8",
+          "identifier": "nb:55e39b6c-b733-4b4b-a929-0049f0217288",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-05/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:a51e2e02-1b5b-4c0c-98c5-9f31a3472c1f",
+              "identifier": "nb:53d67650-2b94-4ba1-b52b-d7be1bab9628",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:04d08b5d-33d6-448d-9585-ee948a744b51",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:49afd7c8-1c9a-41ff-b291-214fa153f429",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4d5cd778-b6f1-4c5f-b6d2-028944756f6a",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:1271b867-a8e1-44b5-a68e-4f8c09cc63b3",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:5252050c-f5d5-4116-8878-c1cbeb57fe2e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e67286d7-bd68-4746-ad44-d78f3aebab64",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -500,38 +511,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:8531a67c-39ce-45cc-ad7a-b889453636de",
+          "identifier": "nb:66d00f3a-e3f0-4b65-ae54-0e5473741f72",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-05/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:a8b9d0bf-6110-4bbe-9f1a-73e9ef3957b3",
+              "identifier": "nb:a87e6119-7732-4831-a22e-75536a792303",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:9b47fc29-84af-4ee8-886c-87e66584aff7",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b40a9b2d-97d2-4721-8f6f-7dd4a4481eb7",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:be93399f-88bc-493e-8913-5f1b7babde3a",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:12f54b9c-6b57-4444-8eb1-4cb4823277db",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:a74dbda2-d7d0-4b1c-80f7-44a9f556bf16",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d42fdabb-1be5-401d-9237-f386cbc908f5",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -543,12 +554,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:8058efc4-eb14-476c-8735-387d89881134",
+      "identifier": "nb:017d88d2-7aa3-4d31-8680-4b9d81851328",
       "hasLabel": "sub-06",
       "hasSession": [
         {
-          "identifier": "nb:f165c39d-6b73-498c-a54c-f35ccd95c90e",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:8aba0565-598a-4720-8560-bf6e1c9f2bb1",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -556,38 +567,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:b0d92801-f538-451e-a9e7-c8addeaeccdf",
+          "identifier": "nb:6048e018-c8bc-4bbb-9a3b-f121025436c2",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-06/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:35ea07a8-73d0-4103-a0cf-5020534ed8e3",
+              "identifier": "nb:7044a922-5eab-47fb-8127-b96556c150f3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4c8ac3e6-68ad-4383-82b4-363e3e16a058",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8dccd697-1030-4074-9aa2-e9a5f1e9501c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:ced4ee93-133d-4040-a051-1ac480f1f2e0",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b56abca3-8b83-4fd8-817d-0aee0f5bfd48",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:9f682c93-5cd8-46b1-9e8c-69836c04c4a2",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:a793ef7a-ab19-4cb2-9aea-f31879e41bf8",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -596,38 +607,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:537503cf-bcf8-4301-bb52-96a29c036c3b",
+          "identifier": "nb:e6bb3db2-c6b5-4dd2-978f-b08c7d8f872e",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-06/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:9f07004f-0ffc-4126-abe6-260b6465a718",
+              "identifier": "nb:cd714ef9-e8d8-4f6f-bf63-352e13760c13",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b3957355-2445-4bf4-837a-2d777cd52183",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4617c501-b20b-4408-a7b6-c393f8275d7d",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:feefe364-831c-483f-a2f1-83f57f8048dc",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:7ef5f5bf-b6af-4314-9983-ff41ada81f07",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d40d4d19-5906-431c-bdc6-373d5897f619",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:dbbfc128-1183-4cd2-b982-3b7d5579d5b7",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -639,12 +650,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:6b82d4c7-23af-477b-bb4e-17fbff57a910",
+      "identifier": "nb:9aba6fb5-d0a1-4f65-9513-e384980200d1",
       "hasLabel": "sub-07",
       "hasSession": [
         {
-          "identifier": "nb:3efdc622-9fc9-4822-8a12-095882c19764",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:dadb9308-bd69-438d-ac96-55d3b4526a46",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -652,38 +663,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:18e59842-92d4-491f-bde6-827f7ab02a75",
+          "identifier": "nb:bde288af-663c-4656-82a9-64c4c544e1fc",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-07/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:b1d3a578-689a-4330-be9d-aaf377f78ee6",
+              "identifier": "nb:5dd4e303-ca0f-43d1-97a7-07bcea7866a5",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:54637785-2345-41e6-84c8-20d711c055e9",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d4767246-9589-4662-bc8f-ae3f61b4417b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:bbffae85-d642-4303-9545-a5249c86c360",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:ae373139-2155-4ad2-b763-c14d3d45a55f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:69a7a230-203a-47c6-a61c-ee14059573a0",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:337b0823-64f1-4d06-ad39-ae88416697ff",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -692,38 +703,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:f660e2ee-fef9-4a1f-b4b6-a1aedc5c64f9",
+          "identifier": "nb:ead9ea32-5400-4b3d-ad5c-6181ae249898",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-07/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:03ceccb1-7a52-4bfb-b6a1-627e664c75e5",
+              "identifier": "nb:d97b1f12-79ad-4b82-917f-1fc7a874cf08",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:227c5a7b-c4ac-447c-b00f-01a6264f5823",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:2dc818ca-e487-406f-b50b-3cf0ce5fc720",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b272cccd-49ff-49b0-992c-482c49ffe651",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:4c8305ca-715d-4501-bb29-a7730a7043ab",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b65bb1cc-859d-4d08-9f1b-4fe9ab082eca",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:4c5b05cb-1b1e-425b-a1e3-fa666d0d57a7",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -735,12 +746,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:c94d60cf-5ae6-429e-83c6-17a827407af0",
+      "identifier": "nb:4e53010e-52da-4d84-9203-310ec5c3462d",
       "hasLabel": "sub-08",
       "hasSession": [
         {
-          "identifier": "nb:9024d0c3-730d-40d2-8f5a-00e4712e7b73",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:740f3735-eda6-4297-a516-2837c16a4cd7",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -748,12 +759,12 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:b23ddfbc-6fc4-465c-98fc-91e33ff500dc",
+          "identifier": "nb:7704277a-2d68-435b-b8ae-7f308444253b",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-08/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:b3de7170-4f89-49ab-9570-3599dd4e0f12",
+              "identifier": "nb:877f2fbc-275f-4f78-afe2-25253879bb10",
               "hasContrastType": {
                 "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
@@ -761,7 +772,7 @@
               "schemaKey": "Acquisition"
             },
             {
-              "identifier": "nb:9735c8f0-873b-43e1-bf9e-6ccc1e011106",
+              "identifier": "nb:8c4846e1-ef60-4a52-9ad6-ecd216d6eebe",
               "hasContrastType": {
                 "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
@@ -769,7 +780,7 @@
               "schemaKey": "Acquisition"
             },
             {
-              "identifier": "nb:3bca978d-f9d3-4711-8084-58dc16b5033a",
+              "identifier": "nb:9a015da4-85b1-4f86-8d5f-0e2ea594dc30",
               "hasContrastType": {
                 "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
@@ -780,38 +791,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:65e73de9-a47c-4277-b605-e25331e53139",
+          "identifier": "nb:f197fe9b-1972-4103-a018-bc4fff0b8624",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-08/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:abcb8f01-e106-46d1-b5da-533b15fb09f9",
+              "identifier": "nb:168598b4-74d8-4a0d-a1c7-8f413f20938a",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8fdbc717-b72b-4557-a611-b1f7142c6d24",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:556de50c-0daf-4e0d-9219-be071712716b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:9c1791d7-4804-4a6a-a263-e895489dae3c",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:4e226acc-6cfd-48ee-8399-2aefa053f822",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:07c06f30-ce4b-4f57-91a3-f1bc6c2f08b8",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d3a12ec0-fe1d-44d5-b1cb-10932407427f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -823,12 +834,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:eaa91593-6cd6-4d7c-8637-6a7ee307ff2d",
+      "identifier": "nb:907bbd43-97f5-455d-ac6d-557113c8621e",
       "hasLabel": "sub-09",
       "hasSession": [
         {
-          "identifier": "nb:5bd7b05a-6a06-49c4-80bb-397a385e45be",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:b4adc101-7e89-40d5-a873-7a0a4f0f7e5c",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -836,38 +847,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:29a6e9ab-3b42-4e9b-94f2-771553c113ef",
+          "identifier": "nb:ca538392-286f-4da0-bc35-146583f56cc8",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-09/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:6d9d5e07-b1ab-4ed4-82dd-19e273995d76",
+              "identifier": "nb:029f0101-0fbc-4e70-b63c-587dbaae6d9a",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:dda6cbf9-eafe-4da0-9abd-6e6049f9ec69",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:3821349d-4791-4dba-99f8-2878ba4e6e23",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b4989717-c61f-439b-8a4a-188fab8ef5dd",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b179f52d-d8a8-4b04-8895-793303345cb5",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6262d475-940c-4d94-8b39-72da33768e3e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:10ce6ae3-d4c6-4418-b005-f5dde7d6fbab",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -876,38 +887,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:7213188c-d7c3-4f0b-a6d6-feadc190dee7",
+          "identifier": "nb:d5656fd1-7f5a-40c7-aace-8d0ab0d5728f",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-09/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:35dd721f-b093-4434-8df9-3666b945fb64",
+              "identifier": "nb:069bc9a1-778e-4b56-8f26-c4310639f65d",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:5c63a94c-efdd-4452-870a-039f3c3f93da",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:639fcc4c-3b4d-43b4-90a0-cc382f9fbe11",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:ed14211e-779b-4c02-8ab9-53444b03ca83",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:91aec6f1-d85a-469a-aec8-8ada9e86d348",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:75ac3b9c-6ddd-40c4-bdb0-1d52502d8753",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e48fb0c4-cddd-4d8c-b14b-0a3538ff50a8",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -919,12 +930,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:191671f2-6d35-41a2-a1d3-c9bfad406941",
+      "identifier": "nb:07243de0-cc4d-434d-ad53-267c76ce068e",
       "hasLabel": "sub-10",
       "hasSession": [
         {
-          "identifier": "nb:74ad7776-4ddd-411b-93f0-f5fd6c63956e",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:25610c6d-6cb8-4414-8f94-5f95ca2c3671",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -932,38 +943,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:0d99dd46-1ab8-4b0f-b522-8e68af1a2ce0",
+          "identifier": "nb:fe55156d-ffda-44ce-baa2-36673eeec0cb",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-10/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:56a97ccb-d74d-4ba7-8dba-eb87227f2ce5",
+              "identifier": "nb:54493cb0-7d5e-41b0-a3bd-62a9fba2f9ab",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b9a1340e-e765-4951-91e7-7c4b07d8f2c4",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0cc542e9-d3d6-463d-85ea-cb1e078eb92f",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b629646f-1dbe-4f04-8e3c-b052578e36f4",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:7ac97c50-03a5-42ba-8d07-e84c2b7cd728",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:a96db2e8-239f-4a98-bf36-9f3982830040",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:3fab2c40-1609-4383-8a47-a5df34500d55",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -972,38 +983,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:0ec60cad-0bd0-48c1-ac76-469271b8a240",
+          "identifier": "nb:71f54896-77a9-4252-bb4b-c977c6779254",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-10/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:aaea33d4-9d32-48a0-80a0-a0e0abeacb1d",
+              "identifier": "nb:ccc960f2-45c8-4c7c-bca1-bc836133da17",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:9e8f157b-55fa-4ada-ac8f-0c64d7dd5ffb",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:816f3acc-f4a2-463d-b28f-df8546edcb2e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8d21aa88-079c-4416-bc60-1d676b43990d",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:38bad3f8-8487-44a5-893d-5f39d8627813",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:ee039c31-e420-466d-8d0d-847e0ec21609",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:532de793-db16-4ee2-bb10-016af975a664",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1015,12 +1026,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:43db2cd7-6e47-40bd-b00d-be8d2fecda9a",
+      "identifier": "nb:a16116e6-a4e1-4fb6-b724-083dae5a65b8",
       "hasLabel": "sub-11",
       "hasSession": [
         {
-          "identifier": "nb:96e723d3-d865-4696-a351-68eddcdde1e3",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:ec79078d-8890-40be-90da-2c6dadc62330",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1028,38 +1039,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:79cd5518-ccd2-4316-878c-f14a3f52bc73",
+          "identifier": "nb:41ba7889-9cbb-49e5-b5f3-5d16101a4b26",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-11/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:48fd047a-afbc-4078-9290-426e9f9041bd",
+              "identifier": "nb:35c54217-cf8b-4a62-af10-b43c9ac71fd3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:38baa90e-a405-44fa-9c29-bdb5ab73fe9b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:64846239-6cf0-444e-985a-b54aac0ef014",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:980e0d2d-3590-4d7f-b413-1e5d765fa63f",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:096f88fc-7044-46a0-a058-2201b3280956",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:9fc68a2d-e72e-4d93-ac01-e70b4429bba7",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:39924ee5-e92d-47f3-b0fc-ba5d953cc3a8",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1068,38 +1079,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:21372630-7cd6-4b69-a6db-8ab5789ab62f",
+          "identifier": "nb:6d14ca12-d614-4cb0-a2ed-35f09d3cae2b",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-11/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:63b0909d-7129-4a7e-8109-00b6826f4bbd",
+              "identifier": "nb:3d7161fb-39eb-4ffc-a00b-cc5b3a2b2ab0",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:287c6e8f-63ff-4757-8a47-555c1f2bef16",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:1ee81672-c4fa-48b9-9788-77663d3d70a2",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0cda5992-d438-4676-bff4-206f26d1ab3d",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:566b0fb7-20cf-4014-9842-21837c55afc5",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:1cb5ceac-9cd7-4e70-85b6-7bd075e89325",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:63c04590-8f94-4f1e-bdcc-68baa633434c",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1111,12 +1122,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:d92a49cb-e129-4381-8565-9ba94261eeee",
+      "identifier": "nb:32fa9de5-6e25-4ee1-b690-3891467acb4c",
       "hasLabel": "sub-12",
       "hasSession": [
         {
-          "identifier": "nb:afdba57a-e79b-4450-95ad-c2a4fff22538",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:076faac3-7e08-441f-9147-844c88294b9a",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1124,38 +1135,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:513fc065-ed62-4c84-b56b-7fe2ff0852f1",
+          "identifier": "nb:19165d33-00b8-48d5-a0b0-29adab8ba760",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-12/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:0c55cad5-623c-4ff9-8914-af467acb44cb",
+              "identifier": "nb:cf366b0f-9c7f-436e-8845-b585d56fd903",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e826f022-074c-4d75-9e53-759cdd0ff2c6",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:f576a64e-c5d7-4a8d-aaa7-1218f3b69e50",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:3d64af8d-8744-4dfc-8617-7509e3b68475",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:105fabe0-6a71-48f4-9e4f-c32c914ac955",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b8b041ab-c0b1-4e01-8092-b46bd8fa5d6d",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d451a717-856f-4c3a-942b-e8f1bdf5d4c3",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1164,38 +1175,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:e10561a0-81b6-4363-ac99-1acfd89448e1",
+          "identifier": "nb:5a543165-ae00-4f5a-8cf2-49c86c37ba49",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-12/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:c6b06a73-8117-4ade-bab2-edc4b7fe9e05",
+              "identifier": "nb:c687d4e4-3710-4d72-a4f3-98aa07f76364",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d58068f2-3f9a-4cd0-bc3c-5eb5a5dd018c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:75a8098a-b779-4de5-83d3-b6e724239557",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8917131c-6468-4af2-85b7-4ff49f08f233",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:7692c619-d97d-4dcb-a09d-eef8a9a15f01",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:1474275a-615c-4ae2-8b3d-c38af1eacc1b",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:c08214fb-d704-4cc0-a172-8519b3a8e921",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1207,12 +1218,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:8745eaed-6973-49a7-97d0-3db49fba7a9f",
+      "identifier": "nb:f9773b5e-5a2e-458d-acd7-ab178a0c9fd6",
       "hasLabel": "sub-13",
       "hasSession": [
         {
-          "identifier": "nb:37bc5c86-695f-4a4c-91f4-b8fbb860b7f6",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:ae49d476-ae13-4103-af7e-a65e2a2748e4",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1220,38 +1231,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:44149c11-36a9-4d84-916e-a05b4247490e",
+          "identifier": "nb:665dc262-9a35-4fde-bd69-2ad9e15c0c66",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-13/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:62c4aa54-33d6-48ae-83eb-5abe5907f6b8",
+              "identifier": "nb:e2a9cdc4-273b-4eda-b87f-15241d6b9e5b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:a6f7b593-cc89-4b2d-ab02-12be003fb327",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:f43245b2-2117-4287-9fc0-f11576ce0a8e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b8837b71-e2ae-4453-ac9c-f609582c5362",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:56a4bc6f-ebe4-4307-b15c-3a692d311088",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:bd4d3539-d91f-4943-bf94-42d8b9ed22bc",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6677fac5-5847-4bfa-a9dd-12cb6130c35a",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1260,38 +1271,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:d9541cf5-2559-48d5-a734-7505268022e9",
+          "identifier": "nb:50c52e1c-5c28-41b0-96a4-08307b4d35b8",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-13/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:d26936d9-3fd6-411b-afb7-bd2d3363d7a4",
+              "identifier": "nb:d8359048-d58b-4997-8831-6170d28ebfc1",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:31eef713-ea14-4bdc-8f68-71530879a872",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:404cac7a-d377-4d39-b39f-2baa296254c5",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:a185cf7b-671f-4be5-93bf-66f8bf71bdcb",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:7deb31c9-465e-4453-a6b3-522f0f4dfb2a",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d4f196eb-c1ee-4297-99fc-cd5bb8bb9ee0",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0354a6e0-8db9-4658-8455-e830820cd931",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1303,12 +1314,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:ee3c13f1-18d6-4319-a835-d43f80717577",
+      "identifier": "nb:21f494b9-930a-4b6b-9eb3-09f437e02223",
       "hasLabel": "sub-14",
       "hasSession": [
         {
-          "identifier": "nb:77ec88a6-1ab8-4e7e-ade6-b4e3821338ac",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:934cad5f-8185-43b0-8249-47134aba9b92",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1316,38 +1327,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:4269e4a1-69c1-4e72-9154-aa19500e119c",
+          "identifier": "nb:e3e19789-252f-4d97-9d02-52caaf5c744b",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-14/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:d95619c4-6800-482d-8070-b27f29123853",
+              "identifier": "nb:59119816-3ede-4aab-b345-4b0e2efc543e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:268a5fcf-fd4f-44bd-b661-0c1fef64deaf",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:82025bee-93cc-44fb-a672-4529596d1901",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:5a634293-2c1b-44c5-ad88-11347156e0e8",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:82c9b118-34bb-47e7-95ce-ccf2e31bb4ad",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:7329ede8-f4db-45f2-88f0-5d59efa48507",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0f93c0d2-4027-405f-843f-0fedb99a323b",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1356,38 +1367,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:f638065b-f73a-4585-b11d-6e0fd1367460",
+          "identifier": "nb:f8a10345-efc6-4416-ac67-d6aa81215952",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-14/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:b53c110a-6bee-4863-b10b-3c975a111ed8",
+              "identifier": "nb:6852b6d0-c0d3-43f5-8c24-a01f5db5fb1f",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:01f25b5b-a416-4a00-b488-c4c53945008f",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:853b9c88-51c4-4bca-a7e0-c8a25539a795",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:85fea006-9495-480f-92b2-4194308c76ae",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:c37b2089-270b-439a-9a27-310bf2d6e85e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6b67dd18-f3b4-41b1-804b-da8abe43be02",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:169a0f56-0783-4b51-852f-a644a401a762",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1399,12 +1410,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:26314e06-0f1e-4a98-9c8f-f133f8823c51",
+      "identifier": "nb:b0bad771-d11c-4384-948a-c6a8e040d466",
       "hasLabel": "sub-15",
       "hasSession": [
         {
-          "identifier": "nb:83766d25-96f4-41f4-bf10-bf63884c71f7",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:22d452a8-083c-421e-acad-febb68f6a945",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1412,38 +1423,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:2a0bbb0b-3ad2-4fd6-8b3d-d16e5fe7842d",
+          "identifier": "nb:ac981393-929d-4c0c-ba62-2fe5d50821ff",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-15/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:27e77654-7fb8-401c-a7a0-7fa77e14606f",
+              "identifier": "nb:51420db4-9e5c-4199-815d-523fa242d9d7",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:fd3cfeb4-b740-47f9-8fe0-1b09c37739f3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:18064e4f-376d-420d-90ce-57dd99e2b702",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:beeba6aa-f4ce-4732-9109-ff42bc726fed",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e38a0841-f48d-48ca-a635-1b539fa5853a",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:f6c35056-ba14-4db3-8615-963bfd6d8278",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:957ba78b-9492-424c-828e-bcb0c050f98a",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1452,38 +1463,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:a805e75e-6550-4463-927f-62fa734eff2c",
+          "identifier": "nb:1c2ab221-026a-4bbb-998b-0c38e72088b6",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-15/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:ad756af2-cb6d-4d78-b535-ba8ea271b5ca",
+              "identifier": "nb:2a1599fc-6c5c-48f7-82a4-756e4f6e3f3a",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8ba627dd-9b6a-4480-8493-9091081fe5b5",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:f117a8fc-88d5-4490-893a-08effb6cf31b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:228d2397-a7f6-4e2d-b02f-6f95198ed89b",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6758fb44-78fb-44b2-b514-222926ec19f9",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:22d4e612-de8f-4e3a-bc57-7b63125130c4",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:50a25254-5e86-4d52-8943-5ff006e4ac46",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1495,12 +1506,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:a3e4d7d6-dbf9-4703-b730-26318bb67efd",
+      "identifier": "nb:89fbbe66-76b4-4a8d-ae45-9e7bcf198190",
       "hasLabel": "sub-16",
       "hasSession": [
         {
-          "identifier": "nb:2e2d97d5-1a95-429b-92c5-adf38fa4075c",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:1bf04776-95ea-4e76-8c5d-c0f73e7d0444",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1508,38 +1519,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:e72d2661-a42b-4401-b56a-f6c8598c725e",
+          "identifier": "nb:8a275299-9ad5-43a5-a9c7-f4a620b2fce0",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-16/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:684eb36a-e1f9-47b9-b813-aa5f0c8fe047",
+              "identifier": "nb:c8220ffb-1665-4b46-9410-478f2e8164e7",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:5ce82a82-37ff-443a-8acb-5fd7422481fc",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:c28cef90-a5ca-48eb-88cc-2b4facfef862",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b80d6663-8570-45db-90cb-8e28392bc79f",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b487f4ec-8c89-4700-977d-0fe28c294586",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:8381b865-693e-4088-9082-9116a0a9a95f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:ed8d6660-040f-4f5f-9392-56371f24232b",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1548,38 +1559,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:c4dbb88c-5915-4b5b-ad32-cd69e62ea30f",
+          "identifier": "nb:3afc9195-ff9c-48d1-8af5-0622020c0e99",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-16/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:d307af78-bbff-41b9-950a-7b9f16a2411a",
+              "identifier": "nb:f6fef7c0-ecd8-47e9-ba3e-02a10e903237",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b3ad1c60-a4e5-4209-bff6-741b878da8a4",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:87e5c762-616a-4b7f-a16f-550fdc15f33e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:997828ca-7343-4b93-b608-f1ae6379d5a2",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e9509d0f-2d6f-4f86-87d3-61256c3c626d",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:4e98a143-61f3-4942-84c1-d87359f2f89f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:88f64451-ec78-450a-bffc-d4f070000a8e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1591,12 +1602,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:12f3b059-4482-4efb-a6a2-dad0bc1a9053",
+      "identifier": "nb:ae63d6c7-4b99-4d23-84e7-61bc1a665954",
       "hasLabel": "sub-17",
       "hasSession": [
         {
-          "identifier": "nb:0823bf14-b874-4bc0-b758-b253ce48ae8b",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:3d5ca990-6b19-48e8-86c0-af4e63c70a2e",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1604,38 +1615,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:74e813e3-2503-49a2-9ace-daefdf64befc",
+          "identifier": "nb:d19b85c1-3a10-49e8-adc8-aca38df9f114",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-17/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:4f0abb16-7009-4af6-9ad8-4313a93aece1",
+              "identifier": "nb:b2588f10-789d-449a-8384-206ace6a6d74",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:f2c58b75-400a-4f96-aab7-ac650b394941",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:c37f8f6e-4366-49cf-a121-1d789960c08c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4f214a32-b9ff-4e51-bfcf-3fa005122345",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:bf7ac439-31a7-4107-a286-eaa6096e7879",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:4dfd7563-95e9-4a5f-ad46-849e6bc30b16",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b6fbd9c4-813a-45a7-b971-55651fd06acf",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1644,38 +1655,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:773cab33-2d70-45b3-be25-d4ffd6221e76",
+          "identifier": "nb:1bed8776-7910-4b26-a240-db7671ec4ded",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-17/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:f232b2db-67cb-4aec-8d48-a7935e411889",
+              "identifier": "nb:40eb0641-d974-4c22-a6fc-284116115c7d",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:90e890cb-96d3-46c6-a994-e0d313dc22e1",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:343eb84d-6110-42ae-a4da-842a51be555d",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8701d20f-3e6e-46ad-b74a-4fb731d5e3b3",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:58dc8cc6-c661-47b4-93cb-419d38346031",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:385e8160-a5a0-4271-8785-55e09ff9a599",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:82508317-19c4-4969-b2c3-2fa7d6512992",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1687,12 +1698,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:8950dcee-c9e4-4519-9b2e-7ca1e0334c5e",
+      "identifier": "nb:6f1aca45-4d7f-4b4b-a859-82f72ce3486d",
       "hasLabel": "sub-18",
       "hasSession": [
         {
-          "identifier": "nb:74966b60-e95c-44e5-b15f-f7558184eaf1",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:5fa64cb1-fb76-4162-9602-30dd77f00420",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1700,38 +1711,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:e5995805-2511-4c8e-9310-56c8aa12bb79",
+          "identifier": "nb:55376fe3-d85f-475f-8a1b-e3d66b5a5c37",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-18/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:a6723a0b-4e59-494d-af81-3826e06da7ef",
+              "identifier": "nb:18c0c604-7cda-4efb-ba3e-9bf9e0eb0b36",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4e7179c7-008c-411a-b66f-1f5c9778159b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:a09f0266-31d7-474c-978b-0285694c7ed3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:5707f369-f745-40d2-abe9-ce39fa99f36a",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:dcb30791-17fb-4670-8f7b-2886f0d1ce9d",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:5f4df360-b221-4fff-ba8e-a07d37299d31",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:da058e0f-97f9-41c1-a3e5-360203a4a495",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1740,38 +1751,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:1f45f60a-7e5e-4b56-a31c-74e543a3c5a2",
+          "identifier": "nb:11e7544c-e05a-45ba-8acb-722b9cf83d93",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-18/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:271c57f0-c020-426e-9c6f-2abf8d79acf1",
+              "identifier": "nb:17eb9d97-c345-4437-af2b-f9b6344eb589",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:a1f610ca-6aa5-4252-82e0-6a4cb4fa3eb6",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:184fc8bf-a6af-41d2-810a-124c120e243f",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:275064ea-420f-404f-bdc4-574b27ea2d24",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:f427621d-96fe-4c28-9836-635e942851d1",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:dff8df17-4e69-4abe-b96b-20c7f39d72f3",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:3948b26a-b43d-4316-a31b-feeb97d69c1c",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1783,12 +1794,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:3bf9f0b2-5d62-473f-b2ab-acd06fe60386",
+      "identifier": "nb:14980bb2-a764-4030-966c-35929e631a9f",
       "hasLabel": "sub-19",
       "hasSession": [
         {
-          "identifier": "nb:00fed0ae-548a-4bf2-8fb6-1d13d391513e",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:06ef9cf6-fb9f-47b0-9088-daacb0407c37",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1796,38 +1807,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:e8078c1a-a321-45b9-9426-8479f025b789",
+          "identifier": "nb:b5b91f99-ab2b-49a2-88fa-6045bc418e79",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-19/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:ae27f832-20bc-491f-aabb-b3411aa8e962",
+              "identifier": "nb:8fc85831-4e9e-4697-a506-ebd2fe04d6dc",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:092bac2a-8513-4223-8d70-2d0e260fbeda",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:72b9d089-b359-4cf7-8b14-2c5cb15cd643",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8c3655b3-f201-4b76-9441-7a357a4d2a70",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:bae33d15-f6d3-4dd4-beda-515a471c0bba",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e44b4fc6-87e8-4319-b811-88e30362b410",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:4d65aaeb-20a0-43c5-88c4-4ee980712e47",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1836,38 +1847,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:05db504c-8898-4f9c-9304-1e0622a00f55",
+          "identifier": "nb:7958b845-0bd7-446d-a734-fb861f1be640",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-19/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:2ffb3ab8-8e9f-4995-966c-7ef2dbdeddc1",
+              "identifier": "nb:69c55313-be9b-499b-bcfc-27bb825d4555",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0f126a7c-1915-4b9b-90a0-8267c2f48a3b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d84b6224-8737-4591-ae4b-814a009efc98",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:af104c2c-365b-488f-88e5-012bbdb17561",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:fd5abbdc-112f-46a7-b068-eab4bc22cfee",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6d1b59c6-2a16-487f-9d24-71b7bcba7c38",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:ba7348a1-bd8d-40af-8e0d-5f1121bbcf30",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1879,12 +1890,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:d40dfd67-6430-4e36-8000-98038a2a7266",
+      "identifier": "nb:4a7977f0-a1bc-4fed-a018-b60d0be32819",
       "hasLabel": "sub-20",
       "hasSession": [
         {
-          "identifier": "nb:87076d6e-b048-4283-8397-bfbee179c4cf",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:408a7bcd-0e5b-4b3a-8916-0a5a4125e309",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1892,38 +1903,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:f1013a2f-0cdb-405e-a958-abeb2a6ae30d",
+          "identifier": "nb:8c624a6d-4ba0-4cae-abea-8c6e853ff8f4",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-20/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:3b02ba5d-c7b5-489d-99f7-007f61952839",
+              "identifier": "nb:1452c5c6-b3f9-4986-abda-e4b8105c658c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e9e9bfaa-934d-42fc-a0a2-8333776379d2",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:c7d2a08b-be93-488c-88a0-562bcc426a4c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:fbc2c36c-f5ac-40dd-9e30-03e08fe215a4",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:7d2f41c7-bc8c-412f-9e40-dac01643c73d",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:2b2f39dc-a2c2-458d-a395-f48ed2b886e0",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:5a4ba414-d03b-4bc6-8a66-05a786dfb859",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1932,38 +1943,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:2d0fa58f-9377-46eb-8b45-e3ae237ed814",
+          "identifier": "nb:155d6048-c392-462c-84a9-226873683815",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-20/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:fb0bb4f1-1d34-4b09-b635-72eac8dd78b7",
+              "identifier": "nb:937f386d-ada6-4a24-9344-09dcd196ca6b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:1dc061d4-7efa-402b-8b0d-e413b05d2e01",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d0a2afe8-3f0d-4624-8c90-551879e220d3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:177f3fd1-cb33-43a7-abec-d089a6ed6d56",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:298c833d-1f9a-4f58-9134-a9fefaeca3ea",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0c5d4d7e-d773-4420-af7c-45a282676831",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:98616bef-f2f2-49da-b6dd-d76cb6653803",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -1975,12 +1986,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:088c6fe8-bf9b-40ff-92bb-b715b67ebc06",
+      "identifier": "nb:3a154420-57a6-452f-bdd8-15b73c2bfef0",
       "hasLabel": "sub-21",
       "hasSession": [
         {
-          "identifier": "nb:52a1ed90-e8dc-44da-9fb9-c102658d626b",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:c83dda2a-c87f-4aa7-8d28-96ae7ff797ac",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -1988,38 +1999,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:ab8b0b55-ebe6-4630-80e9-88f31c49184e",
+          "identifier": "nb:fa7d235d-13e4-4d48-b69e-a1ae5a17cbdd",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-21/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:5326bcf0-18f0-4233-8232-59924fadee9d",
+              "identifier": "nb:38d82714-d502-4354-8419-6eb041f09f8e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e004210b-cc49-4499-be49-078b42328f72",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:91ccf245-00ca-409a-95ef-89778f340acf",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0c854ddf-80e7-46d4-a8ec-ab4aefe72f54",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0abd60e8-619a-4005-a17c-c6f6b31ca4e3",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6dbc450c-3c13-409f-943b-320f46fdcd0d",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:714f182e-1508-4d9d-a716-fdc69fad254e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2028,38 +2039,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:1a04d820-968d-4107-bf7e-d990519ed989",
+          "identifier": "nb:69f0a93e-ec5e-4680-865b-e60a7feaaf75",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-21/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:6d91d23f-aed3-4fee-b00d-2050e0e05ca9",
+              "identifier": "nb:27c4e801-ef25-49b9-8ca6-3b76b50f5954",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:5d1c3e5f-6b9a-44ed-a441-51436e373244",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:6ee9238c-841a-4020-a52f-84476fc92bc0",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:1272967d-6471-4eab-92f6-677062176158",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:33d8c8f8-d2e2-44c1-9610-359ce62f634c",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:3d6132e0-9e44-4a66-adac-88246be539e7",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:20c96506-291c-489d-8757-0d4190859529",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2071,12 +2082,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:5f69a0b0-1986-43bc-b747-0f6fb467a152",
+      "identifier": "nb:b9b69e64-a515-4b5c-b96f-ff33ab804336",
       "hasLabel": "sub-22",
       "hasSession": [
         {
-          "identifier": "nb:152f545e-c27a-44fc-9dbb-8e0f8eb47dbb",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:7469706b-d8e0-4554-ac86-2b8537d0c933",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -2084,38 +2095,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:d2c6a059-713e-4dd7-8a01-de7532f06849",
+          "identifier": "nb:29f094a8-a586-487e-8df5-b4aeba40d2d8",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-22/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:5eadcb08-a5fd-46ad-b75f-67be5e10501c",
+              "identifier": "nb:58797d64-2e76-44f5-b011-db88e3a11e65",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:36a8d049-2a7b-43d3-9a1a-1a37da2d20e8",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:8bf3c483-e27a-4691-9ef5-bf11ba993bce",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:421bd74b-63b3-466c-a424-d127c59d4ed6",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:cddd6819-387f-4bf5-a03a-5456a3df7a7e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:6770a4f8-fd4f-4545-8cfa-557f11f7bf61",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:c05c780c-2fb4-4397-82d7-45fc387282a7",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2124,38 +2135,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:e2566a26-07b9-4001-96bd-1d174582fb6d",
+          "identifier": "nb:1a6b19ad-f52b-45d7-a499-44b79190c180",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-22/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:0e52b77d-729b-4a30-8269-72c9c8d66487",
+              "identifier": "nb:26217776-dcf5-4e70-ab37-2a2cb2aa6ddd",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:40646386-51c8-44ed-9d5f-8423fb9e0179",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:9963e981-49cc-4be2-8b97-e462528fc98c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:f6b8add8-a7a7-43c4-bb15-dc7fe8944e69",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:22eba744-a4ab-4210-a11f-839ba5c9eef2",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:dbf8e2e8-0dc1-4873-aeaf-53a9fa67c641",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:cc03d3a4-018c-408a-a3e4-9bbad3bdf921",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2167,12 +2178,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:2f626500-55c9-4153-9466-69fb2fb79827",
+      "identifier": "nb:ece83e5f-d3e8-48ce-90a2-b064e99189dd",
       "hasLabel": "sub-23",
       "hasSession": [
         {
-          "identifier": "nb:fd87c3c9-734b-4111-8b4a-038e4e13e384",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:5e1f6065-f09b-4179-9bc1-d4eb523eb14c",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -2180,38 +2191,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:a2061c50-3d05-4487-83a9-85e56f88b6a6",
+          "identifier": "nb:c4c19441-1f2a-431e-af26-520a957ada45",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-23/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:ebb9d5fe-89a7-4c03-95a2-3454cfb8497f",
+              "identifier": "nb:f006a302-7f0c-425b-a500-0b6f41f498bf",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:16fb1c0b-5180-477f-8b61-e144dd4d0be1",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:46d4c025-677a-4b96-be8a-be9fe6c18d6d",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b2105907-a05b-43bf-baad-dd3858ab752f",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:1418b841-3ed8-4593-aca2-c698def3b7d1",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:8c6b0952-8f54-4328-9cfb-d039c732a8e5",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:c83d933d-dc0d-4fab-a491-45014acb9264",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2220,38 +2231,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:36efd87d-2552-4187-ba3c-d29e365a5b15",
+          "identifier": "nb:303c13d0-103e-4ae2-8f90-d4ade1093062",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-23/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:6693dd04-3012-4152-8184-64f01290fe2d",
+              "identifier": "nb:d33af76b-664d-4b7d-a5fd-ae43ec615d9a",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4053ea6c-cfc4-4c5a-b8ab-4ab51088dcbd",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:c3671212-b84c-4157-ab69-b39561dda6f7",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:79ef87e6-b332-4cd5-8d4a-647cc119c053",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:43e3f596-7040-4efb-aeff-5f53c74e8920",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:2db0fddd-a81e-4c34-9210-fed3c7a29b09",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0845f339-a500-4017-8895-07ac251a684c",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2263,12 +2274,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:679d4f9e-beae-46b8-aed8-601e28534714",
+      "identifier": "nb:0187422b-2f1c-4d17-a8f7-50a5970e91c6",
       "hasLabel": "sub-24",
       "hasSession": [
         {
-          "identifier": "nb:7e37eb2b-49eb-4ad4-9b97-2a998427fde7",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:dd62b9fd-022b-4beb-bc28-cd62328794e4",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -2276,38 +2287,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:a442693e-09a4-4f7a-bce6-62f506c5b12b",
+          "identifier": "nb:f0b119bc-0ca3-4e2e-95a9-bcb02f53ca4d",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-24/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:b00e37bb-e603-42a9-b023-2ecfb1f7dbd4",
+              "identifier": "nb:1cdeacc9-27c9-4239-a376-405b96f32547",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:baad6a77-033c-4df6-8063-9b24b1d5c042",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d35950fa-5289-4783-a3b4-9e78186f8da3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:9b85ff42-c30f-4198-8575-a8b9f2d2448b",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:fece14e1-1218-4774-97c2-5956578eb46a",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e4a22280-be0a-4001-aafc-8fa5bb11e276",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e9c702a8-1dd2-4ca7-a7d2-0eceb3093940",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2316,38 +2327,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:b81337a2-d2b0-4b1e-93fe-b9194efd46d5",
+          "identifier": "nb:da454f7c-76e3-4c73-82c7-659a9baeb04a",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-24/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:3a4a6b4f-b524-4130-9069-07e94e0e012a",
+              "identifier": "nb:26d4cd96-f69e-4ebc-8ab5-1beff3fb891d",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:30fc0293-676e-4d72-98d5-fecabec0aab6",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:66efdbb8-b6dc-4d97-875f-669f4ce8babd",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:26f0788c-5f99-4396-8c29-37a4e2beeddf",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0c189e46-4aec-4e23-a4db-1ee32ec49786",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:e77bfa6e-f6ff-4f94-a474-5c712dd7d89e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:718e2332-f39c-4e4e-862d-1c62c2c1c424",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2359,12 +2370,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:7c9219bd-0b56-4734-b8a5-b090da23a9e7",
+      "identifier": "nb:1d2e263b-f9cb-47c9-a9d3-f96602a9778e",
       "hasLabel": "sub-25",
       "hasSession": [
         {
-          "identifier": "nb:0312f8c6-00eb-4a39-8fed-b0228daf1d7f",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:2fa024e0-014b-483e-8aa0-30ddd8740f26",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -2372,38 +2383,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:38d20b1c-641b-4e38-a047-28a7df8cc4d9",
+          "identifier": "nb:a6e9473a-8781-4531-b6f5-ace9bc18b78c",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-25/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:ea883a1d-96b0-4a47-ad8e-5244bc682caa",
+              "identifier": "nb:4281f09f-9450-4cd8-8e03-f55ce5a6419b",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d94ade77-bcf4-453e-b485-88dd5c5e1866",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:301d5e9d-0d1a-473d-bbcd-03887bd417ee",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:c2bbcb09-4f83-46ab-8eb0-0af700fcb069",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:3dc91f3a-1a2b-4937-b282-838c9406b81f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:3600c4ff-80f6-4ecd-a38d-03291915fb5f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:172725f5-8f04-4fbc-8c4d-da51f868658e",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2412,38 +2423,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:e3f37e2f-c8bb-44b6-986a-62dee6db5605",
+          "identifier": "nb:7389f136-d179-4b37-a1c1-ad5bc0a854a1",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-25/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:142bff11-4f57-4769-b6b0-ee8eb471e59d",
+              "identifier": "nb:80883d29-97b4-4bd9-8779-a8249cfb48e0",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:58902adf-9c1c-4256-8ea6-fd6e4fd002c7",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:063e7c72-6998-4d50-b289-bec7686b8da1",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:4f32e1ea-b259-4181-b646-53bfadd07140",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:b99b0f4b-6830-4c81-84a1-246df81c857d",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:d077bc3e-b721-472c-98d2-194fd20ead2b",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:9daeb84b-edac-4aa6-b88e-8de94fa62e0f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2455,12 +2466,12 @@
       "schemaKey": "Subject"
     },
     {
-      "identifier": "nb:d908eb52-f535-4883-b695-8e7679c0d7dc",
+      "identifier": "nb:282086c2-4afa-45ea-8041-4e393b07516e",
       "hasLabel": "sub-26",
       "hasSession": [
         {
-          "identifier": "nb:0e145404-e741-4c37-9061-35bf4fa2e748",
-          "hasLabel": "ses-nb01",
+          "identifier": "nb:f59e1677-bc11-4414-b0e6-913d3bd5ca1a",
+          "hasLabel": "ses-unnamed",
           "hasSex": {
             "identifier": "snomed:248153007",
             "schemaKey": "Sex"
@@ -2468,38 +2479,38 @@
           "schemaKey": "PhenotypicSession"
         },
         {
-          "identifier": "nb:61b568f8-1c14-4f10-87c4-9b83149efc28",
+          "identifier": "nb:be265c33-fec6-4a33-809c-99cdd8bd901d",
           "hasLabel": "ses-post",
           "hasFilePath": "/ds000133/sub-26/ses-post",
           "hasAcquisition": [
             {
-              "identifier": "nb:ca2399d9-85ec-49a2-8782-0ae69f9949d2",
+              "identifier": "nb:fd6b2828-d727-408d-a71f-1eaf1ffb2281",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:cee8339f-2af0-4539-8b63-9ccafc973710",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:16bb8ed9-a16d-4f03-988b-01b5f30f6ff3",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e869cbd0-4ad7-4cb4-b3b4-429e5890dfde",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:8b8eecad-d3a2-4688-a60e-e8df4767f4a0",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0a25eedf-91aa-4f7d-b8e6-cf232fa5e70f",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:aaf0327a-6ad6-46e9-b650-337a1263bb97",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"
@@ -2508,38 +2519,38 @@
           "schemaKey": "ImagingSession"
         },
         {
-          "identifier": "nb:89c9dbfa-6196-4888-a36c-5ed023cdd9c8",
+          "identifier": "nb:888c5ab4-bcda-4943-8a3f-caeb51d4385a",
           "hasLabel": "ses-pre",
           "hasFilePath": "/ds000133/sub-26/ses-pre",
           "hasAcquisition": [
             {
-              "identifier": "nb:ed3e0446-2f27-4291-bb09-3c78007c470e",
+              "identifier": "nb:d5c8a756-c766-4c4d-90a3-f8695df2160e",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:1cf5313f-a500-48b8-8161-98de147b8925",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:823a1a17-dd02-48d8-828c-79dfbbb70b34",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e9cf112c-b0bc-4818-8d39-e63b674a8d4e",
               "hasContrastType": {
                 "identifier": "nidm:T1Weighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:0f6d9b96-3f0c-419a-8938-e68d187990a5",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:957ea426-7310-44ae-a846-4a6be33f9e69",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
-                "schemaKey": "Image"
-              },
-              "schemaKey": "Acquisition"
-            },
-            {
-              "identifier": "nb:52208888-e317-45f9-b9a1-6b8325b0910b",
-              "hasContrastType": {
-                "identifier": "nidm:FlowWeighted",
                 "schemaKey": "Image"
               },
               "schemaKey": "Acquisition"

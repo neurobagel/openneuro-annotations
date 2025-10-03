@@ -1,68 +1,70 @@
 {
-    "participant_id": {
-        "Description": "Unique participant identifier",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:ParticipantID",
-                "Label": ""
-            },
-            "Identifies": "participant"
-        }
-    },
-    "age": {
-        "Description": "Age of the participant at time of testing",
-        "Units": "years",
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Age",
-                "Label": ""
-            },
-            "Transformation": {
-                "TermURL": "nb:FromFloat",
-                "Label": "float data"
-            },
-            "MissingValues": [
-                "",
-                "n/a",
-                " "
-            ]
-        }
-    },
-    "sex": {
-        "Description": "Biological sex of the participant",
-        "Levels": {
-            "F": "female",
-            "M": "male"
-        },
-        "Annotations": {
-            "IsAbout": {
-                "TermURL": "nb:Sex",
-                "Label": ""
-            },
-            "Levels": {
-                "F": {
-                    "TermURL": "snomed:248152002",
-                    "Label": ""
-                },
-                "M": {
-                    "TermURL": "snomed:248153007",
-                    "Label": ""
-                }
-            },
-            "MissingValues": [
-                "",
-                " ",
-                "nan",
-                "n/a"
-            ]
-        }
-    },
-    "hand": {
-        "Description": "Handedness of the participant",
-        "Levels": {
-            "R": "right",
-            "L": "left",
-            "A": "ambidextrous"
-        }
+  "participant_id": {
+    "Description": "Unique participant identifier",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": ""
+      },
+      "VariableType": "Identifier"
     }
+  },
+  "age": {
+    "Description": "Age of the participant at time of testing",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": ""
+      },
+      "MissingValues": [
+        "",
+        "n/a",
+        " "
+      ],
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float data"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "sex": {
+    "Description": "Biological sex of the participant",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": ""
+      },
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": ""
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": ""
+        }
+      },
+      "MissingValues": [
+        "",
+        " ",
+        "nan",
+        "n/a"
+      ],
+      "VariableType": "Categorical"
+    }
+  },
+  "hand": {
+    "Description": "Handedness of the participant",
+    "Levels": {
+      "R": "right",
+      "L": "left",
+      "A": "ambidextrous"
+    }
+  }
 }
