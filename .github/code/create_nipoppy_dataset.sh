@@ -71,7 +71,5 @@ done <<< "$derivative_datasets"
 processing_status_file="${NIPOPPY_DATASET_DIR}/derivatives/processing_status.tsv"
 if [ -f "$processing_status_file" ]; then
     cp "$processing_status_file" "${OUTPUT_DIR}/${DS_ID}.tsv"
+    echo "${DS_ID}: Processing status file copied to ${OUTPUT_DIR}/${DS_ID}.tsv"
 fi
-echo "${DS_ID}: Processing status file copied to ${OUTPUT_DIR}/${DS_ID}.tsv"
-
-echo "${DS_ID}: Done."
