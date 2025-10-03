@@ -34,7 +34,7 @@ while IFS= read -r derivative_ds; do
 
     # Check that the derivative dataset has pipeline info
     if [ "$pipeline_info" != "{}" ]; then
-        echo "${DS_ID}: Cloning derivative dataset ${derivative_ds}"
+        echo "${DS_ID}: ${derivative_ds}: Cloning derivative dataset"
         derivative_ds_url="https://github.com/OpenNeuroDerivatives/${derivative_ds}.git"
         pipeline_name=$(jq -r '.name | ascii_downcase' <<< "$pipeline_info")
         pipeline_version=$(jq -r '.version' <<< "$pipeline_info")
@@ -54,10 +54,10 @@ while IFS= read -r derivative_ds; do
         if [ $has_no_ses -eq 1 ]; then
             args+=("--no-sessions")
         fi
-        echo "${DS_ID}: Customizing config.json and tracker.json files for ${derivative_ds}"
+        echo "${DS_ID}: ${derivative_ds}: Customizing config.json and tracker.json files"
         python ${SCRIPT_DIR}/customize_configs_for_pipeline.py "${args[@]}"
     else
-        echo "${DS_ID}: WARNING No pipeline info found for ${derivative_ds} in ${DERIVATIVES_REPO_MAP}, skipping."
+        echo "${DS_ID}: ${derivative_ds}: WARNING No pipeline info found, skipping."
     fi
 
 done <<< "$derivative_datasets"
