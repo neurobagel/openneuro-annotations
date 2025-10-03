@@ -1,30 +1,45 @@
-name: Initialize Nipoppy dataset for OpenNeuroDatasets
+name: Generate processing status files for OpenNeuroDatasets
 
 on:
   workflow_dispatch:
+    inputs:
+      chunk_size:
+        description: "Number of datasets to process in each job"
+        required: false
+        default: "100"
 
 jobs:
   define-matrix:
+    name: Get chunks of dataset IDs to run on
     runs-on: ubuntu-latest
     outputs:
-      dataset_ids: ${{ steps.get-datasets.outputs.dataset_ids }}
+      dataset_id_chunks: ${{ steps.chunk-datasets.outputs.dataset_id_chunks }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      
-      - name: Get dataset IDs from mapping file
-        id: get-datasets
-        run: |
-          dataset_ids=$(jq -c 'keys' .github/dataset_derivatives_mapping.json)
-          echo "dataset_ids=$dataset_ids" >> "$GITHUB_OUTPUT"
 
-  init-dataset:
+      - name: Chunk dataset IDs from mapping file
+        id: chunk-datasets
+        run: |
+          chunk_size=${{ github.event.inputs.chunk_size }}
+
+          dataset_id_chunks=$(jq -c 'keys as $dataset_ids | \
+            [range(0; $dataset_ids|length; '"$chunk_size"') | \
+            $dataset_ids[. : . + '"$chunk_size"']]' \
+            .github/dataset_derivatives_mapping.json)
+
+          echo "dataset_id_chunks=$dataset_id_chunks" >> "$GITHUB_OUTPUT"
+
+  generate-processing-status-files:
+    name: Generate processing status files
     needs: define-matrix
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        dataset_id: ${{ fromJson(needs.define-matrix.outputs.dataset_ids) }}
+        dataset_id_chunk: ${{ fromJson(needs.define-matrix.outputs.dataset_id_chunks) }}
 
     steps:
       - name: Checkout
@@ -43,4 +58,63 @@ jobs:
 
       - name: Create Nipoppy dataset
         run: |
-          .github/code/create_nipoppy_dataset.sh "${{ matrix.dataset_id }}"
+          count=1
+          total_datasets=$(jq -r 'length' <<< "${{ matrix.dataset_id_chunk }}")
+          for dataset_id in $(jq -r '.[]' <<< "${{ matrix.dataset_id_chunk }}"); do
+            echo "($count/$total_datasets) Processing dataset: $dataset_id"
+            .github/code/create_nipoppy_dataset.sh "$dataset_id"
+            ((count++))
+          done
+
+      # NOTE: after the first time this workflow is run, processing_status_files
+      # should never be an empty directory, so the download-artifact step should 
+      # never fail with the error that no artifacts were found
+      - name: Upload dataset processing status files as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.dataset_id_chunk }}_processing_status
+          path: processing_status_files
+
+  commit-files:
+    needs: generate-processing-status-files
+    if: ${{ always() }}
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate a Neurobagel Bot token
+        id: generate-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.NB_BOT_ID }}
+          private-key: ${{ secrets.NB_BOT_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v5
+        with:
+          path: .
+
+      - name: Get Neurobagel Bot App User ID
+        id: get-user-id
+        run: echo "user-id=$(gh api "/users/${{ steps.generate-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+
+      - name: Configure git for Neurobagel Bot user
+        run: |
+          git config --global user.name '${{ steps.generate-token.outputs.app-slug }}[bot]'
+          git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com'
+
+      - name: Commit and push if any processing status files have changed
+        run: |
+          git add processing_status_files
+          if ! git diff --cached --quiet processing_status_files; then
+            git commit -m "[bot] Update processing status files"
+            git push origin main
+          fi
