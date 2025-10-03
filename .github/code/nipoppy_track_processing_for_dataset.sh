@@ -4,14 +4,13 @@ set -euo pipefail
 DS_ID=$1
 DS_URL="https://github.com/OpenNeuroDatasets/${DS_ID}.git"
 
-# NOTE: Double check paths in context of wf runner
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
-DERIVATIVES_REPO_MAP="${SCRIPT_DIR}/../dataset_derivatives_mapping.json"
+DERIVATIVES_REPO_MAP="derivatives/repo_derivatives_map.json"
 SOURCE_WORKDIR="derivatives/source"
 NIPOPPY_WORKDIR="derivatives/nipoppy"
 TEMPLATE_CONFIGS_DIR="derivatives/template_pipeline_configs"
 NIPOPPY_DATASET_DIR="${NIPOPPY_WORKDIR}/${DS_ID}"
-OUTPUT_DIR="processing_status_files/"
+OUTPUT_DIR="processing_status_files"
 
 mkdir -p ${SOURCE_WORKDIR}
 mkdir -p ${NIPOPPY_WORKDIR}

@@ -26,7 +26,7 @@ jobs:
           dataset_id_chunks=$(jq -c 'keys as $dataset_ids | \
             [range(0; $dataset_ids|length; '"$chunk_size"') | \
             $dataset_ids[. : . + '"$chunk_size"']]' \
-            .github/dataset_derivatives_mapping.json)
+            derivatives/repo_derivatives_map.json)
 
           echo "dataset_id_chunks=$dataset_id_chunks" >> "$GITHUB_OUTPUT"
 
