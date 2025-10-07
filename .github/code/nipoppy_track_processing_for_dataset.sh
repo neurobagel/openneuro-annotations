@@ -20,7 +20,7 @@ echo "${DS_ID}: Initializing Nipoppy dataset"
 # NOTE: The BIDS dataset is symlinked by default
 nipoppy init --dataset ${NIPOPPY_DATASET_DIR} --bids-source ${SOURCE_WORKDIR}/${DS_ID}
 
-# This creates a multi-line string variable
+# This creates a multi-line string variable with all derivatives for the ${ds} dataset
 derivative_datasets="$(jq -r --arg ds "$DS_ID" '.[ $ds ] | keys[]' "$DERIVATIVES_REPO_MAP")"
 
 has_no_ses=0
