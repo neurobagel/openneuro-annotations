@@ -48,7 +48,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
+          python-version: "3.13"
 
       # TODO: Switch to using requirements.txt
       - name: Install dependencies
@@ -56,13 +56,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install nipoppy
 
-      - name: Create Nipoppy dataset
+      - name: Create Nipoppy processing status files for datasets in chunk
         run: |
           count=1
           total_datasets=$(jq -r 'length' <<< "${{ matrix.dataset_id_chunk }}")
           for dataset_id in $(jq -r '.[]' <<< "${{ matrix.dataset_id_chunk }}"); do
             echo "($count/$total_datasets) Processing dataset: $dataset_id"
-            .github/code/create_nipoppy_dataset.sh "$dataset_id"
+            .github/code/nipoppy_track_processing_for_dataset.sh "$dataset_id"
             ((count++))
           done
 
