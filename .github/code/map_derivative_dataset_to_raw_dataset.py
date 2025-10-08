@@ -92,7 +92,7 @@ def get_parent(repo_name, token) -> tuple[str, str]:
         if parent_name:
             return (parent_url, parent_name)
         else:
-            logger.warning(f"    {repo_name} has a parent, but we cannot identify the parent name ")
+            logger.warning(f"    {repo_name} has a parent, but we cannot identify the parent name from the .gitmodules file")
 
     else:
         logger.info(f"    {repo_name} does not have a parent: {repo_name}")
