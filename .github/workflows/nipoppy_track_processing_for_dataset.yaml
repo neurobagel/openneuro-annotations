@@ -23,9 +23,9 @@ jobs:
         run: |
           chunk_size=${{ github.event.inputs.chunk_size }}
 
-          dataset_id_chunks=$(jq -c 'keys as $dataset_ids | \
-            [range(0; $dataset_ids|length; '"$chunk_size"') | \
-            $dataset_ids[. : . + '"$chunk_size"']]' \
+          dataset_id_chunks=$(jq -c "keys as \$dataset_ids | \
+            [range(0; \$dataset_ids|length; $chunk_size) | \
+            \$dataset_ids[. : . + $chunk_size]]" \
             derivatives/repo_derivatives_map.json)
 
           echo "dataset_id_chunks=$dataset_id_chunks" >> "$GITHUB_OUTPUT"
