@@ -44,7 +44,8 @@ def get_file(owner, repo, file_path, token, branch='main'):
 
 def get_submodule_url(content, submodule_path):
     # .gitmodule is INI format, which configparser handles
-    # Some repos have duplicate entires in .gitmodule, so we need strict=False
+    # Some repos have duplicate keys in a section in .gitmodules, so we need strict=False
+    # to allow this (NOTE: last occurrence takes precedence)
     config = configparser.ConfigParser(strict=False)
     config.read_string(content)
     
@@ -56,7 +57,7 @@ def get_submodule_url(content, submodule_path):
 
 
 def get_name_from_url(url: str) -> str:
-    return url.split('/')[-1].strip('.git')
+    return url.split('/')[-1].removesuffix('.git')
 
 
 def get_pipeline_info(repo_name, token) -> dict:
@@ -78,13 +79,13 @@ def get_pipeline_info(repo_name, token) -> dict:
     return {}
 
 
-def get_parent(repo_name, token):
+def get_parent(repo_name, token): -> tuple[str, str]
     owner = 'OpenNeuroDerivatives'
     submodule_path = 'sourcedata/raw'
     # Get the file
     response = get_file(owner, repo_name, file_path='.gitmodules', token=token)
     # Process the response
-    content  = get_content(response)
+    content = get_content(response)
     # Parse the file
     parent_url = get_submodule_url(content, submodule_path)
     # Parse the name of the parent
@@ -107,6 +108,9 @@ def main(repo_name: str, map_file_path: Path, token: str):
             loaded_dict = json.load(f)
     else:
         loaded_dict = {}
+   # start with the contents of loaded_dict, but ensure that any new (non-existent) key
+   # accessed later will default to having a value of empty dict `{}`,
+   # allowing nested updates without needing to check for key existence.
     map_dict = defaultdict(dict, loaded_dict)
     
     try:
@@ -122,7 +126,7 @@ def main(repo_name: str, map_file_path: Path, token: str):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Build repo map from a TSV of derivative repos")
+    parser = argparse.ArgumentParser(description="Map an OpenNeuroDerivative repo to its parent OpenNeuroDataset repo and store its pipeline information")
     parser.add_argument('repo_name', type=str, help='Name of the derivative repo to run on')
     parser.add_argument('map_file', type=str, help='Path to the .json repo map file')
     args = parser.parse_args()
