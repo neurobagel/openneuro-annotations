@@ -15,7 +15,7 @@ OUTPUT_DIR="processing_status_files"
 mkdir -p ${SOURCE_WORKDIR}
 mkdir -p ${NIPOPPY_WORKDIR}
 
-git clone -q ${DS_URL} ${SOURCE_WORKDIR}/${DS_ID}
+git clone -q "${DS_URL}" "${SOURCE_WORKDIR}/${DS_ID}"
 echo "${DS_ID}: Initializing Nipoppy dataset"
 # NOTE: The BIDS dataset is symlinked by default
 nipoppy init --dataset ${NIPOPPY_DATASET_DIR} --bids-source ${SOURCE_WORKDIR}/${DS_ID}
@@ -61,6 +61,9 @@ while IFS= read -r derivative_ds; do
         nipoppy track-processing "${NIPOPPY_DATASET_DIR}" \
             --pipeline "${pipeline_name}" \
             --pipeline-version "${pipeline_version}"
+        if [ $? -ne 0 ]; then
+            echo "${DS_ID}: ${derivative_ds}: ERROR Nipoppy tracking failed!"
+        fi
     else
         echo "${DS_ID}: ${derivative_ds}: WARNING No pipeline info found, skipping."
     fi
