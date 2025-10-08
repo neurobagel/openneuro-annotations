@@ -4,6 +4,7 @@ import configparser
 import json
 import logging
 import os
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -16,7 +17,8 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('build_repo_map.log', mode='w'),
+        logging.FileHandler('build_repo_map.log'),
+        logging.StreamHandler(sys.stdout)
     ]
 )
 logger = logging.getLogger("processing")
@@ -125,5 +127,5 @@ if __name__ == '__main__':
     parser.add_argument('map_file', type=str, help='Path to the .json repo map file')
     args = parser.parse_args()
 
-    token = os.environ.get('NB_TOKEN', '')
+    token = os.environ.get('NB_TOKEN', 'nix')
     main(args.repo_name, Path(args.map_file), token)
