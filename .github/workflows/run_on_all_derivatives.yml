@@ -36,7 +36,7 @@ jobs:
         env:
           NB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
-          while IFS=$'\t' read -r repo_name || [ -n "$repo_name" ]; do
+          while IFS= read -r repo_name || [ -n "$repo_name" ]; do
             echo "Processing: $repo_name"
             python .github/code/build_repo_map.py "$repo_name" ./derivatives/repo_derivatives_map.json
           done < all_openneuroderivatives_repos.tmp
