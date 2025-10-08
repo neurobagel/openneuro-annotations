@@ -89,7 +89,10 @@ def get_parent(repo_name, token) -> tuple[str, str]:
     # Parse the name of the parent
     if parent_url:
         parent_name = get_name_from_url(parent_url)
-        return (parent_url, parent_name)
+        if parent_name:
+            return (parent_url, parent_name)
+        else:
+            logger.warning(f"    {repo_name} has a parent, but we cannot identify the parent name ")
     
     logger.info(f"    {repo_name} does not have a parent: {repo_name}")
     return ('', '')
