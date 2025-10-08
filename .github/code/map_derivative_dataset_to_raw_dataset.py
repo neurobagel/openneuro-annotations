@@ -11,8 +11,9 @@ from pathlib import Path
 import requests
 
 
+ORG_OWNER = 'OpenNeuroDerivatives'
 
-# Set up logger
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -24,13 +25,12 @@ logging.basicConfig(
 logger = logging.getLogger("processing")
 
 
-def get_file(owner, repo, file_path, token, branch='main'):
+def get_file(repo, file_path, token, branch='main'):
     headers = {}
     if token:
         headers['Authorization'] = f'token {token}'
     
-    # Fetch .gitmodules file from GitHub
-    url = f'https://api.github.com/repos/{owner}/{repo}/contents/{file_path}'
+    url = f'https://api.github.com/repos/{ORG_OWNER}/{repo}/contents/{file_path}'
     params = {'ref': branch}
     
     response = requests.get(url, headers=headers, params=params)
@@ -61,8 +61,7 @@ def get_name_from_url(url: str) -> str:
 
 
 def get_pipeline_info(repo_name, token) -> dict:
-    owner = 'OpenNeuroDerivatives'
-    response = get_file(owner, repo_name, file_path='dataset_description.json', token=token)
+    response = get_file(repo_name, file_path='dataset_description.json', token=token)
     if response is None:
         logger.debug(f"{repo_name} has no dataset_description.json")
         return {}
@@ -79,11 +78,10 @@ def get_pipeline_info(repo_name, token) -> dict:
     return {}
 
 
-def get_parent(repo_name, token): -> tuple[str, str]
-    owner = 'OpenNeuroDerivatives'
+def get_parent(repo_name, token) -> tuple[str, str]:
     submodule_path = 'sourcedata/raw'
     # Get the file
-    response = get_file(owner, repo_name, file_path='.gitmodules', token=token)
+    response = get_file(repo_name, file_path='.gitmodules', token=token)
     # Process the response
     content = get_content(response)
     # Parse the file
@@ -94,7 +92,7 @@ def get_parent(repo_name, token): -> tuple[str, str]
         return (parent_url, parent_name)
     
     logger.info(f"    {repo_name} does not have a parent: {repo_name}")
-    return (None, None)
+    return ('', '')
 
 
 def get_content(response):
