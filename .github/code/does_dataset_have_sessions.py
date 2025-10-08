@@ -5,8 +5,8 @@ import argparse
 
 def does_dataset_have_sessions(dataset_id: str, bids_path: Path):
     """
-    Exit with code 0 if any sessions exist, 1 otherwise.
-    Warn if some subjects have sessions and others do not.
+    Exit with code 0 if any sessions exist, 1 if no sessions are found, 
+    and 42 if some subjects have sessions and others do not.
     """
     subjects_with_sessions = []
     subjects_without_sessions = []
@@ -24,6 +24,9 @@ def does_dataset_have_sessions(dataset_id: str, bids_path: Path):
             f"{len(subjects_without_sessions)} subject(s) lack session subdirectories: "
             f"{subjects_without_sessions}"
         )
+        # Exit code 2 might be thrown by command line parsing errors,
+        # so we use a distinct code that's unlikely to collide with other codes
+        sys.exit(3)
 
     if subjects_with_sessions:
         sys.exit(0)
