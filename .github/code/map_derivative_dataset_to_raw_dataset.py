@@ -18,7 +18,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('build_repo_map.log'),
+        logging.FileHandler('map_derivative_dataset_to_raw_dataset.log'),
         logging.StreamHandler(sys.stdout)
     ]
 )
