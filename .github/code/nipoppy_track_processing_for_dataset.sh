@@ -52,17 +52,13 @@ else
             pipeline_config_dir="${NIPOPPY_DATASET_DIR}/pipelines/processing/${pipeline_name}-${pipeline_version}"
             mkdir -p "${pipeline_config_dir}"
 
-            args=(
-                "${TEMPLATE_CONFIGS_DIR}/${pipeline_name}/config.json"
-                "${TEMPLATE_CONFIGS_DIR}/${pipeline_name}/tracker.json"
-                "${pipeline_version}"
-                "${pipeline_config_dir}"
-            )
-            if [ $has_no_ses -eq 1 ]; then
-                args+=("--no-sessions")
-            fi
             echo "${DS_ID}: ${derivative_ds}: Customizing config.json and tracker.json files"
-            python ${SCRIPT_DIR}/customize_configs_for_pipeline.py "${args[@]}"
+            jq --arg version "${pipeline_version}" '.VERSION = $version' "${TEMPLATE_CONFIGS_DIR}/${pipeline_name}/config.json" > "${pipeline_config_dir}/config.json"
+            if [ $has_no_ses -eq 1 ]; then
+                cp "${TEMPLATE_CONFIGS_DIR}/${pipeline_name}/tracker_no-sessions.json" "${pipeline_config_dir}/tracker.json"
+            else
+                cp "${TEMPLATE_CONFIGS_DIR}/${pipeline_name}/tracker.json" "${pipeline_config_dir}/tracker.json"
+            fi
 
             echo "${DS_ID}: ${derivative_ds}: Tracking processing statuses"
             nipoppy track-processing "${NIPOPPY_DATASET_DIR}" \
