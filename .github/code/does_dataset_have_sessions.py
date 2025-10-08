@@ -6,7 +6,7 @@ import argparse
 def does_dataset_have_sessions(dataset_id: str, bids_path: Path):
     """
     Exit with code 0 if any sessions exist, 1 if no sessions are found, 
-    and 42 if some subjects have sessions and others do not.
+    and 3 if some subjects have sessions and others do not.
     """
     subjects_with_sessions = []
     subjects_without_sessions = []
