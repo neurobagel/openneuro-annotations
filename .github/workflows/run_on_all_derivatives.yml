@@ -1,4 +1,4 @@
-name: Process all OpenNeuroDerivatives repos
+name: Create dataset mapping for OpenNeuroDerivatives repos
 
 on:
   workflow_dispatch
@@ -38,7 +38,7 @@ jobs:
         run: |
           while IFS= read -r repo_name || [ -n "$repo_name" ]; do
             echo "Processing: $repo_name"
-            python .github/code/build_repo_map.py "$repo_name" ./derivatives/repo_derivatives_map.json
+            python .github/code/map_derivative_dataset_to_raw_dataset.py "$repo_name" ./derivatives/repo_derivatives_map.json
           done < all_openneuroderivatives_repos.tmp
 
       - name: Get Neurobagel Bot App User ID
