@@ -42,7 +42,7 @@ def get_file(owner, repo, file_path, token, branch='main'):
     return response
 
 
-def get_submodule_url(content, submodule_path):
+def get_submodule_url(content, submodule_path) -> str:
     # .gitmodule is INI format, which configparser handles
     # Some repos have duplicate keys in a section in .gitmodules, so we need strict=False
     # to allow this (NOTE: last occurrence takes precedence)
