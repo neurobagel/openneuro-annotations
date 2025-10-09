@@ -58,9 +58,11 @@ jobs:
 
       - name: Create Nipoppy processing status files for datasets in chunk
         run: |
+          # NOTE: matrix arrays become "Array" strings; toJson preserves the actual JSON structure
+          dataset_chunk_json='${{ toJson(matrix.dataset_id_chunk) }}'
+          total_datasets=$(jq -r 'length' <<< "$dataset_chunk_json")
           count=1
-          total_datasets=$(jq -r 'length' <<< "${{ matrix.dataset_id_chunk }}")
-          for dataset_id in $(jq -r '.[]' <<< "${{ matrix.dataset_id_chunk }}"); do
+          for dataset_id in $(jq -r '.[]' <<< "$dataset_chunk_json"); do
             echo "($count/$total_datasets) Processing dataset: $dataset_id"
             .github/code/nipoppy_track_processing_for_dataset.sh "$dataset_id"
             ((count++))
