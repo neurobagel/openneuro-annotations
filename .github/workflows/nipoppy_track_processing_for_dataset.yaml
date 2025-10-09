@@ -101,7 +101,11 @@ jobs:
       - name: Download all artifacts
         uses: actions/download-artifact@v5
         with:
-          path: .
+          path: processing_status_files
+          merge-multiple: true
+
+      - name: List processing_status_files/ contents
+        run: ls -l processing_status_files
 
       - name: Get Neurobagel Bot App User ID
         id: get-user-id
