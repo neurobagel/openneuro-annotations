@@ -74,7 +74,8 @@ jobs:
       - name: Upload dataset processing status files as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.dataset_id_chunk }}_processing_status
+          # NOTE: We need the roundtrip fromJson(toJson(...)) to 1) restore the actual JSON and 2) convert it back to an array so indexing works
+          name: ${{ fromJson(toJson(matrix.dataset_id_chunk))[0] }}_to_${{ fromJson(toJson(matrix.dataset_id_chunk))[-1] }}_processing_status
           path: processing_status_files
 
   commit-files:
