@@ -1,0 +1,870 @@
+{
+  "@context": {
+    "nb": "http://neurobagel.org/vocab/",
+    "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "ncit": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+    "np": "https://github.com/nipoppy/pipeline-catalog/tree/main/processing/",
+    "Acquisition": "nb:Acquisition",
+    "identifier": "@id",
+    "hasContrastType": {
+      "@id": "nb:hasContrastType"
+    },
+    "schemaKey": "@type",
+    "Assessment": "nb:Assessment",
+    "Bagel": "nb:Bagel",
+    "BaseModel": "nb:BaseModel",
+    "CompletedPipeline": "nb:CompletedPipeline",
+    "hasPipelineVersion": {
+      "@id": "nb:hasPipelineVersion"
+    },
+    "hasPipelineName": {
+      "@id": "nb:hasPipelineName"
+    },
+    "ControlledTerm": "nb:ControlledTerm",
+    "Dataset": "nb:Dataset",
+    "hasLabel": {
+      "@id": "nb:hasLabel"
+    },
+    "hasAuthors": {
+      "@id": "nb:hasAuthors"
+    },
+    "hasReferencesAndLinks": {
+      "@id": "nb:hasReferencesAndLinks"
+    },
+    "hasKeywords": {
+      "@id": "nb:hasKeywords"
+    },
+    "hasRepositoryURL": {
+      "@id": "nb:hasRepositoryURL"
+    },
+    "hasAccessInstructions": {
+      "@id": "nb:hasAccessInstructions"
+    },
+    "hasAccessType": {
+      "@id": "nb:hasAccessType"
+    },
+    "hasAccessEmail": {
+      "@id": "nb:hasAccessEmail"
+    },
+    "hasAccessLink": {
+      "@id": "nb:hasAccessLink"
+    },
+    "hasSamples": {
+      "@id": "nb:hasSamples"
+    },
+    "Diagnosis": "nb:Diagnosis",
+    "Image": "nb:Image",
+    "ImagingSession": "nb:ImagingSession",
+    "hasFilePath": {
+      "@id": "nb:hasFilePath"
+    },
+    "hasAcquisition": {
+      "@id": "nb:hasAcquisition"
+    },
+    "hasCompletedPipeline": {
+      "@id": "nb:hasCompletedPipeline"
+    },
+    "PhenotypicSession": "nb:PhenotypicSession",
+    "hasAge": {
+      "@id": "nb:hasAge"
+    },
+    "hasSex": {
+      "@id": "nb:hasSex"
+    },
+    "isSubjectGroup": {
+      "@id": "nb:isSubjectGroup"
+    },
+    "hasDiagnosis": {
+      "@id": "nb:hasDiagnosis"
+    },
+    "hasAssessment": {
+      "@id": "nb:hasAssessment"
+    },
+    "Pipeline": "nb:Pipeline",
+    "Session": "nb:Session",
+    "Sex": "nb:Sex",
+    "Subject": "nb:Subject",
+    "hasSession": {
+      "@id": "nb:hasSession"
+    },
+    "SubjectGroup": "nb:SubjectGroup"
+  },
+  "identifier": "nb:5b8113c3-a6dc-427a-8b6a-4ba015947eb5",
+  "hasLabel": "NeuroSpin hMT+ Localizer DATA (MEG & aMRI)",
+  "hasAuthors": [
+    "Nicolas Zilber",
+    "Philippe Ciuciu",
+    "Alexandre Gramfort",
+    "Leila Azizi",
+    "Virginie van Wassenhove"
+  ],
+  "hasReferencesAndLinks": [
+    "https://openneuro.org/datasets/ds003392",
+    "https://doi.org/10.1016/j.neuroimage.2014.02.017"
+  ],
+  "hasRepositoryURL": "https://github.com/OpenNeuroDatasets-JSONLD/ds003392.git",
+  "hasSamples": [
+    {
+      "identifier": "nb:0d25f110-d047-47e0-ab6d-7ac792b51ec9",
+      "hasLabel": "sub-01",
+      "hasSession": [
+        {
+          "identifier": "nb:85b3e33b-503c-422e-b72b-e60063ce580a",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:08fe6198-d615-4ca1-b1d3-ad1d737220ce",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-01",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:ca97288b-8621-4649-93bc-2b709491fbf3",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e10293b2-9fdc-4d71-8ea7-92a744b9fbf9",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:1cefe07b-123c-4783-8c6f-643f62805f9f",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e8d3c154-6419-4be8-a4b0-1a028c1efb2e",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:751a0020-a022-49ec-8238-73df0eeddf33",
+      "hasLabel": "sub-02",
+      "hasSession": [
+        {
+          "identifier": "nb:0081745c-611c-4465-add8-7c7259d4be0d",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:8da7bd3b-413a-4d5e-ae8f-ba1bfc464f1b",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-02",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:099c2f2d-0b8e-4fef-a9b7-ad531252d8ff",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:7a9ddee6-efb6-402c-bf65-129730b0a33d",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:efdc09f1-2f9c-4b1b-baa8-f7abc1edbce7",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:37e58386-4501-47ca-8c17-9da6ea3c9530",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:af984d3d-43c4-40d3-8fb9-74aba05f5d4c",
+      "hasLabel": "sub-03",
+      "hasSession": [
+        {
+          "identifier": "nb:8816e87f-d5c0-4172-bd5d-a6113aac666d",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:b6655c44-31a4-471e-996d-c3a54117332c",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-03",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:d352af0c-a7fb-4235-bcb2-2ac08ef15596",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:ed9ee159-4dc2-4865-8bdf-3858f5cc316b",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:6d686935-682b-4bab-875b-10182d2c7fd0",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:adf56b7c-0781-416b-9f56-7cb359f8610d",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:01fda286-b7c1-46cc-89f1-ebf06e06f91e",
+      "hasLabel": "sub-05",
+      "hasSession": [
+        {
+          "identifier": "nb:06b1b18e-b3b5-4453-a6ba-0f5ac35635bb",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:b25d678e-0c53-41e5-92ac-8dd25e4d41be",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-05",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:03202262-3ef4-4405-8a7b-b5f7f45638c2",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:36324684-dff7-421d-85df-4545099b8690",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:0ca96623-0b68-4d76-94c0-3fc86a8cc3a8",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:43478f1a-de79-4450-9e82-6d4885226bce",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:6aad7d98-cd28-4fef-be16-d39949f80f06",
+      "hasLabel": "sub-06",
+      "hasSession": [
+        {
+          "identifier": "nb:a9abec19-3ff4-4af7-b5ec-c1df3d90bb86",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:b700b3c0-15b0-4c50-bea4-51d5e8c71674",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-06",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:09a4f878-e43a-4f21-952e-6e46a61146d1",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:83b79a5e-3c06-418b-ad65-d6036ca2bfdc",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:ae0677e4-8d20-4899-96c5-3751d8b1fa6e",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:304cd4b8-020c-4268-9624-ead0e966bc86",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:a593fb41-946b-46e5-ba66-343c7c833519",
+      "hasLabel": "sub-07",
+      "hasSession": [
+        {
+          "identifier": "nb:354e0e01-46b0-43d8-9fec-4dce7f778715",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:8f93fb3e-c506-4cce-8177-284a3c49a686",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-07",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:5ab1b43a-6752-46d9-9ab7-ebe4fbb5ca07",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:518eebde-f332-4199-9979-4e8f0f3a510d",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:65247273-9047-4c74-8928-dac3acef7830",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:2dab411a-bad2-41bb-a58b-b8728d97a295",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:cb27282c-ec7c-45db-a9ab-ab8e1f00793b",
+      "hasLabel": "sub-08",
+      "hasSession": [
+        {
+          "identifier": "nb:3a9645e1-7d4f-42a6-8fba-f4adefe75cc1",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:bf7c882b-e5c1-4aeb-8e75-dbe371f1a9d1",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-08",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:a76bab58-22d3-4cf6-8eae-8ab6e4864a6b",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:5c8ec1e3-d221-475d-ae92-f759b48d0595",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:973a7e77-204b-492f-a37f-de8efb6f0615",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:048343fa-8a55-4590-bcf6-99676919119d",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:764aad58-a6b2-462a-8177-80b16b8afd33",
+      "hasLabel": "sub-09",
+      "hasSession": [
+        {
+          "identifier": "nb:2ee0f61e-91e3-4622-b63f-e0df63e5ee0c",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:4dec2e04-1d55-4bf6-a461-9a472f150bd4",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-09",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:43e5c2b6-81c2-46cf-b25f-be58b68fae15",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:82be687d-e22b-4a5d-802e-445a3553339e",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:3a1b5cef-e6a0-4c60-b076-c8be9558f64a",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:b44289a6-8e22-409b-8c54-f780f440d2cf",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:d832da43-cf99-4e04-99fa-7b65b3010011",
+      "hasLabel": "sub-10",
+      "hasSession": [
+        {
+          "identifier": "nb:cf22ea30-49e7-4543-83f4-daff8f4617f7",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:0d6a2b46-4d5a-4bdf-8173-39e0a82bad9f",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-10",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:b7d0b840-03da-44d5-9d79-cc697b738b80",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:cc5c2b1f-7b07-4562-baeb-a128124a58e6",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:2bcc70ae-ad1e-4c96-a6ea-3c70990a89ae",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:280b5189-deee-49d3-8599-9e974bc69c43",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:ac2a6782-c705-4032-a034-1e7d580f7519",
+      "hasLabel": "sub-11",
+      "hasSession": [
+        {
+          "identifier": "nb:676fd7e5-3fc8-4558-9eb2-23969c4593a6",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:c180c48c-a8dc-46c5-84f7-74af3d0a7d91",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-11",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:36d5a388-4d43-4736-9dac-5d1d298a551f",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:310e9a95-f22b-405f-b45d-45129c3ec5ce",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:f0c64cfb-3962-4500-bdc8-f90954d9569b",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:e8134ff7-a718-4446-a356-6aa25d12b4b0",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:a4350098-f02c-49d3-b64f-45dfcf422a75",
+      "hasLabel": "sub-12",
+      "hasSession": [
+        {
+          "identifier": "nb:4cd7167b-29d8-4a60-8e09-37b6debfb972",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:31699ef0-eef6-4638-a8e6-089dfc9ce12c",
+          "hasLabel": "ses-unnamed",
+          "hasFilePath": "/ds003392/sub-12",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:4e8f6c44-5839-42c3-9041-6230dc7880b4",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:a513c83f-f016-4375-9fd0-b601b2d7f875",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:51118e0e-da56-4f3f-801b-aa18abaf4b0a",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:d15c9a18-03cc-4b3d-a263-d21355530b88",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:45d07502-e08b-4c49-aeda-6b6e2fb7e829",
+      "hasLabel": "sub-emptyroom",
+      "hasSession": [
+        {
+          "identifier": "nb:295f26ee-1dc6-425e-8f24-0fca9fd4ee3d",
+          "hasLabel": "ses-unnamed",
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:245f0af0-5f80-4222-8abd-5945f39fdd56",
+          "hasLabel": "ses-19111207",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111207",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:ee657919-165b-492a-8596-c3bf10ae241b",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:c6af64ac-728e-4c93-97f2-9bc3bf95f776",
+          "hasLabel": "ses-19111208",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111208",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:0498e11e-18d5-4aff-87f1-1371f2cd1564",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:ace0abea-26fb-4788-ab82-3f48e0402de8",
+          "hasLabel": "ses-19111209",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111209",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:67117662-ebf5-482e-ae5b-04beac1c2747",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:e0b30ea6-2c24-425b-8986-a09105df4b93",
+          "hasLabel": "ses-19111211",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111211",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:bd46825b-1fe3-4cd9-8648-10c2caa6fa6a",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:77cb245a-eba8-4136-a49d-d237585f8ce4",
+          "hasLabel": "ses-19111212",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111212",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:be69279a-722e-4d6a-b934-302f38050447",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:9e3b87a1-b88d-4764-9dd8-9598c523134b",
+          "hasLabel": "ses-19111213",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111213",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:718383e1-4e5d-4749-b4ac-1610e963b962",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:8d0b6737-80f3-41ba-8e55-9283db504650",
+          "hasLabel": "ses-19111214",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111214",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:e740363e-b20b-4314-a00a-70f787a038ec",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:1319dadf-5e8e-4eb2-b36b-4e048d8edbaa",
+          "hasLabel": "ses-19111215",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111215",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:09884b71-b6d6-423d-a425-ee2ba40b44b0",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:3deb181d-baaf-41c7-9ef6-6b705a2d6a8f",
+          "hasLabel": "ses-19111216",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111216",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:06bff814-c232-4846-b276-ad28ffe0c6e7",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:b1c872cc-59a9-4281-8b7a-1b6f18fb50ec",
+          "hasLabel": "ses-19111217",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111217",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:5b317db3-1fa9-4cce-9e19-dfbe6a52b324",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:2e315f17-5fcf-4fb0-8db7-f6822151324d",
+          "hasLabel": "ses-19111218",
+          "hasFilePath": "/ds003392/sub-emptyroom/ses-19111218",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:8bc0c455-c478-4586-93cd-ea3aa3e9078d",
+              "hasContrastType": {
+                "identifier": "nidm:Magnetoencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    }
+  ],
+  "schemaKey": "Dataset"
+}
