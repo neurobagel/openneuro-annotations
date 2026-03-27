@@ -11,11 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 720
     steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.NB_BOT_ID }}
+          private-key: ${{ secrets.NB_BOT_KEY }}
+
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
 
       - name: Find and submit data dictionaries
         id: get_dictionaries
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
 
           # Get the list of dictionaries
@@ -27,6 +38,7 @@ jobs:
           fail_count=0
           missing_repos=""
           opened_prs=""
+          failed_merge_prs=""
 
           index=0
           for dict in ${data_dictionaries}; do
@@ -47,52 +59,47 @@ jobs:
               -F 'gh_username=neurobagel-bot')
 
             # Check the status of the response
-            if echo $response | jq -e 'has("error")' > /dev/null; then
+            if echo "$response" | jq -e 'has("error")' > /dev/null; then
+              # The upload API will return an informative error message if the upload failed
               error_message=$(echo "$response" | jq -r '.error')
 
               if [[ "$error_message" =~ "same as in the target file." ]]; then
                 # Nothing to do
                 success_count=$((success_count + 1))
-                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
-                continue
-              elif [[ "$error_message" =~ "not a valid JSON file" ]]; then
-                fail_count=$((fail_count + 1))
-                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
-                continue
               elif [[ "$error_message" == "404: Not Found. Please ensure you have provided a correct existing dataset ID." ]]; then
                 # Repo moved
                 fail_count=$((fail_count + 1))
                 missing_repos="${missing_repos}${dataset_name}\n"
-                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
-                continue
-              elif [[ "$error_message" == "Something went wrong" ]]; then
-                # Other error
-                fail_count=$((fail_count + 1))
-                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
-                continue
               else
-                # Unknown error
                 fail_count=$((fail_count + 1))
-                echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
-                continue
               fi
-            elif echo $response | jq -e 'has("pull_request_url")' > /dev/null; then
-              # PR opened  
+              echo "(${index}/${n_dictionaries}) ${dataset_name}: ${error_message}"
+            elif echo "$response" | jq -e 'has("pull_request_url")' > /dev/null; then
+              # PR opened
               pr_url=$(echo "$response" | jq -r '.pull_request_url')
               success_count=$((success_count + 1))
               opened_prs="${opened_prs}${dataset_name}: ${pr_url}\n"
-              echo "(${index}/${n_dictionaries}) ${dataset_name}: upload successful - ${pr_url}"
+              echo "(${index}/${n_dictionaries}) ${dataset_name}: PR opened successfully - ${pr_url}"
+
+              if gh pr merge "$pr_url" --merge --delete-branch --auto; then
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: Successfully merged PR ${pr_url}"
+              else
+                failed_merge_prs="${failed_merge_prs}${dataset_name}: ${pr_url}\n"
+                echo "(${index}/${n_dictionaries}) ${dataset_name}: Failed to merge PR ${pr_url}"
+              fi
             else
               # Bad stuff happened and we don't know why
               fail_count=$((fail_count + 1))
               echo "(${index}/${n_dictionaries}) ${dataset_name}: Unknown response: $response"
-              continue
             fi
 
           done
 
-          echo -e "Missing repositories:\n${missing_repos}"
-          echo -e "Opened PRs:\n${opened_prs}"
-          echo -e "Success count: ${success_count}"
-          echo -e "Fail count: ${fail_count}"
+          opened_prs_count=$(echo -e "$opened_prs" | wc -l)
+          failed_merge_prs_count=$(echo -e "$failed_merge_prs" | wc -l)
 
+          echo -e "Missing repositories:\n${missing_repos}"
+          echo -e "Successfully processed dictionaries: ${success_count}"
+          echo -e "Dictionaries that failed processing: ${fail_count}"
+          echo -e "Opened ${opened_prs_count} PRs:\n${opened_prs}"
+          echo -e "Failed to merge ${failed_merge_prs_count} PRs:\n${failed_merge_prs}"
