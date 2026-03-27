@@ -1,0 +1,74 @@
+{
+  "sex": {
+    "Description": "Sex of the participant based on self-report",
+    "HED": {
+      "F": "(Label/sex, ID/F)",
+      "M": "(Label/sex, ID/M)"
+    },
+    "Levels": {
+      "F": "Female",
+      "M": "Male"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": "Sex"
+      },
+      "VariableType": "Categorical",
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": "Female"
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": "Male"
+        }
+      },
+      "MissingValues": []
+    }
+  },
+  "bmi": {
+    "Description": "Body Mass Index (BMI) based on self-reported height and weight",
+    "HED": "(Label/bmi, ID/#)"
+  },
+  "participant_id": {
+    "Description": "Recording ID, named due to BIDS conventions. See 'pid' for unique participant identifier",
+    "HED": "(Label/participant_id, ID/#)",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": "Participant ID"
+      },
+      "VariableType": "Identifier"
+    }
+  },
+  "age": {
+    "Description": "Age at the time of the recording based on self-report",
+    "HED": "(Label/age, ID/#)",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": "Age"
+      },
+      "VariableType": "Continuous",
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float"
+      },
+      "MissingValues": [
+        "",
+        "nan",
+        "na",
+        "NaN",
+        "N/A",
+        "n/a",
+        "NA"
+      ]
+    }
+  },
+  "pid": {
+    "Description": "Unique participant identifier; is the same for all sessions of the same individual",
+    "HED": "(Label/pid, ID/#)"
+  }
+}
