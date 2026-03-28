@@ -95,11 +95,11 @@ jobs:
 
           done
 
-          opened_prs_count=$(echo -e "$opened_prs" | wc -l)
-          failed_merge_prs_count=$(echo -e "$failed_merge_prs" | wc -l)
+          opened_prs_count=$(echo -e "$opened_prs" | grep -c .)
+          failed_merge_prs_count=$(echo -e "$failed_merge_prs" | grep -c .)
 
           echo -e "Missing repositories:\n${missing_repos}"
-          echo -e "Successfully processed dictionaries: ${success_count}"
-          echo -e "Dictionaries that failed processing: ${fail_count}"
+          echo -e "Num. successfully processed dictionaries: ${success_count}"
+          echo -e "Num. dictionaries that failed processing: ${fail_count}"
           echo -e "Opened ${opened_prs_count} PRs:\n${opened_prs}"
           echo -e "Failed to merge ${failed_merge_prs_count} PRs:\n${failed_merge_prs}"
