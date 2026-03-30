@@ -83,7 +83,7 @@ jobs:
               # Reattempt the merge in case the PR mergeability computation isn't complete yet
               # (see https://github.com/cli/cli/issues/8092)
               merged=false
-              for i in {1..3}; do:
+              for i in {1..3}; do
                 if gh pr merge "$pr_url" --squash --delete-branch; then
                   merged=true
                   echo "(${index}/${n_dictionaries}) ${dataset_name}: Successfully merged PR ${pr_url}"
