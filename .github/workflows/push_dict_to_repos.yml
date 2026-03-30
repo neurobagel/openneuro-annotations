@@ -17,11 +17,10 @@ jobs:
         with:
           app-id: ${{ vars.NB_BOT_ID }}
           private-key: ${{ secrets.NB_BOT_KEY }}
+          owner: OpenNeuroDatasets-JSONLD
 
       - name: Checkout repository
         uses: actions/checkout@v6
-        with:
-          token: ${{ steps.generate-token.outputs.token }}
 
       - name: Find and submit data dictionaries
         id: get_dictionaries
