@@ -1,953 +1,157 @@
-(1/71) Repo info: ds003787,"577a94b328d9138d8a91f1dcff848538ccc17c95"
-ds003787: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003787 (dataset)
-
-[2026-03-31 07:43:35] ERROR    The BIDS dataset file contains subject IDs not   
-                               found in the provided JSON-LD file:              
-                               ['sub-wlsubj043', 'sub-wlsubj094']               
-                               Subject IDs are case sensitive. Please check that
-                               the BIDS dataset file corresponds to the dataset 
-                               in the .jsonld file.                             
-Moved BIDS metadata table for failed dataset to data/failed_bids_tsv.
-ds003787: CLI failed
-(2/71) Repo info: ds003821,"7e5bcff29fa45f314f9c038416c602454ba5d418"
-ds003821: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003821 (dataset)
-[2026-03-31 07:43:39] ERROR    The phenotypic table contains duplicate          
-                               participant IDs or duplicate combinations of     
-                               participant and session IDs. Duplicate IDs were  
-                               found in these rows (header row is 1): [31, 32,  
-                               81, 82, 113, 114, 118, 119, 123, 124, 141, 142,  
-                               184, 185, 186, 187, 193, 194, 195, 196, 197, 199,
-                               200]. Ensure that each row represents a unique   
-                               participant or participant-session (if a session 
-                               column is present).                              
-ds003821: CLI failed
-(3/71) Repo info: ds003823,"ace10a1d2a44ddbadd2c7ad54569b383b44a8ff0"
-ds003823: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003823 (dataset)
-
-[31m╭─[0m[31m────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────[0m[31m─╮[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bids/la[0m [31m│[0m
-[31m│[0m [2myout/[0m[1mindex.py[0m:334 in load_json                                               [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m331 [0m[2m│   │   [0m[94mdef[0m[90m [0m[92mload_json[0m(path):                                           [31m│[0m
-[31m│[0m   [2m332 [0m[2m│   │   │   [0m[94mwith[0m Path(path).fs.open(Path(path).path, [33m'[0m[33mr[0m[33m'[0m, encoding=[33m'[0m[33mut[0m [31m│[0m
-[31m│[0m   [2m333 [0m[2m│   │   │   │   [0m[94mtry[0m:                                                   [31m│[0m
-[31m│[0m [31m❱ [0m334 [2m│   │   │   │   │   [0m[94mreturn[0m json.load(handle)                           [31m│[0m
-[31m│[0m   [2m335 [0m[2m│   │   │   │   [0m[94mexcept[0m ([96mUnicodeDecodeError[0m, json.JSONDecodeError) [94mas[0m e [31m│[0m
-[31m│[0m   [2m336 [0m[2m│   │   │   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mOSError[0m[1;4m([0m                                     [31m│[0m
-[31m│[0m   [2m337 [0m[2m│   │   │   │   │   │   [0m[1;4;33m"[0m[1;4;33mError occurred while trying to decode JSON [0m[1;4;33m"[0m  [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/[0m[1m__init__.py[0m:293  [31m│[0m
-[31m│[0m in load                                                                      [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m290 [0m[2;33m│   [0m[33mTo use a custom ``JSONDecoder`` subclass, specify it with the ``cl[0m [31m│[0m
-[31m│[0m   [2m291 [0m[2;33m│   [0m[33mkwarg; otherwise ``JSONDecoder`` is used.[0m                          [31m│[0m
-[31m│[0m   [2m292 [0m[2;33m│   [0m[33m"""[0m                                                                [31m│[0m
-[31m│[0m [31m❱ [0m293 [2m│   [0m[94mreturn[0m [1;4mloads(fp.read(),[0m                                            [31m│[0m
-[31m│[0m   [2m294 [0m[2m│   │   [0m[1;4;96mcls[0m[1;4m=[0m[1;4;96mcls[0m[1;4m, object_hook=object_hook,[0m                              [31m│[0m
-[31m│[0m   [2m295 [0m[2m│   │   [0m[1;4mparse_float=parse_float, parse_int=parse_int,[0m                  [31m│[0m
-[31m│[0m   [2m296 [0m[2m│   │   [0m[1;4mparse_constant=parse_constant, object_pairs_hook=object_pairs_[0m [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/[0m[1m__init__.py[0m:346  [31m│[0m
-[31m│[0m in loads                                                                     [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m343 [0m[2m│   [0m[94mif[0m ([96mcls[0m [95mis[0m [94mNone[0m [95mand[0m object_hook [95mis[0m [94mNone[0m [95mand[0m                        [31m│[0m
-[31m│[0m   [2m344 [0m[2m│   │   │   [0mparse_int [95mis[0m [94mNone[0m [95mand[0m parse_float [95mis[0m [94mNone[0m [95mand[0m              [31m│[0m
-[31m│[0m   [2m345 [0m[2m│   │   │   [0mparse_constant [95mis[0m [94mNone[0m [95mand[0m object_pairs_hook [95mis[0m [94mNone[0m [95mand[0m [95mn[0m [31m│[0m
-[31m│[0m [31m❱ [0m346 [2m│   │   [0m[94mreturn[0m [1;4m_default_decoder.decode(s)[0m                              [31m│[0m
-[31m│[0m   [2m347 [0m[2m│   [0m[94mif[0m [96mcls[0m [95mis[0m [94mNone[0m:                                                    [31m│[0m
-[31m│[0m   [2m348 [0m[2m│   │   [0m[96mcls[0m = JSONDecoder                                              [31m│[0m
-[31m│[0m   [2m349 [0m[2m│   [0m[94mif[0m object_hook [95mis[0m [95mnot[0m [94mNone[0m:                                        [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/[0m[1mdecoder.py[0m:337   [31m│[0m
-[31m│[0m in decode                                                                    [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m334 [0m[2;33m│   │   [0m[33mcontaining a JSON document).[0m                                   [31m│[0m
-[31m│[0m   [2m335 [0m[2m│   │   [0m                                                               [31m│[0m
-[31m│[0m   [2m336 [0m[2;33m│   │   [0m[33m"""[0m                                                            [31m│[0m
-[31m│[0m [31m❱ [0m337 [2m│   │   [0mobj, end = [1;4;96mself[0m[1;4m.raw_decode(s, idx=_w(s, [0m[1;4;94m0[0m[1;4m).end())[0m              [31m│[0m
-[31m│[0m   [2m338 [0m[2m│   │   [0mend = _w(s, end).end()                                         [31m│[0m
-[31m│[0m   [2m339 [0m[2m│   │   [0m[94mif[0m end != [96mlen[0m(s):                                              [31m│[0m
-[31m│[0m   [2m340 [0m[2m│   │   │   [0m[94mraise[0m JSONDecodeError([33m"[0m[33mExtra data[0m[33m"[0m, s, end)                [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/json/[0m[1mdecoder.py[0m:353   [31m│[0m
-[31m│[0m in raw_decode                                                                [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m350 [0m[2m│   │   [0m                                                               [31m│[0m
-[31m│[0m   [2m351 [0m[2;33m│   │   [0m[33m"""[0m                                                            [31m│[0m
-[31m│[0m   [2m352 [0m[2m│   │   [0m[94mtry[0m:                                                           [31m│[0m
-[31m│[0m [31m❱ [0m353 [2m│   │   │   [0mobj, end = [96mself[0m.scan_once(s, idx)                          [31m│[0m
-[31m│[0m   [2m354 [0m[2m│   │   [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mStopIteration[0m[1;4m [0m[1;4;94mas[0m[1;4m err:[0m                                   [31m│[0m
-[31m│[0m   [2m355 [0m[2m│   │   │   [0m[1;4;94mraise[0m[1;4m JSONDecodeError([0m[1;4;33m"[0m[1;4;33mExpecting value[0m[1;4;33m"[0m[1;4m, s, err.value) [0m[1;4;94mfro[0m [31m│[0m
-[31m│[0m   [2m356 [0m[2m│   │   [0m[94mreturn[0m obj, end                                                [31m│[0m
-[31m╰──────────────────────────────────────────────────────────────────────────────╯[0m
-[1;91mJSONDecodeError: [0mExpecting property name enclosed in double quotes: line [1;36m68[0m 
-column [1;36m2[0m [1m([0mchar [1;36m1652[0m[1m)[0m
-
-[3mThe above exception was the direct cause of the following exception:[0m
-
-[31m╭─[0m[31m────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m─────────────────────[0m[31m─╮[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bagel/[0m[1mc[0m [31m│[0m
-[31m│[0m [1mli.py[0m:173 in bids2tsv                                                        [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m170 [0m[2m│   │   │   [0mprogress.add_task(                                         [31m│[0m
-[31m│[0m   [2m171 [0m[2m│   │   │   │   [0m[33m"[0m[33mValidating BIDS dataset. This may take a while...[0m[33m"[0m, t [31m│[0m
-[31m│[0m   [2m172 [0m[2m│   │   │   [0m)                                                          [31m│[0m
-[31m│[0m [31m❱ [0m173 [2m│   │   │   [0mBIDSLayout(bids_dir, validate=[94mTrue[0m)                        [31m│[0m
-[31m│[0m   [2m174 [0m[2m│   │   [0mlogger.info([33m"[0m[33mBIDS validation passed.[0m[33m"[0m)                         [31m│[0m
-[31m│[0m   [2m175 [0m[2m│   [0m[1;4;94mexcept[0m[1;4m exceptions.BIDSValidationError [0m[1;4;94mas[0m[1;4m e:[0m                        [31m│[0m
-[31m│[0m   [2m176 [0m[2m│   │   [0m[1;4mlog_error([0m                                                     [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bids/la[0m [31m│[0m
-[31m│[0m [2myout/[0m[1mlayout.py[0m:188 in __init__                                               [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m 185 [0m[2m│   │   │   [0m_indexer = indexer [95mor[0m BIDSLayoutIndexer(                  [31m│[0m
-[31m│[0m   [2m 186 [0m[2m│   │   │   │   [0mvalidate=validate [95mand[0m [95mnot[0m is_derivative,              [31m│[0m
-[31m│[0m   [2m 187 [0m[2m│   │   │   [0m)                                                         [31m│[0m
-[31m│[0m [31m❱ [0m 188 [2m│   │   │   [0m[1;4m_indexer([0m[1;4;96mself[0m[1;4m)[0m                                            [31m│[0m
-[31m│[0m   [2m 189 [0m[2m│   │   [0m                                                              [31m│[0m
-[31m│[0m   [2m 190 [0m[2m│   │   [0m[2m# Add derivatives if any are found[0m                            [31m│[0m
-[31m│[0m   [2m 191 [0m[2m│   │   [0m[94mif[0m derivatives:                                               [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bids/la[0m [31m│[0m
-[31m│[0m [2myout/[0m[1mindex.py[0m:159 in __call__                                                [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m156 [0m[2m│   │   [0m[96mself[0m.session.commit()                                          [31m│[0m
-[31m│[0m   [2m157 [0m[2m│   │   [0m                                                               [31m│[0m
-[31m│[0m   [2m158 [0m[2m│   │   [0m[94mif[0m [96mself[0m.index_metadata:                                        [31m│[0m
-[31m│[0m [31m❱ [0m159 [2m│   │   │   [0m[1;4;96mself[0m[1;4m._index_metadata()[0m                                     [31m│[0m
-[31m│[0m   [2m160 [0m[2m│   [0m                                                                   [31m│[0m
-[31m│[0m   [2m161 [0m[2m│   [0m[1;95m@property[0m                                                          [31m│[0m
-[31m│[0m   [2m162 [0m[2m│   [0m[94mdef[0m[90m [0m[92msession[0m([96mself[0m):                                                 [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bids/la[0m [31m│[0m
-[31m│[0m [2myout/[0m[1mindex.py[0m:446 in _index_metadata                                         [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m443 [0m[2m│   │   │   [0mfile_md = {}                                               [31m│[0m
-[31m│[0m   [2m444 [0m[2m│   │   │   [0m[94mfor[0m pl, js_file [95min[0m payloads[::-[94m1[0m]:                         [31m│[0m
-[31m│[0m   [2m445 [0m[2m│   │   │   │   [0m[94mtry[0m:                                                   [31m│[0m
-[31m│[0m [31m❱ [0m446 [2m│   │   │   │   │   [0mfile_md.update(pl())                               [31m│[0m
-[31m│[0m   [2m447 [0m[2m│   │   │   │   [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mFileNotFoundError[0m[1;4m:[0m                              [31m│[0m
-[31m│[0m   [2m448 [0m[2m│   │   │   │   │   [0m[1;4;94mif[0m[1;4m [0m[1;4;95mnot[0m[1;4m virtual_datafile:[0m                           [31m│[0m
-[31m│[0m   [2m449 [0m[2m│   │   │   │   │   │   [0m[1;4;94mraise[0m                                          [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m [2m/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/bids/la[0m [31m│[0m
-[31m│[0m [2myout/[0m[1mindex.py[0m:336 in load_json                                               [31m│[0m
-[31m│[0m                                                                              [31m│[0m
-[31m│[0m   [2m333 [0m[2m│   │   │   │   [0m[94mtry[0m:                                                   [31m│[0m
-[31m│[0m   [2m334 [0m[2m│   │   │   │   │   [0m[94mreturn[0m json.load(handle)                           [31m│[0m
-[31m│[0m   [2m335 [0m[2m│   │   │   │   [0m[94mexcept[0m ([96mUnicodeDecodeError[0m, json.JSONDecodeError) [94mas[0m e [31m│[0m
-[31m│[0m [31m❱ [0m336 [2m│   │   │   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mOSError[0m[1;4m([0m                                     [31m│[0m
-[31m│[0m   [2m337 [0m[2m│   │   │   │   │   │   [0m[1;4;33m"[0m[1;4;33mError occurred while trying to decode JSON [0m[1;4;33m"[0m  [31m│[0m
-[31m│[0m   [2m338 [0m[2m│   │   │   │   │   │   [0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mfrom file [0m[1;4;33m{[0m[1;4mpath[0m[1;4;33m}[0m[1;4;33m"[0m                            [31m│[0m
-[31m│[0m   [2m339 [0m[2m│   │   │   │   │   [0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;96me[0m                                           [31m│[0m
-[31m╰──────────────────────────────────────────────────────────────────────────────╯[0m
-[1;91mOSError: [0mError occurred while trying to decode JSON from file [1m<[0m[1;95mBIDSJSONFile[0m[39m [0m
-[33mfilename[0m[39m=[0m[32m'/home/runner/work/.github/.github/code/data/ds003823/phenotype/plasma_[0m
-[32mab_tau_summary.json'[0m[1m>[0m
-ds003823: CLI failed
-(4/71) Repo info: ds003830,"f187779347ca4a0b2de7a88b031081d06f5a2e3d"
-ds003830: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003830 (dataset)
-[2026-03-31 07:44:17] ERROR    The provided phenotypic table and data dictionary
-                               are incompatible. The following columns are      
-                               annotated in the data dictionary but are missing 
-                               from the phenotypic table: ['gender']. Check that
-                               you've selected the correct data dictionary for  
-                               your phenotypic table. Each column described in  
-                               the data dictionary must have a corresponding    
-                               column with the same name in the phenotypic      
-                               table.                                           
-ds003830: CLI failed
-(5/71) Repo info: ds003949,"b828ab089b10d8114da7227086341c4e651f0aa2"
-ds003949: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003949 (dataset)
-[2026-03-31 07:44:21] ERROR    The phenotypic table contains duplicate          
-                               participant IDs or duplicate combinations of     
-                               participant and session IDs. Duplicate IDs were  
-                               found in these rows (header row is 1): [31, 32,  
-                               81, 82, 113, 114, 118, 119, 123, 124, 141, 142,  
-                               184, 185, 186, 187, 193, 194, 195, 196, 197, 199,
-                               200]. Ensure that each row represents a unique   
-                               participant or participant-session (if a session 
-                               column is present).                              
-ds003949: CLI failed
-(6/71) Repo info: ds003967,"d06dc447fc0403eafc3184cf4f29e2199934c8da"
-ds003967: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003967 (dataset)
-
-[2026-03-31 07:44:27] ERROR    No image files with supported BIDS suffixes were 
-                               found in                                         
-                               /home/runner/work/.github/.github/code/data/ds003
-                               967. A BIDS metadata table could not be          
-                               generated. Please ensure your dataset includes at
-                               least one image file with a Neurobagel-supported 
-                               BIDS suffix (Supported suffixes: ['T1w', 'T2w',  
-                               'dwi', 'bold', 'asl', 'eeg', 'meg', 'pet']).     
-ds003967: CLI failed
-(7/71) Repo info: ds004044,"102ce1ecb0884ba635a6a8fbe1c11e588697498e"
-ds004044: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004044 (dataset)
-
-[2026-03-31 07:44:49] ERROR    The BIDS dataset file contains subject IDs not   
-                               found in the provided JSON-LD file:              
-                               ['sub-46']                                       
-                               Subject IDs are case sensitive. Please check that
-                               the BIDS dataset file corresponds to the dataset 
-                               in the .jsonld file.                             
-Moved BIDS metadata table for failed dataset to data/failed_bids_tsv.
-ds004044: CLI failed
-(8/71) Repo info: ds004073,"692b2bd84bdb1a42bc9a071f469588b43d1b05b6"
-ds004073: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004073 (dataset)
-
-[2026-03-31 07:45:04] ERROR    The BIDS dataset file contains subject IDs not   
-                               found in the provided JSON-LD file:              
-                               ['sub-BAN24']                                    
-                               Subject IDs are case sensitive. Please check that
-                               the BIDS dataset file corresponds to the dataset 
-                               in the .jsonld file.                             
-Moved BIDS metadata table for failed dataset to data/failed_bids_tsv.
-ds004073: CLI failed
-(9/71) Repo info: ds004092,"ee96247e6c4b7256bc3f0f3f687d131dfe7bb7ef"
-ds004092: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004092 (dataset)
-[2026-03-31 07:45:07] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               092/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004092: CLI failed
-(10/71) Repo info: ds004114,"790f7179cc6c762e53f6529cbff98dfd856d7a36"
-ds004114: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004114 (dataset)
-[2026-03-31 07:45:11] ERROR    The phenotypic table contains duplicate          
-                               participant IDs or duplicate combinations of     
-                               participant and session IDs. Duplicate IDs were  
-                               found in these rows (header row is 1): [12, 13,  
-                               14, 15, 16, 17, 18, 19, 32, 33, 34, 35, 36, 37,  
-                               38, 39, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69,  
-                               70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 180, 181,
-                               182, 183, 184, 185, 186, 187, 188, 189, 190, 191,
-                               192, 193, 194, 195, 196, 197, 198, 199, 200, 201,
-                               202, 203, 204, 205, 206, 207, 208, 209, 210, 211,
-                               212, 213, 214, 215, 216, 217, 218, 219, 230, 231,
-                               232, 233, 234, 235, 236, 237, 238, 239, 240, 241,
-                               242, 243, 244, 245, 246, 247, 248, 249, 250, 251,
-                               252, 253, 254, 255, 256, 257, 258, 259, 260, 261,
-                               262, 263, 264, 265, 266, 267, 268, 269, 310, 311,
-                               312, 313, 314, 315, 316, 317, 318, 319, 320, 321,
-                               322, 323, 324, 325, 366, 367, 368, 369, 370, 371,
-                               372, 373, 374, 375, 376, 377, 378, 379, 380, 381,
-                               382, 383, 384, 385, 536, 537, 538, 539, 540, 541,
-                               542, 543, 544, 545, 546, 547, 548, 549, 550, 551,
-                               552, 553, 554, 555, 565, 566, 567, 568, 569, 570,
-                               571, 572, 573, 574, 575, 576, 577, 578, 579, 580,
-                               581, 582, 583, 584, 605, 606, 607, 608, 609, 610,
-                               611, 612, 613, 614, 615, 616, 617, 618, 619, 620,
-                               621, 622]. Ensure that each row represents a     
-                               unique participant or participant-session (if a  
-                               session column is present).                      
-ds004114: CLI failed
-(11/71) Repo info: ds004134,"b44b96291eae34c76b26d7d3cb3188d392ad2484"
-ds004134: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004134 (dataset)
-[2026-03-31 07:45:17] ERROR    The phenotypic table contains duplicate          
-                               participant IDs or duplicate combinations of     
-                               participant and session IDs. Duplicate IDs were  
-                               found in these rows (header row is 1): [18, 19]. 
-                               Ensure that each row represents a unique         
-                               participant or participant-session (if a session 
-                               column is present).                              
-ds004134: CLI failed
-(12/71) Repo info: ds004145,"ca568b560aa9c6bfc23d10907dacc41a7d9df5cf"
-ds004145: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004145 (dataset)
-[2026-03-31 07:45:20] ERROR    The data dictionary contains unsupported         
-                               vocabulary namespace prefixes: ['n/a']           
-                               Unsupported vocabularies are used for terms in   
-                               the following columns' annotations:              
-                               {'mouse_strain': 'n/a'}                          
-                               Please ensure the data dictionary only includes  
-                               terms from vocabularies recognized by Neurobagel.
-ds004145: CLI failed
-(13/71) Repo info: ds004226,"50420910f2dfee457409205de8851bc31d0103ca"
-ds004226: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004226 (dataset)
-
-[2026-03-31 07:45:29] ERROR    The BIDS dataset file contains subject IDs not   
-                               found in the provided JSON-LD file:              
-                               ['sub-007', 'sub-008', 'sub-035', 'sub-003',     
-                               'sub-023', 'sub-033', 'sub-005', 'sub-028',      
-                               'sub-017', 'sub-021', 'sub-001', 'sub-006',      
-                               'sub-024', 'sub-025', 'sub-031', 'sub-029',      
-                               'sub-020', 'sub-036', 'sub-014', 'sub-011',      
-                               'sub-012', 'sub-032', 'sub-002', 'sub-026',      
-                               'sub-034', 'sub-013', 'sub-009', 'sub-019']      
-                               Subject IDs are case sensitive. Please check that
-                               the BIDS dataset file corresponds to the dataset 
-                               in the .jsonld file.                             
-Moved BIDS metadata table for failed dataset to data/failed_bids_tsv.
-ds004226: CLI failed
-(14/71) Repo info: ds004299,"ba9a685916489dffa31ac36fc04b889a1bb19826"
-ds004299: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004299 (dataset)
-[2026-03-31 07:45:33] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               299/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004299: CLI failed
-(15/71) Repo info: ds004393,"2ea83426f29e562d4856abc7233704ea4c2285b4"
-ds004393: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004393 (dataset)
-
-[2026-03-31 07:45:49] ERROR    The BIDS dataset file contains subject IDs not   
-                               found in the provided JSON-LD file:              
-                               ['sub-27']                                       
-                               Subject IDs are case sensitive. Please check that
-                               the BIDS dataset file corresponds to the dataset 
-                               in the .jsonld file.                             
-Moved BIDS metadata table for failed dataset to data/failed_bids_tsv.
-ds004393: CLI failed
-(16/71) Repo info: ds004400,"1434d46138e2138db59be2b0790df90d594b3896"
-ds004400: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004400 (dataset)
-[2026-03-31 07:45:53] ERROR    The phenotypic table contains missing values in  
-                               participant or session ID columns. Ensure that   
-                               each row includes a non-empty participant ID (and
-                               session ID, if the table contains a session ID   
-                               column). Missing IDs were found in these rows    
-                               (header row is 1): [27, 28, 29, 30, 31, 32, 33,  
-                               34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,  
-                               46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57]. 
-                               TIP: Check that your table does not have any     
-                               completely empty rows.                           
-ds004400: CLI failed
-(17/71) Repo info: ds004401,"971ffba336149fe3b9e73b28460ac788bd80238e"
-ds004401: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004401 (dataset)
-
-[2026-03-31 07:46:00] ERROR    The BIDS dataset file contains subject IDs not   
-                               found in the provided JSON-LD file:              
-                               ['sub-dummy']                                    
-                               Subject IDs are case sensitive. Please check that
-                               the BIDS dataset file corresponds to the dataset 
-                               in the .jsonld file.                             
-Moved BIDS metadata table for failed dataset to data/failed_bids_tsv.
-ds004401: CLI failed
-(18/71) Repo info: ds006502,"e3c2fd63d5986744cdd85ee7957ec325c9a49a9f"
-ds006502: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds006502 (dataset)
-[2026-03-31 07:46:04] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               age                                              
-                               Details: {'LongName': 'age', 'Units': 'years',   
-                               'TermURL':                                       
-                               'http://purl.obolibrary.org/obo/PATO_0000011'} is
-                               not valid under any of the given schemas         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds006502: CLI failed
-(19/71) Repo info: ds006563,"ca63d09c8e695aeefd45ca652c732398a12c10c2"
-ds006563: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds006563 (dataset)
-[2026-03-31 07:46:07] ERROR    /home/runner/work/.github/.github/code/data/ds006
-                               563/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds006563: CLI failed
-(20/71) Repo info: ds005776,"661858a82ba2438c95fbf210af5e7e568e69de3e"
-ds005776: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005776 (dataset)
-[2026-03-31 07:46:10] ERROR    /home/runner/work/.github/.github/code/data/ds005
-                               776/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds005776: CLI failed
-(21/71) Repo info: ds005929,"74be3c6de8f634fb9e9a379941bde69ddbf76fa7"
-ds005929: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005929 (dataset)
-[2026-03-31 07:46:13] ERROR    /home/runner/work/.github/.github/code/data/ds005
-                               929/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds005929: CLI failed
-(22/71) Repo info: ds006392,"5665fb48dbfd4b077c378f0e56cf16351217ecb5"
-ds006392: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds006392 (dataset)
-[2026-03-31 07:46:17] ERROR    /home/runner/work/.github/.github/code/data/ds006
-                               392/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds006392: CLI failed
-(23/71) Repo info: ds005087,"e8a881394310a9c3005c344257980cf3ec1a7480"
-ds005087: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005087 (dataset)
-[2026-03-31 07:46:20] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               gender                                           
-                               Details: {'description': 'gender'} is not valid  
-                               under any of the given schemas                   
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005087: CLI failed
-(24/71) Repo info: ds005341,"00cf2befc4b697b7cc4907d2a1069cc451a5879f"
-ds005341: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005341 (dataset)
-[2026-03-31 07:46:26] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'Levels': {'M': 'Male', 'F': 'Female'}}
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005341: CLI failed
-(25/71) Repo info: ds003404,"9370210203dae49ecb9c5f79ec64a893228ad864"
-ds003404: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003404 (dataset)
-[2026-03-31 07:46:29] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               age                                              
-                               Details: {'LongName': 'Age', 'Units': 'Years'} is
-                               not valid under any of the given schemas         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003404: CLI failed
-(26/71) Repo info: ds005106,"750efea64dee51f9f47df3451aa09a2a599f91a4"
-ds005106: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005106 (dataset)
-[2026-03-31 07:46:33] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'description': 'M/F'} is not valid     
-                               under any of the given schemas                   
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005106: CLI failed
-(27/71) Repo info: ds005530,"5beae6ad1d545f42468d74ac1a5f4c5d8fda8cd8"
-ds005530: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005530 (dataset)
-[2026-03-31 07:46:36] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               age                                              
-                               Details: {'LongName': 'age', 'Units': 'years'} is
-                               not valid under any of the given schemas         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005530: CLI failed
-(28/71) Repo info: ds004892,"96b2ed3ca7b5fb6a45103129ca4377cfa766d347"
-ds004892: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004892 (dataset)
-[2026-03-31 07:46:41] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               weight                                           
-                               Details: {'LongName': 'Weight in kilo'} is not   
-                               valid under any of the given schemas             
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004892: CLI failed
-(29/71) Repo info: ds005185,"0857858f7a2ba1582930f23eca3ec56f90a96da9"
-ds005185: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005185 (dataset)
-[2026-03-31 07:46:45] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'levels': ['m', 'f']} is not valid     
-                               under any of the given schemas                   
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005185: CLI failed
-(30/71) Repo info: ds005699,"9bea48749090726566f38096b3595584e15e8ea0"
-ds005699: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005699 (dataset)
-[2026-03-31 07:46:48] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex'} is not valid under  
-                               any of the given schemas                         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005699: CLI failed
-(31/71) Repo info: ds005625,"be375801418abcdc3784f55271e05aded7ee1059"
-ds005625: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005625 (dataset)
-[2026-03-31 07:46:52] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex'} is not valid under  
-                               any of the given schemas                         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005625: CLI failed
-(32/71) Repo info: ds005613,"121914b58f75ffabe106cb70beb9c2b400452b65"
-ds005613: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005613 (dataset)
-[2026-03-31 07:46:57] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'Annotations': {'IsAbout': {'Label':   
-                               'Sex', 'TermURL': 'nb:Sex'}, 'Levels': {'f':     
-                               {'Label': 'Female', 'TermURL':                   
-                               'snomed:248152002'}, 'm': {'Label': 'Male',      
-                               'TermURL': 'snomed:248153007'}}, 'MissingValues':
-                               []}, 'Description': 'biological sex assigned at  
-                               birth'} is not valid under any of the given      
-                               schemas                                          
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005613: CLI failed
-(33/71) Repo info: ds004604,"7a140a783c8dc49eed2f1a84b3901571328ddd06"
-ds004604: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004604 (dataset)
-[2026-03-31 07:47:03] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex'} is not valid under  
-                               any of the given schemas                         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004604: CLI failed
-(34/71) Repo info: ds005012,"9f9071a9c18223c6a3acb91460d0380fa354544a"
-ds005012: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005012 (dataset)
-[2026-03-31 07:47:11] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex', 'Levels': {'0':     
-                               'Female', '1': 'Male'}} is not valid under any of
-                               the given schemas                                
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005012: CLI failed
-(35/71) Repo info: ds005497,"78b29082f15108a101283b720e6297cb97243c50"
-ds005497: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005497 (dataset)
-[2026-03-31 07:47:14] ERROR    /home/runner/work/.github/.github/code/data/ds005
-                               497/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds005497: CLI failed
-(36/71) Repo info: ds005496,"0f432a3a2c090abb69e0d9656dd87616525c6a2b"
-ds005496: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005496 (dataset)
-[2026-03-31 07:47:17] ERROR    /home/runner/work/.github/.github/code/data/ds005
-                               496/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds005496: CLI failed
-(37/71) Repo info: ds005467,"aae7de547aed125b84d29012c03acdd7af64c90e"
-ds005467: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005467 (dataset)
-[2026-03-31 07:47:21] ERROR    Failed to decode the input file                  
-                               /home/runner/work/.github/.github/code/data/ds005
-                               467/participants.tsv. Please ensure that all     
-                               input files have UTF-8 encoding. TIP: Need help  
-                               converting your file? Try a tool like iconv      
-                               (http://linux.die.net/man/1/iconv) or            
-                               https://www.freeformatter.com/convert-file-encodi
-                               ng.html.                                         
-ds005467: CLI failed
-(38/71) Repo info: ds005418,"cdc08c4776183f55593cd7dbeee256198c1d03a1"
-ds005418: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005418 (dataset)
-[2026-03-31 07:47:26] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex'} is not valid under  
-                               any of the given schemas                         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005418: CLI failed
-(39/71) Repo info: ds004388,"ab5f0cb559249cb6d82b6f763767c6fe99292886"
-ds004388: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004388 (dataset)
-[2026-03-31 07:47:30] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               cap_size                                         
-                               Details: {'Units': 'cm'} is not valid under any  
-                               of the given schemas                             
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004388: CLI failed
-(40/71) Repo info: ds005079,"46996671aebc90747769b47a5f748da4c5850b39"
-ds005079: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005079 (dataset)
-[2026-03-31 07:47:33] ERROR    /home/runner/work/.github/.github/code/data/ds005
-                               079/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds005079: CLI failed
-(41/71) Repo info: ds005270,"5690e4a22132ca79ff6d7e76b381f45f3309defd"
-ds005270: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005270 (dataset)
-[2026-03-31 07:47:37] ERROR    File is not valid JSON:                          
-                               /home/runner/work/.github/.github/code/data/ds005
-                               270/participants.json. Please provide a valid    
-                               JSON file.                                       
-ds005270: CLI failed
-(42/71) Repo info: ds005056,"48d2575a0b23aa9dac90f04bf6d9f4af6fd02282"
-ds005056: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005056 (dataset)
-[2026-03-31 07:47:40] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               DOB                                              
-                               Details: {'LongName': 'Date of Birth'} is not    
-                               valid under any of the given schemas             
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005056: CLI failed
-(43/71) Repo info: ds002722,"fbc84b282513ab7659eb47e593c406f267a33ca6"
-ds002722: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds002722 (dataset)
-[2026-03-31 07:47:43] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               participant_id                                   
-                               Details: {'Description': 'A participant          
-                               identifier', 'Annotations': {'IsAbout':          
-                               {'TermURL': 'nb:ParticipantID', 'Label': 'Subject
-                               Unique Identifier'}, 'Identifies':               
-                               'participant'}} is not valid under any of the    
-                               given schemas                                    
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds002722: CLI failed
-(44/71) Repo info: ds004872,"e9b1bf0b05975f7815f2924da16e3ff37111739e"
-ds004872: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004872 (dataset)
-[2026-03-31 07:47:47] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex'} is not valid under  
-                               any of the given schemas                         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004872: CLI failed
-(45/71) Repo info: ds005038,"31a0d715d1c2f2a43c9e7f8e905ca7d0d951c66a"
-ds005038: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds005038 (dataset)
-[2026-03-31 07:47:51] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Participants sex',        
-                               'Levels': {'F': 'female', 'M': 'male'}} is not   
-                               valid under any of the given schemas             
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds005038: CLI failed
-(46/71) Repo info: ds004962,"6d727c10743f01f205382a9fd658dc33d8738e94"
-ds004962: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004962 (dataset)
-[2026-03-31 07:47:54] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               962/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004962: CLI failed
-(47/71) Repo info: ds004894,"d6ac4b71289a458aae474605c2205273e5cd1458"
-ds004894: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004894 (dataset)
-[2026-03-31 07:47:57] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               894/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004894: CLI failed
-(48/71) Repo info: ds003620,"412e9e5a63ecc694958af97bd1dca1d96e826de1"
-ds003620: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003620 (dataset)
-[2026-03-31 07:48:09] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               neurological_psychiatric_diagnosis               
-                               Details: {'LongName':                            
-                               'neurological_psychiatric_diagnosis',            
-                               'Descritpion': 'participant reported history of  
-                               neurological or psychiatric diagnosis', 'Levels':
-                               {'y': 'yes', 'n': 'no', 'n/a': 'not incuded in   
-                               screen'}} is not valid under any of the given    
-                               schemas                                          
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003620: CLI failed
-(49/71) Repo info: ds003835,"d5d71db970f83dbfb099781d3447d91ff105148d"
-ds003835: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003835 (dataset)
-[2026-03-31 07:48:12] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               gender                                           
-                               Details: {'Levels': {'F': 'Female', 'M': 'Male'}}
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003835: CLI failed
-(50/71) Repo info: ds004866,"8749f4a559996c9ed0a4d35d32d3d43d11109ec4"
-ds004866: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004866 (dataset)
-[2026-03-31 07:48:16] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               age                                              
-                               Details: {'LongName': 'age', 'Units': 'years'} is
-                               not valid under any of the given schemas         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004866: CLI failed
-(51/71) Repo info: ds004786,"5414c88fdf9f4c2d685b220e1ffaee4c2fbb9bde"
-ds004786: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004786 (dataset)
-[2026-03-31 07:48:21] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'Levels': {'M': 'Male', 'F': 'Female'}}
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004786: CLI failed
-(52/71) Repo info: ds004785,"b7abe674d92222a57af948d5472f18628160b2eb"
-ds004785: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004785 (dataset)
-[2026-03-31 07:48:24] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               785/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004785: CLI failed
-(53/71) Repo info: ds004745,"b760b2be2637b679ba82fa68e5d2fad14a6d5048"
-ds004745: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004745 (dataset)
-[2026-03-31 07:48:27] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               745/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004745: CLI failed
-(54/71) Repo info: ds004743,"430f86b80c82ffbaacd4b4dcd33fad60cb998a2c"
-ds004743: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004743 (dataset)
-[2026-03-31 07:48:31] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'Levels': {'M': 'Male', 'F': 'Female'}}
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004743: CLI failed
-(55/71) Repo info: ds002034,"6abfa95617407c878b18b276eafa773ada07a03a"
-ds002034: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds002034 (dataset)
-[2026-03-31 07:48:36] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex', 'Levels': {'F':     
-                               'Female', 'M': 'Male'}} is not valid under any of
-                               the given schemas                                
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds002034: CLI failed
-(56/71) Repo info: ds004648,"ac5270b79eb0f9746f5394e36933c12cf06acbdd"
-ds004648: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004648 (dataset)
-[2026-03-31 07:48:40] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               ln_LF_all                                        
-                               Details: {'LongName': 'All day natural logarithm 
-                               of low frequency power', 'Units': 'ln ms2'} is   
-                               not valid under any of the given schemas         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004648: CLI failed
-(57/71) Repo info: ds004650,"d9f7386dd757ca765fdd5a64288b7ecd139c9496"
-ds004650: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004650 (dataset)
-[2026-03-31 07:48:43] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               weight                                           
-                               Details: {'LongName': 'Weight'} is not valid     
-                               under any of the given schemas                   
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004650: CLI failed
-(58/71) Repo info: ds004597,"3a0f1d0c50ea506dc0b449fd24fe55efa950d335"
-ds004597: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004597 (dataset)
-[2026-03-31 07:48:49] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'Levels': {'M': 'Male', 'F': 'Female'}}
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004597: CLI failed
-(59/71) Repo info: ds002717,"e7d6442de0fe5543abdf72b8806b3e269038968f"
-ds002717: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds002717 (dataset)
-[2026-03-31 07:48:52] ERROR    /home/runner/work/.github/.github/code/data/ds002
-                               717/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                               NOTE: Your phenotypic table resembles a .csv file
-                               as it contains several ',' commas. Check that you
-                               have not accidentally renamed a .csv file to a   
-                               .tsv.                                            
-ds002717: CLI failed
-(60/71) Repo info: ds004588,"a009426662ff761f0614cce3621c738cadb63d61"
-ds004588: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004588 (dataset)
-[2026-03-31 07:48:55] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               588/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004588: CLI failed
-(61/71) Repo info: ds004271,"1e081bf4594386fc5946cf98758048bb3a59d413"
-ds004271: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004271 (dataset)
-[2026-03-31 07:48:59] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'Levels': {'M': 'Male', 'F': 'Female'}}
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004271: CLI failed
-(62/71) Repo info: ds004519,"71dc518ade4a8e96e8c6575fe7a84ec76e6b8e1a"
-ds004519: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004519 (dataset)
-[2026-03-31 07:49:02] ERROR    /home/runner/work/.github/.github/code/data/ds004
-                               519/participants.tsv is not a valid Neurobagel   
-                               phenotypic table (.tsv). This file is expected to
-                               have multiple columns but only one column was    
-                               found.                                           
-                                                                                
-ds004519: CLI failed
-(63/71) Repo info: ds004312,"6f2c308211b81273fb1df30efa516c9fc4f8e834"
-ds004312: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004312 (dataset)
-[2026-03-31 07:49:05] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               weight                                           
-                               Details: {'LongName': 'Weight', 'Units':         
-                               'Kilograms'} is not valid under any of the given 
-                               schemas                                          
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004312: CLI failed
-(64/71) Repo info: ds003061,"223a18423a57d00dd1fb1fc3ac088b9d54c1e1e6"
-ds003061: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003061 (dataset)
-[2026-03-31 07:49:09] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               Ethnicity                                        
-                               Details: {'Levels': {'Indian': 'Participant of   
-                               Indian origin', 'Non_indian': 'Participant of    
-                               non-Indian origin (Caucasian, etc...)'}} is not  
-                               valid under any of the given schemas             
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003061: CLI failed
-(65/71) Repo info: ds004151,"cacf061e7f0a3a981fadbee74fc3f70694a4b0b3"
-ds004151: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004151 (dataset)
-[2026-03-31 07:49:12] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               BMI                                              
-                               Details: {'LongName': 'Body mass index', 'Units':
-                               'numeric'} is not valid under any of the given   
-                               schemas                                          
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004151: CLI failed
-(66/71) Repo info: ds003380,"34be927f077ff5897aacbb58bb4ba200cc0bab33"
-ds003380: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003380 (dataset)
-[2026-03-31 07:49:15] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               participant_id                                   
-                               Details: {'LongName': 'serial animal identifier'}
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003380: CLI failed
-(67/71) Repo info: ds004019,"ec337675d5f187256d01da3d60412e8ef9b3b84c"
-ds004019: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds004019 (dataset)
-[2026-03-31 07:49:18] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               BMI                                              
-                               Details: {'LongName': 'Body mass index', 'Units':
-                               'numeric'} is not valid under any of the given   
-                               schemas                                          
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds004019: CLI failed
-(68/71) Repo info: ds003969,"52f118f60c6c1d87d5bd9a31e1d6694f6edbd660"
-ds003969: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003969 (dataset)
-[2026-03-31 07:49:22] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               first_session                                    
-                               Details: {'Levels': {'meditation': 'The first    
-                               session was a meditation session', 'thinking':   
-                               'The first session was a thinking session'}} is  
-                               not valid under any of the given schemas         
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003969: CLI failed
-(69/71) Repo info: ds001785,"53be0167e7068aba693d57923eb4c9c037878159"
-ds001785: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds001785 (dataset)
-[2026-03-31 07:49:25] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               sex                                              
-                               Details: {'LongName': 'Sex', 'Levels': {'F':     
-                               'Female', 'M': 'Male'}} is not valid under any of
-                               the given schemas                                
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds001785: CLI failed
-(70/71) Repo info: ds003702,"642f7b7bc2ea5b157072ff41e1678d6dd03bee07"
-ds003702: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003702 (dataset)
-[2026-03-31 07:49:28] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               participant_id                                   
-                               Details: {'LongName': 'Participant identifier'}  
-                               is not valid under any of the given schemas      
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003702: CLI failed
-(71/71) Repo info: ds003343,"699d281347c1b8c49352e3a08c64fcd1b2736c51"
-ds003343: Running the CLI
-install(ok): /home/runner/work/.github/.github/code/data/ds003343 (dataset)
-[2026-03-31 07:49:31] ERROR    The data dictionary is not a valid Neurobagel    
-                               data dictionary. Entry that failed validation:   
-                               stimulated_side                                  
-                               Details: {'LongName': 'Stimulated elbow side',   
-                               'Levels': {'R': 'Right', 'L': 'Left'}} is not    
-                               valid under any of the given schemas             
-                               TIP: Ensure each annotated column contains an    
-                               'Annotations' key.                               
-ds003343: CLI failed
+(1/20) Repo info: ds007602,"4c4473fae073e283f1ca29fe4231620b367aaa84"
+ds007602: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds007602 (dataset)
+[2026-03-31 16:59:50] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds007602: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds007602: Updating SHA in file
+ds007602: CLI failed
+(2/20) Repo info: ds004513,"37590f49c0bf6cb11ea75ebdc36266277c87fe98"
+ds004513: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds004513 (dataset)
+[2026-03-31 16:59:53] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds004513: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds004513: Updating SHA in file
+ds004513: CLI failed
+(3/20) Repo info: ds004499,"aa991c03245ddbc96fa77cfed6399427b59746b6"
+ds004499: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds004499 (dataset)
+[2026-03-31 16:59:56] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds004499: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds004499: Updating SHA in file
+ds004499: CLI failed
+(4/20) Repo info: ds005095,"5533889c8c76f02d0537dd565432d8bee6464868"
+ds005095: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005095 (dataset)
+[2026-03-31 16:59:59] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005095: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005095: Updating SHA in file
+ds005095: CLI failed
+(5/20) Repo info: ds005296,"3566d394fbf0980da36fec76f3f5a76f8133ecc7"
+ds005296: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005296 (dataset)
+[2026-03-31 17:00:02] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005296: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005296: Updating SHA in file
+ds005296: CLI failed
+(6/20) Repo info: ds005127,"ba1568b297a760edd9dc2407be2636f63fceb93e"
+ds005127: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005127 (dataset)
+[2026-03-31 17:00:06] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005127: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005127: Updating SHA in file
+ds005127: CLI failed
+(7/20) Repo info: ds005917,"d5747382440dc93344eafeb3b55e9430197b52aa"
+ds005917: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005917 (dataset)
+[2026-03-31 17:00:10] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005917: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005917: Updating SHA in file
+ds005917: CLI failed
+(8/20) Repo info: ds005648,"67f01a648e2fca320416514e1454134a4096e8e2"
+ds005648: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005648 (dataset)
+[2026-03-31 17:00:13] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005648: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005648: Updating SHA in file
+ds005648: CLI failed
+(9/20) Repo info: ds005811,"089d4e40ff9f2ee70a9cc5b5f97462018717d3ef"
+ds005811: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005811 (dataset)
+[2026-03-31 17:00:27] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005811: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005811: Updating SHA in file
+ds005811: CLI failed
+(10/20) Repo info: ds006131,"e13ed9603abc5eda40f09ab99fd1567a6c525e4a"
+ds006131: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds006131 (dataset)
+[2026-03-31 17:00:31] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds006131: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds006131: Updating SHA in file
+ds006131: CLI failed
+(11/20) Repo info: ds005407,"a688170f0fa0f9c9f08eb20e3d07588e09d0cc7f"
+ds005407: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005407 (dataset)
+[2026-03-31 17:01:01] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005407: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005407: Updating SHA in file
+ds005407: CLI failed
+(12/20) Repo info: ds004572,"95bd22fdb4bba72e1bc6eba006595e6f4f7abfe2"
+ds004572: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds004572 (dataset)
+[2026-03-31 17:01:05] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds004572: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds004572: Updating SHA in file
+ds004572: CLI failed
+(13/20) Repo info: ds004974,"8b64403469799dc772553a4709f49563457873d9"
+ds004974: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds004974 (dataset)
+[2026-03-31 17:01:07] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds004974: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds004974: Updating SHA in file
+ds004974: CLI failed
+(14/20) Repo info: ds005810,"d6aae710adf24193b79c840d9e82841dcbcf8b08"
+ds005810: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005810 (dataset)
+[2026-03-31 17:01:20] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005810: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005810: Updating SHA in file
+ds005810: CLI failed
+(15/20) Repo info: ds005264,"cacaafa1be8348e2cd5b8800da013d6544f3e832"
+ds005264: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds005264 (dataset)
+[2026-03-31 17:01:22] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds005264: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds005264: Updating SHA in file
+ds005264: CLI failed
+(16/20) Repo info: ds004392,"4976704924228ed08e411bd6cc72fdac55664922"
+ds004392: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds004392 (dataset)
+ds004392: CLI ran successfully!
+ds004392: Updating SHA in file
+(17/20) Repo info: ds006707,"074006f84c14043d9065d03bca6a665e701e483b"
+ds006707: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds006707 (dataset)
+[2026-03-31 17:01:33] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds006707: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds006707: Updating SHA in file
+ds006707: CLI failed
+(18/20) Repo info: ds006642,"917f1a2e737a79f565b3584ece1339c41e4aec2a"
+ds006642: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds006642 (dataset)
+[2026-03-31 17:01:41] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds006642: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds006642: Updating SHA in file
+ds006642: CLI failed
+(19/20) Repo info: ds006444,"206bee07d70e9f53f8f0d43ba664afeb46bfc217"
+ds006444: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds006444 (dataset)
+[2026-03-31 17:01:44] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds006444: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds006444: Updating SHA in file
+ds006444: CLI failed
+(20/20) Repo info: ds006533,"4cd5269112104de9fb86553c2590299cb687943f"
+ds006533: Running the CLI
+install(ok): /home/runner/work/.github/.github/code/data/ds006533 (dataset)
+[2026-03-31 17:01:47] ERROR    The data dictionary must contain at least one    
+                               column with Neurobagel annotations.              
+ds006533: participants.json is missing Neurobagel annotations. Saving repo ID to temp_datasets_missing_annotations.txt
+ds006533: Updating SHA in file
+ds006533: CLI failed
