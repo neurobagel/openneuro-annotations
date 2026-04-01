@@ -1,0 +1,153 @@
+{
+  "participant_id": {
+    "Description": "Unique participant identifier",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": "Participant ID"
+      },
+      "VariableType": "Identifier"
+    }
+  },
+  "recording_restarted": {
+    "Description": "Whether the recording was restarted due to a technical issue. This applies to one participant, for whom the experiment crashed partway through.",
+    "Levels": {
+      "0": "no",
+      "1": "yes"
+    }
+  },
+  "recording_interrupted": {
+    "Description": "Whether the recording was interrupted. In this case, the recording crashed partway through the experiment, and was continued in a separate brainvision file. Some data is missing from the period during which the recording was restarted. The files in this BIDS repository are joined end-to-end into one EEG file. This problem occurred for one participant.",
+    "Levels": {
+      "0": "no",
+      "1": "yes"
+    }
+  },
+  "age": {
+    "Description": "Age of the participant at time of testing",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": "Age"
+      },
+      "VariableType": "Continuous",
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float"
+      },
+      "MissingValues": [
+        "n/a",
+        "N/A",
+        "na",
+        "NA",
+        "nan",
+        "NaN",
+        ""
+      ]
+    }
+  },
+  "gender": {
+    "Description": "Self-reported gender of the participant",
+    "Levels": {
+      "F": "female",
+      "M": "male",
+      "NB": "non-binary"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": "Sex"
+      },
+      "VariableType": "Categorical",
+      "Levels": {
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": "Female"
+        },
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": "Male"
+        }
+      },
+      "MissingValues": []
+    }
+  },
+  "hand_index": {
+    "Description": "Laterality Quotient from the Short Form of the Edinburgh Handedness Inventory (from -100 [completely left] to 100 [completely right])."
+  },
+  "hand": {
+    "Description": "Handedness of the participant",
+    "Levels": {
+      "R": "right",
+      "L": "left",
+      "A": "ambidextrous"
+    }
+  },
+  "other_lang": {
+    "Description": "A semicolon-separated list of languages that the participant speaks in addition to German."
+  },
+  "other_lang_level": {
+    "Description": "A semicolon-separated list of the CEFR level to which the participant speaks each language listed in other_lang. The order of entries in the list matches that in other_lang."
+  },
+  "multiling_read": {
+    "Description": "Whether the participant often reads in a language, in addition to German.",
+    "Levels": {
+      "0": "no",
+      "1": "yes"
+    }
+  },
+  "other_lang_read": {
+    "Description": "A semicolon-separated list of languages that the participant reads, in addition to German."
+  },
+  "head_circum": {
+    "Description": "Circumference of the head, as measured for the EEG cap.",
+    "Units": "cm"
+  },
+  "tired": {
+    "Description": "A rating on how tired the participant feels (made after the experiment).",
+    "Levels": {
+      "1": "very tired",
+      "5": "not at all tired"
+    }
+  },
+  "sleep_h": {
+    "Description": "How many hours of sleep the participant had last night.",
+    "Units": "hours"
+  },
+  "caffeine": {
+    "Description": "Whether the participant reported drinking caffeine in the last 6 hours.",
+    "Levels": {
+      "yes": "yes",
+      "no": "no"
+    }
+  },
+  "caf_drink": {
+    "Description": "A semicolon-separated list of which caffeinated drinks the participant reported drinking in the last 6 hours."
+  },
+  "strategy": {
+    "Description": "A self-reported description of the strategy used by the participant during the experiment ('no' or missing data correspond to no self-reported strategy)."
+  },
+  "inner_speech": {
+    "Description": "Whether the participant reported internally pronouncing the letters that were presented.",
+    "Levels": {
+      "yes": "yes",
+      "no": "no"
+    }
+  },
+  "sex": {
+    "Description": "Biological sex of the participant",
+    "Levels": {
+      "F": "female",
+      "M": "male"
+    }
+  },
+  "weight": {
+    "Description": "Body weight of the participant",
+    "Units": "kg"
+  },
+  "height": {
+    "Description": "Body height of the participant",
+    "Units": "m"
+  }
+}

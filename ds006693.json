@@ -1,0 +1,92 @@
+{
+  "participant_id": {
+    "Description": "BIDS-compliant subject label",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": "Participant ID"
+      },
+      "VariableType": "Identifier"
+    }
+  },
+  "original_id": {
+    "Description": "Original subject code (e.g., NODEAP_06)"
+  },
+  "sex": {
+    "Description": "Biological sex of participant",
+    "Levels": {
+      "M": "Male",
+      "F": "Female",
+      "O": "Other"
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": "Sex"
+      },
+      "VariableType": "Categorical",
+      "Levels": {
+        "M": {
+          "TermURL": "snomed:248153007",
+          "Label": "Male"
+        },
+        "F": {
+          "TermURL": "snomed:248152002",
+          "Label": "Female"
+        }
+      },
+      "MissingValues": []
+    }
+  },
+  "age": {
+    "Description": "Age of participant at time of experiment",
+    "Units": "years",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": "Age"
+      },
+      "VariableType": "Continuous",
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float"
+      },
+      "MissingValues": [
+        "n/a",
+        "N/A",
+        "na",
+        "NA",
+        "nan",
+        "NaN",
+        ""
+      ]
+    }
+  },
+  "group": {
+    "Description": "Stimulation target group",
+    "Levels": {
+      "aOFC": "Anterior OFC",
+      "pOFC": "Posterior OFC"
+    }
+  },
+  "meal_order": {
+    "Description": "Devaluation meal across the three sessions (Session1-Session2-Session3). Alternates from the initial meal unless overridden by subject-specific notes.",
+    "Levels": {
+      "Sweet-Savory-Sweet": "Sweet devalued in Sessions 1 & 3, Savory in Session 2",
+      "Savory-Sweet-Savory": "Savory devalued in Sessions 1 & 3, Sweet in Session 2",
+      "Sweet-Sweet-Savory": "Special case (e.g., NODEAP_44): Sweet in Sessions 1 & 2, Savory in Session 3"
+    }
+  },
+  "tms_order": {
+    "Description": "TMS condition per session pair (D1+D2) across Session1-Session2-Session3, using C=cTBS and S=sham (e.g., 'CS-SC-SS').",
+    "Levels": {
+      "CS-SC-SS": "S1: cTBS+sham, S2: sham+cTBS, S3: sham+sham",
+      "CS-SS-SC": "S1: cTBS+sham, S2: sham+sham, S3: sham+cTBS",
+      "SC-CS-SS": "S1: sham+cTBS, S2: cTBS+sham, S3: sham+sham",
+      "SC-SS-CS": "S1: sham+cTBS, S2: sham+sham, S3: cTBS+sham",
+      "SS-CS-SC": "S1: sham+sham, S2: cTBS+sham, S3: sham+cTBS",
+      "SS-SC-CS": "S1: sham+sham, S2: sham+cTBS, S3: cTBS+sham",
+      "NA": "Unspecified or invalid code"
+    }
+  }
+}
