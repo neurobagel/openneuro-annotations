@@ -1,0 +1,489 @@
+{
+  "@context": {
+    "nb": "http://neurobagel.org/vocab/",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
+    "ncit": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+    "np": "https://github.com/nipoppy/pipeline-catalog/tree/main/processing/",
+    "Acquisition": "nb:Acquisition",
+    "identifier": "@id",
+    "hasContrastType": {
+      "@id": "nb:hasContrastType"
+    },
+    "schemaKey": "@type",
+    "Assessment": "nb:Assessment",
+    "Bagel": "nb:Bagel",
+    "BaseModel": "nb:BaseModel",
+    "CompletedPipeline": "nb:CompletedPipeline",
+    "hasPipelineVersion": {
+      "@id": "nb:hasPipelineVersion"
+    },
+    "hasPipelineName": {
+      "@id": "nb:hasPipelineName"
+    },
+    "ControlledTerm": "nb:ControlledTerm",
+    "Dataset": "nb:Dataset",
+    "hasLabel": {
+      "@id": "nb:hasLabel"
+    },
+    "hasAuthors": {
+      "@id": "nb:hasAuthors"
+    },
+    "hasReferencesAndLinks": {
+      "@id": "nb:hasReferencesAndLinks"
+    },
+    "hasKeywords": {
+      "@id": "nb:hasKeywords"
+    },
+    "hasRepositoryURL": {
+      "@id": "nb:hasRepositoryURL"
+    },
+    "hasAccessInstructions": {
+      "@id": "nb:hasAccessInstructions"
+    },
+    "hasAccessType": {
+      "@id": "nb:hasAccessType"
+    },
+    "hasAccessEmail": {
+      "@id": "nb:hasAccessEmail"
+    },
+    "hasAccessLink": {
+      "@id": "nb:hasAccessLink"
+    },
+    "hasSamples": {
+      "@id": "nb:hasSamples"
+    },
+    "Diagnosis": "nb:Diagnosis",
+    "Image": "nb:Image",
+    "ImagingSession": "nb:ImagingSession",
+    "hasFilePath": {
+      "@id": "nb:hasFilePath"
+    },
+    "hasAcquisition": {
+      "@id": "nb:hasAcquisition"
+    },
+    "hasCompletedPipeline": {
+      "@id": "nb:hasCompletedPipeline"
+    },
+    "PhenotypicSession": "nb:PhenotypicSession",
+    "hasAge": {
+      "@id": "nb:hasAge"
+    },
+    "hasSex": {
+      "@id": "nb:hasSex"
+    },
+    "isSubjectGroup": {
+      "@id": "nb:isSubjectGroup"
+    },
+    "hasDiagnosis": {
+      "@id": "nb:hasDiagnosis"
+    },
+    "hasAssessment": {
+      "@id": "nb:hasAssessment"
+    },
+    "Pipeline": "nb:Pipeline",
+    "Session": "nb:Session",
+    "Sex": "nb:Sex",
+    "Subject": "nb:Subject",
+    "hasSession": {
+      "@id": "nb:hasSession"
+    },
+    "SubjectGroup": "nb:SubjectGroup"
+  },
+  "identifier": "nb:1a4bf3b1-82cc-40a9-9d77-d8eb9e028b4d",
+  "hasLabel": "Bimodal dataset on Inner speech",
+  "hasAuthors": [
+    "Foteini Liwicki",
+    "Vibha Gupta",
+    "Rajkumar Saini",
+    "Kanjar De",
+    "Nosheen Abid",
+    "Sumit Rakesh",
+    "Scott Wellington",
+    "Holly Wilson",
+    "Marcus Liwicki",
+    "Johan Eriksson"
+  ],
+  "hasReferencesAndLinks": [
+    "https://openneuro.org/datasets/ds004196",
+    "https://github.com/LTU-Machine-Learning/Inner_Speech_EEG_FMRI",
+    "https://www.biorxiv.org/content/10.1101/2022.05.24.492109v3"
+  ],
+  "hasRepositoryURL": "https://github.com/OpenNeuroDatasets-JSONLD/ds004196.git",
+  "hasAccessType": "public",
+  "hasSamples": [
+    {
+      "identifier": "nb:bef3d29d-6ea7-47f9-b129-5fc446b36a39",
+      "hasLabel": "sub-01",
+      "hasSession": [
+        {
+          "identifier": "nb:de3faf07-3c5b-40f8-9689-ac8878e3fb2e",
+          "hasLabel": "ses-unnamed",
+          "hasAge": 33.0,
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:688e24d7-7ba1-47fd-90ce-9b499e846a51",
+          "hasLabel": "ses-01",
+          "hasFilePath": "/ds004196/sub-01/ses-01",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:b32b116e-ea46-4e28-877a-5bef207abe8a",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:cc472fb5-f52e-4af8-bdcd-94c28f55705a",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "hasCompletedPipeline": [
+            {
+              "identifier": "nb:04c293f5-b9ab-44f0-853d-5eecafa06b18",
+              "hasPipelineVersion": "24.1.0",
+              "hasPipelineName": {
+                "identifier": "np:fmriprep",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            },
+            {
+              "identifier": "nb:8220533f-08a0-4fe2-9c5b-85abf61bbc1b",
+              "hasPipelineVersion": "24.0.2",
+              "hasPipelineName": {
+                "identifier": "np:mriqc",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:307754d4-32b0-4b22-a186-d3197d014fec",
+          "hasLabel": "ses-02",
+          "hasFilePath": "/ds004196/sub-01/ses-02",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:5b597be7-3a84-43f9-9241-130d4d6aef68",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:277e83d6-9cec-428f-9586-454d13a9b439",
+          "hasLabel": "ses-EEG",
+          "hasFilePath": "/ds004196/sub-01/ses-EEG",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:25871666-0cf2-4f29-9df0-4236bcd12a1b",
+              "hasContrastType": {
+                "identifier": "nidm:Electroencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:49263881-0e37-4fa3-abe4-292b0cf22a8f",
+      "hasLabel": "sub-02",
+      "hasSession": [
+        {
+          "identifier": "nb:c8a1ef95-02f6-4f41-90a2-25db7c4bfe5d",
+          "hasLabel": "ses-unnamed",
+          "hasAge": 36.0,
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:caa7d942-a81a-4c40-95ea-ac01d467efcd",
+          "hasLabel": "ses-01",
+          "hasFilePath": "/ds004196/sub-02/ses-01",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:b4397b70-30ac-4ff0-98b9-029b4578ce1c",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:fffe8fb4-a12b-4132-b0a5-35ceb684debf",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "hasCompletedPipeline": [
+            {
+              "identifier": "nb:d1d35343-cdc6-4643-9437-bf54d5f34296",
+              "hasPipelineVersion": "24.1.0",
+              "hasPipelineName": {
+                "identifier": "np:fmriprep",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            },
+            {
+              "identifier": "nb:e28d53be-f2e0-4598-ad9a-a280ac4a3fcf",
+              "hasPipelineVersion": "24.0.2",
+              "hasPipelineName": {
+                "identifier": "np:mriqc",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:88185631-7b9c-46ab-93b4-096757bd1735",
+          "hasLabel": "ses-02",
+          "hasFilePath": "/ds004196/sub-02/ses-02",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:0b1a4d08-91aa-4e23-957c-fb2040461170",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:20381966-63be-423b-859b-7c110485745e",
+          "hasLabel": "ses-EEG",
+          "hasFilePath": "/ds004196/sub-02/ses-EEG",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:f871c2d8-3048-4bf8-b658-f824467f866e",
+              "hasContrastType": {
+                "identifier": "nidm:Electroencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:4c29afe2-6dfe-469a-8a88-f7740e978339",
+      "hasLabel": "sub-03",
+      "hasSession": [
+        {
+          "identifier": "nb:69bff0d8-7dc0-4383-851d-292abcf13575",
+          "hasLabel": "ses-unnamed",
+          "hasAge": 52.0,
+          "hasSex": {
+            "identifier": "snomed:248152002",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:948097d3-399c-4aad-bef0-1ee26c51df42",
+          "hasLabel": "ses-01",
+          "hasFilePath": "/ds004196/sub-03/ses-01",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:eb306550-605f-4abf-b5d2-3ceebd9ebac9",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:a1d21212-0764-4586-af52-cbf66d822e9a",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "hasCompletedPipeline": [
+            {
+              "identifier": "nb:d9312ae5-3c9a-498d-8b5a-ef6761fc50da",
+              "hasPipelineVersion": "24.1.0",
+              "hasPipelineName": {
+                "identifier": "np:fmriprep",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            },
+            {
+              "identifier": "nb:74923715-8e43-4543-8c27-411325943ea3",
+              "hasPipelineVersion": "24.0.2",
+              "hasPipelineName": {
+                "identifier": "np:mriqc",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:1b108794-4cf4-4a14-8338-a2fa80ccc94b",
+          "hasLabel": "ses-02",
+          "hasFilePath": "/ds004196/sub-03/ses-02",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:b5e587b7-ba30-4b04-b6dd-f23c9226ea86",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:1084f750-960f-45e3-991d-547bf51fe212",
+          "hasLabel": "ses-EEG",
+          "hasFilePath": "/ds004196/sub-03/ses-EEG",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:02b5bfa9-3e31-43ad-b337-3944f650c579",
+              "hasContrastType": {
+                "identifier": "nidm:Electroencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:6649e152-282d-447d-a23e-b189e29e3a36",
+      "hasLabel": "sub-05",
+      "hasSession": [
+        {
+          "identifier": "nb:8597616a-6377-4f4c-9a90-075994d4cc1f",
+          "hasLabel": "ses-unnamed",
+          "hasAge": 38.0,
+          "hasSex": {
+            "identifier": "snomed:248152002",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:e6ca39f9-fa28-46bc-bc70-2377d1e9df4c",
+          "hasLabel": "ses-01",
+          "hasFilePath": "/ds004196/sub-05/ses-01",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:ecfd3134-0ed5-480f-b678-ac53136aa039",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            },
+            {
+              "identifier": "nb:9c56462e-4fa5-484b-8a25-83495bb68f89",
+              "hasContrastType": {
+                "identifier": "nidm:T1Weighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "hasCompletedPipeline": [
+            {
+              "identifier": "nb:4ad241cf-283b-4013-918c-7f74233fbb8e",
+              "hasPipelineVersion": "24.1.0",
+              "hasPipelineName": {
+                "identifier": "np:fmriprep",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            },
+            {
+              "identifier": "nb:e4d95bdf-701b-4296-a89a-c571d000d759",
+              "hasPipelineVersion": "24.0.2",
+              "hasPipelineName": {
+                "identifier": "np:mriqc",
+                "schemaKey": "Pipeline"
+              },
+              "schemaKey": "CompletedPipeline"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:20f428a0-360e-4367-a7f9-7f127e418821",
+          "hasLabel": "ses-02",
+          "hasFilePath": "/ds004196/sub-05/ses-02",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:2d08cdf9-455b-4cf2-b871-2507dccc60dd",
+              "hasContrastType": {
+                "identifier": "nidm:FlowWeighted",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:f2c7871d-96c7-479b-9f1f-71963e938743",
+          "hasLabel": "ses-EEG",
+          "hasFilePath": "/ds004196/sub-05/ses-EEG",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:0d7e2caa-27a1-4574-814f-7537207b9ba8",
+              "hasContrastType": {
+                "identifier": "nidm:Electroencephalography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    }
+  ],
+  "schemaKey": "Dataset"
+}

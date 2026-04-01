@@ -1,0 +1,910 @@
+{
+  "@context": {
+    "nb": "http://neurobagel.org/vocab/",
+    "nidm": "http://purl.org/nidash/nidm#",
+    "snomed": "http://purl.bioontology.org/ontology/SNOMEDCT/",
+    "ncit": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#",
+    "np": "https://github.com/nipoppy/pipeline-catalog/tree/main/processing/",
+    "Acquisition": "nb:Acquisition",
+    "identifier": "@id",
+    "hasContrastType": {
+      "@id": "nb:hasContrastType"
+    },
+    "schemaKey": "@type",
+    "Assessment": "nb:Assessment",
+    "Bagel": "nb:Bagel",
+    "BaseModel": "nb:BaseModel",
+    "CompletedPipeline": "nb:CompletedPipeline",
+    "hasPipelineVersion": {
+      "@id": "nb:hasPipelineVersion"
+    },
+    "hasPipelineName": {
+      "@id": "nb:hasPipelineName"
+    },
+    "ControlledTerm": "nb:ControlledTerm",
+    "Dataset": "nb:Dataset",
+    "hasLabel": {
+      "@id": "nb:hasLabel"
+    },
+    "hasAuthors": {
+      "@id": "nb:hasAuthors"
+    },
+    "hasReferencesAndLinks": {
+      "@id": "nb:hasReferencesAndLinks"
+    },
+    "hasKeywords": {
+      "@id": "nb:hasKeywords"
+    },
+    "hasRepositoryURL": {
+      "@id": "nb:hasRepositoryURL"
+    },
+    "hasAccessInstructions": {
+      "@id": "nb:hasAccessInstructions"
+    },
+    "hasAccessType": {
+      "@id": "nb:hasAccessType"
+    },
+    "hasAccessEmail": {
+      "@id": "nb:hasAccessEmail"
+    },
+    "hasAccessLink": {
+      "@id": "nb:hasAccessLink"
+    },
+    "hasSamples": {
+      "@id": "nb:hasSamples"
+    },
+    "Diagnosis": "nb:Diagnosis",
+    "Image": "nb:Image",
+    "ImagingSession": "nb:ImagingSession",
+    "hasFilePath": {
+      "@id": "nb:hasFilePath"
+    },
+    "hasAcquisition": {
+      "@id": "nb:hasAcquisition"
+    },
+    "hasCompletedPipeline": {
+      "@id": "nb:hasCompletedPipeline"
+    },
+    "PhenotypicSession": "nb:PhenotypicSession",
+    "hasAge": {
+      "@id": "nb:hasAge"
+    },
+    "hasSex": {
+      "@id": "nb:hasSex"
+    },
+    "isSubjectGroup": {
+      "@id": "nb:isSubjectGroup"
+    },
+    "hasDiagnosis": {
+      "@id": "nb:hasDiagnosis"
+    },
+    "hasAssessment": {
+      "@id": "nb:hasAssessment"
+    },
+    "Pipeline": "nb:Pipeline",
+    "Session": "nb:Session",
+    "Sex": "nb:Sex",
+    "Subject": "nb:Subject",
+    "hasSession": {
+      "@id": "nb:hasSession"
+    },
+    "SubjectGroup": "nb:SubjectGroup"
+  },
+  "identifier": "nb:888a7a30-55cd-4a16-a49a-837080826dda",
+  "hasLabel": "Positron Emission Tomography Quantification in rodents of Cyclooxygenase-2 (COX-2), a Potential Biomarker of Neuroinflammation",
+  "hasAuthors": [
+    "Xuefeng Yan",
+    "Martin Noergaard",
+    "Cheryl L. Morse",
+    "Jeih-San Liow",
+    "Jinsoo Hong",
+    "Douglas Greve",
+    "Sanjay Telu",
+    "Min-Jeong Kim",
+    "Jose A. Montero Santamaria",
+    "Anthony Galassi",
+    "Ningping Feng",
+    "Sarah K. Williams Avram",
+    "Ted B. Usdin",
+    "Shawn Wu",
+    "Andrea Zhang",
+    "Lester S. Manly",
+    "Madeline Jenkins",
+    "Maia Van Buskirk",
+    "Adrian Lee",
+    "Sami S. Zoghbi",
+    "Victor W. Pike",
+    "Paolo Zanotti-Fregonara",
+    "Robert B. Innis"
+  ],
+  "hasReferencesAndLinks": [
+    "https://openneuro.org/datasets/ds005605",
+    "1.\tKenou BV, Manly LS, Rubovits SB, et al. Cyclooxygenases as potential PET imaging biomarkers to explore neuroinflammation in dementia. J Nucl Med. 2022;63:53s-59s.",
+    "2.\tHoozemans JJ, Rozemuller AJ, van Haastert ES, Veerhuis R, Eikelenboom P. Cyclooxygenase-1 and -2 in the different stages of Alzheimers disease pathology. Curr Pharm Des. 2008;14:1419-1427.",
+    "3.\tShrestha S, Kim MJ, Eldridge M, et al. PET measurement of cyclooxygenase-2 using a novel radioligand: upregulation in primate neuroinflammation and first-in-human study. J Neuroinflammation. 2020;17:140.",
+    "4.\tYamagata K, Andreasson KI, Kaufmann WE, Barnes CA, Worley PF. Expression of a mitogen-inducible cyclooxygenase in brain neurons: regulation by synaptic activity and glucocorticoids. Neuron. 1993;11:371-386.",
+    "5.\tCortes-Salva MY, Shrestha S, Singh P, et al. 2-(4-Methylsulfonylphenyl)pyrimidines as prospective radioligands for imaging cyclooxygenase-2 with PET-synthesis, triage, and radiolabeling. Molecules. 2018;23:2850.",
+    "6.\tKoo TK, Li MY. A guideline for selecting and reporting intraclass correlation coefficients for reliability research. J Chiropr Med. 2016;6:155-163.",
+    "7.\tNørgaard M, Beliveau V, Ganz M, et al. A high-resolution in vivo atlas of the human brain's benzodiazepine binding site of GABA(A) receptors. Neuroimage. 2021;232:117878.",
+    "8.\tGreve DN, Svarer C, Fisher PM, et al. Cortical surface-based analysis reduces bias and variance in kinetic modeling of brain PET data. Neuroimage. 2014;92:225-236.",
+    "9.\tGreve DN, Salat DH, Bowen SL, et al. Different partial volume correction methods lead to different conclusions: An (18)F-FDG-PET study of aging. Neuroimage. 2016;132:334-343.",
+    "10.\tOláh O, Németh I, Tóth-Szűki V, Bari F, Domoki F. Regional differences in the neuronal expression of cyclooxygenase-2 (COX-2) in the newborn pig brain. Acta Histochem Cytochem. 2012;45:187-192.",
+    "11.\tBreder CD, Dewitt D, Kraig RP. Characterization of inducible cyclooxygenase in rat brain. J Comp Neurol. 1995;355:296-315.",
+    "12.\tYang H, Chen C. Cyclooxygenase-2 in synaptic signaling. Curr Pharm Des. 2008;14:1443-1451.",
+    "13.\tSalinas CA, Searle GE, Gunn RN. The simplified reference tissue model: model assumption violations and their impact on binding potential. J Cereb Blood Flow Metab. 2015;35:304-311.",
+    "14.\tKreisl WC, Kim MJ, Coughlin JM, Henter ID, Owen DR, Innis RB. PET imaging of neuroinflammation in neurological disorders. Lancet Neurol. 2020;19:940-950."
+  ],
+  "hasRepositoryURL": "https://github.com/OpenNeuroDatasets-JSONLD/ds005605.git",
+  "hasAccessType": "public",
+  "hasSamples": [
+    {
+      "identifier": "nb:76d23a05-5b74-465d-bde6-da8f0289d8e6",
+      "hasLabel": "sub-m01wt",
+      "hasSession": [
+        {
+          "identifier": "nb:795f89d4-88fc-4dfa-a6a4-25acca886fb9",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:970e208b-272b-47d3-af9a-b3a8095c9dfe",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-m01wt/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:d6652d26-0912-4553-99c8-3015ebbc9333",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:475d6f59-589a-4038-8f30-79bb8b5fc29f",
+          "hasLabel": "ses-blockmc1",
+          "hasFilePath": "/ds005605/sub-m01wt/ses-blockmc1",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:d3aa1141-1672-410c-8952-f2cc508582ad",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:b9be85bd-ffb6-4820-8c74-df0e68be3ec7",
+      "hasLabel": "sub-m02wt",
+      "hasSession": [
+        {
+          "identifier": "nb:598e9909-e7e2-43c2-a44a-f669537135be",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:a8fe9e9e-94ca-4d1b-a86d-07d8976d2e01",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-m02wt/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:f67a606f-af87-4f93-add0-f6672f57a46c",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:22f02911-7963-4a52-8330-e3b581d5b778",
+          "hasLabel": "ses-blockmc1",
+          "hasFilePath": "/ds005605/sub-m02wt/ses-blockmc1",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:81b257cd-6ae8-4f40-9d70-43448495923a",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:bee8016d-2384-4d6f-80dc-b956176bed0d",
+      "hasLabel": "sub-m03wt",
+      "hasSession": [
+        {
+          "identifier": "nb:cb9e9895-9efc-43c7-a7a8-f948126a1e35",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:3def81ab-fbb8-4b64-869f-1d21f4009be7",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-m03wt/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:dc49f431-448e-405a-92ce-5d54f6cd4107",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:b34a4c37-dbfd-4192-b4b4-0fba4da5bc00",
+          "hasLabel": "ses-blockmc1",
+          "hasFilePath": "/ds005605/sub-m03wt/ses-blockmc1",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:1a86fda9-7f89-4c61-8260-8574ec0f2b79",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:3ea68cf9-b95e-4012-89ad-bc2e7e10a722",
+      "hasLabel": "sub-m04hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:46aa6e70-1f9d-46a3-9a62-de8466cfd2c8",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:910e09fc-67df-4df4-9120-ca65b7bd8ede",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-m04hcox2/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:c47fb572-c58e-420d-ae4f-2e968eb8d0d3",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:bf11301a-daa0-4b4f-a64d-f7f70860a8e8",
+          "hasLabel": "ses-blockmc1",
+          "hasFilePath": "/ds005605/sub-m04hcox2/ses-blockmc1",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:6298e045-916e-490b-b26c-9b517c27a525",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:800a7783-64a2-4434-bf13-49bf38db0b90",
+      "hasLabel": "sub-m05hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:ed7f8e82-6c5c-4bd0-a97d-a7d7f6099dc6",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:abbb96be-edef-4884-adb9-b38616ea2257",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-m05hcox2/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:6939fee1-02f0-48f3-95f6-3ceab8f6eb53",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:5957039f-ecd5-4c41-a576-e28a9595bc72",
+          "hasLabel": "ses-blockmc1",
+          "hasFilePath": "/ds005605/sub-m05hcox2/ses-blockmc1",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:5b5a3d99-b8bd-4b06-a4fb-cfb2e35dcabd",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:7459bfcb-9dad-46f6-9565-d03fa6317925",
+      "hasLabel": "sub-m06hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:5e3f74f9-18a4-4bfc-ac29-cb77abeb8618",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:381fa9b3-d83f-4540-9ae1-ef776920d351",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-m06hcox2/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:31f5993a-510e-451b-a031-11c8352c1687",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:96b4960c-3d55-424f-98e3-989625378eff",
+          "hasLabel": "ses-blockmc1",
+          "hasFilePath": "/ds005605/sub-m06hcox2/ses-blockmc1",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:f6494c04-81a4-47b9-b4e8-a42c2033c53c",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:42368246-a262-4c53-ae6c-b9a6aba865cb",
+      "hasLabel": "sub-m07hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:13448174-2d4b-4b7d-a581-944553e7fdca",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:f23e7313-ac0b-4363-a608-e6f0f96f4347",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-m07hcox2/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:e71f0f6c-a36b-4e13-8bbe-429adb3b5a94",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:9cfefd12-04e2-4ca5-83e9-c84d8dae58a5",
+      "hasLabel": "sub-m08hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:5db36b38-ded3-4125-96fe-b5e6b93f4ffa",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:d73a901a-9c91-4bb7-ab6d-0ed8dce6457a",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-m08hcox2/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:113f3b37-70d0-45d8-b578-b7940ab7ef04",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:7e4106e2-579d-4c31-b471-aa8baf4ae554",
+      "hasLabel": "sub-m09hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:810dab81-07f8-4f79-b5cb-27a91e67d50b",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:848d4419-8348-4ef8-8431-6ca1b42966d7",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-m09hcox2/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:17a50e53-bc11-4fe5-93af-ae431d3d50a8",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:915d9d03-c326-4e11-9123-7b463ac07b2b",
+      "hasLabel": "sub-m10hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:92355b02-35eb-43bc-acbc-796dec747312",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:64d2bf82-840f-4083-8792-e6c6037a971e",
+          "hasLabel": "ses-blockps13",
+          "hasFilePath": "/ds005605/sub-m10hcox2/ses-blockps13",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:3cbcbee7-d046-42a0-b496-26a93cc74396",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:f90d68d6-a1da-47e8-8366-a2f035965c45",
+      "hasLabel": "sub-m11hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:65227425-1866-4f3f-8bd6-0d7a5f526ee1",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:39248a81-0ccd-4c92-bdb7-19fedc71765e",
+          "hasLabel": "ses-blockps13",
+          "hasFilePath": "/ds005605/sub-m11hcox2/ses-blockps13",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:887668e1-58d6-48d1-b151-9758162787df",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:d32dadb4-9f64-4358-9cb7-136c3c45a6ae",
+      "hasLabel": "sub-m12hcox2",
+      "hasSession": [
+        {
+          "identifier": "nb:946e87f3-f9b6-4432-bcb0-de5b3d43722a",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:963954fe-e40a-4025-b484-184e7435c608",
+          "hasLabel": "ses-blockps13",
+          "hasFilePath": "/ds005605/sub-m12hcox2/ses-blockps13",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:7e1c4dab-5ff4-4e2c-b9ea-07540124e3b6",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:01193887-c58e-4b6e-830d-e880d4979860",
+      "hasLabel": "sub-r1ctl",
+      "hasSession": [
+        {
+          "identifier": "nb:40d4bba3-9d76-425a-929d-87d986762b44",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:1db97ab4-1905-4ce1-8ef5-f666b06c6d94",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-r1ctl/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:f4099df7-5deb-43b9-ac0e-8cf51fbe8f4b",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:fe7c98c2-72e0-4259-8639-ec0cbe8c17db",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-r1ctl/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:78145e07-5d76-4c74-831a-782da923cba4",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:0f2e4511-83ca-423c-8767-f9b7fb9a7e66",
+      "hasLabel": "sub-r2ctl",
+      "hasSession": [
+        {
+          "identifier": "nb:153c2554-6a5f-40e6-abe0-43ada98a811b",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:9a774c06-4751-41bc-b8d6-d4c9f297d348",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-r2ctl/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:84dfce5d-cc66-4fe0-a82e-159c33371437",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:a85a1a6e-7caa-47e7-960a-ba9822bb1e34",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-r2ctl/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:1c774025-9bdb-482c-ae5a-7b0f5c549263",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:7fbfbf32-93f9-4b6b-a5cd-9469ff0d8a71",
+      "hasLabel": "sub-r3ctl",
+      "hasSession": [
+        {
+          "identifier": "nb:29bbddf0-e7aa-4ae8-9b81-617ebf10bdc5",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:24fd1ec2-4b0e-4b0d-8567-8117821e4901",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-r3ctl/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:f374cbbf-c9ea-44f5-8050-a845c9433139",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:a6ee1efd-f8a0-4d18-a7b8-f9ddb93c6bf6",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-r3ctl/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:89b0f81a-e3b9-419e-aa35-e86c1146c825",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:74952125-cc98-48d8-aa77-a831480a6390",
+      "hasLabel": "sub-r4lps",
+      "hasSession": [
+        {
+          "identifier": "nb:940c8e77-0e15-48b1-a97b-e0957c5b4af6",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:8352a9a6-46d6-4edc-8413-80009b5262d2",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-r4lps/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:caec7a81-ec3a-40d3-a34c-d2089786eca0",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:e0d85b99-4522-4e90-951f-5ca98eb6fa37",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-r4lps/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:eff50b56-fe15-43ec-aca3-9b0fa9afc5d9",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:f41cf574-db43-43d8-8a23-57f520ea584d",
+      "hasLabel": "sub-r5lps",
+      "hasSession": [
+        {
+          "identifier": "nb:1206f950-b48e-448b-88ef-bee36f1acbbb",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:27c53991-0e3a-41ad-a6f7-97b6f79f19c0",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-r5lps/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:7bca4b46-69cf-4ae5-9467-ecf404c3f9a7",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:c0ac0560-8879-4b08-8e16-1a0103931c67",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-r5lps/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:45a36a8f-588a-4209-b027-8850d032f4b3",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    },
+    {
+      "identifier": "nb:d41ad082-9f3a-407d-96b1-9ff74e422aa2",
+      "hasLabel": "sub-r6lps",
+      "hasSession": [
+        {
+          "identifier": "nb:a43498b6-5bc9-4b86-b8d6-acb3deb3bf17",
+          "hasLabel": "ses-unnamed",
+          "hasSex": {
+            "identifier": "snomed:248153007",
+            "schemaKey": "Sex"
+          },
+          "schemaKey": "PhenotypicSession"
+        },
+        {
+          "identifier": "nb:2927dc34-c213-43ed-a49d-269cba903fc5",
+          "hasLabel": "ses-baseline",
+          "hasFilePath": "/ds005605/sub-r6lps/ses-baseline",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:b24f9a7a-9fd3-4dea-9bcc-3f229f96aaa5",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        },
+        {
+          "identifier": "nb:5acb3ef8-bb72-419d-943c-1595610be174",
+          "hasLabel": "ses-blockcelecoxib",
+          "hasFilePath": "/ds005605/sub-r6lps/ses-blockcelecoxib",
+          "hasAcquisition": [
+            {
+              "identifier": "nb:facf5204-3eab-4af5-bca1-6a59c7498ca0",
+              "hasContrastType": {
+                "identifier": "nidm:PositronEmissionTomography",
+                "schemaKey": "Image"
+              },
+              "schemaKey": "Acquisition"
+            }
+          ],
+          "schemaKey": "ImagingSession"
+        }
+      ],
+      "schemaKey": "Subject"
+    }
+  ],
+  "schemaKey": "Dataset"
+}
